@@ -1,6 +1,6 @@
 site_name: RokiArkNet
 site_description: ARK Survival Ascended server guides and mod documentation
-site_url: https://marcm000.github.io/RokiArkNet
+site_url: https://rokiarknet.github.io/RokiArkNet
 
 theme:
   name: material
@@ -17,7 +17,6 @@ theme:
 nav:
   - Home: index.md
   - Guides:
-    - Ark Supreme: guides/ark-supreme/index.md
     - Primal Nemesis: guides/primal-nemesis/index.md
 
 markdown_extensions:

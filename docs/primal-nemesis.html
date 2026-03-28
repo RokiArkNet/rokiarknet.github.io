@@ -4,1166 +4,237 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Primal Nemesis Guide — RokiArkNet</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap');
-
-:root {
-  --bg: #0d0d12;
-  --surface: #14141e;
-  --card: #1a1a28;
-  --border: #2a2a3e;
-  --orange: #e8580a;
-  --amber: #f0a020;
-  --text: #d8d8e8;
-  --muted: #7878a0;
-  --tip: #0f2a1a;
-  --tip-border: #1a6a30;
-  --warn: #2a1a08;
-  --warn-border: #8a4010;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  display: flex;
-}
-
-/* Sidebar */
-#sidebar {
-  position: fixed;
-  top: 0; left: 0;
-  width: 240px;
-  height: 100vh;
-  background: var(--surface);
-  border-right: 1px solid var(--border);
-  overflow-y: auto;
-  z-index: 100;
-  padding-bottom: 40px;
-}
-
-#sidebar-header {
-  padding: 20px 16px 14px;
-  border-bottom: 1px solid var(--border);
-}
-
-#sidebar-header .logo {
-  font-family: 'Orbitron', monospace;
-  font-size: 11px;
-  color: var(--orange);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-#sidebar-header h2 {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text);
-  margin-top: 4px;
-  line-height: 1.3;
-}
-
-#sidebar nav a {
-  display: block;
-  padding: 8px 16px;
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  border-left: 2px solid transparent;
-  transition: all 0.15s;
-}
-
-#sidebar nav a:hover, #sidebar nav a.active {
-  color: var(--orange);
-  border-left-color: var(--orange);
-  background: rgba(232,88,10,0.06);
-}
-
-#sidebar nav .nav-section {
-  padding: 12px 16px 4px;
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--muted);
-  text-transform: uppercase;
-  opacity: 0.6;
-}
-
-#sidebar nav .nav-sub {
-  padding-left: 28px;
-  font-size: 12px;
-  font-weight: 400;
-}
-
-/* Main content */
-#main {
-  margin-left: 240px;
-  flex: 1;
-  max-width: 860px;
-  padding: 48px 48px 120px;
-}
-
-/* Sections */
-.section { margin-bottom: 64px; }
-
-/* Hero */
-#hero {
-  text-align: center;
-  padding: 40px 0 48px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 56px;
-}
-
-#hero .eyebrow {
-  font-family: 'Orbitron', monospace;
-  font-size: 10px;
-  letter-spacing: 4px;
-  color: var(--orange);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-#hero h1 {
-  font-family: 'Orbitron', monospace;
-  font-size: 36px;
-  font-weight: 900;
-  color: #fff;
-  text-shadow: 0 0 40px rgba(232,88,10,0.3);
-  letter-spacing: 2px;
-}
-
-#hero .baseline {
-  margin-top: 20px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--amber);
-  padding: 12px 16px;
-  font-size: 13px;
-  color: var(--muted);
-  text-align: left;
-  display: inline-block;
-}
-
-/* Section headers */
-.section-title {
-  font-family: 'Orbitron', monospace;
-  font-size: 13px;
-  letter-spacing: 3px;
-  color: var(--orange);
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border);
-}
-
-h2 {
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 12px;
-}
-
-h3 {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--amber);
-  margin: 24px 0 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-h4 {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text);
-  margin: 16px 0 6px;
-}
-
-p { margin-bottom: 12px; color: var(--text); }
-
-/* Tier list */
-.tier-chain {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 24px 28px;
-  font-family: monospace;
-  font-size: 14px;
-  line-height: 2.2;
-  color: var(--text);
-}
-
-.tier-chain .tier-link {
-  color: var(--orange);
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  transition: color 0.15s;
-}
-
-.tier-chain .tier-link:hover { color: var(--amber); }
-.tier-chain .connector { color: var(--muted); }
-
-/* Tier accordion */
-.tier-block {
-  margin-bottom: 8px;
-  border: 1px solid var(--border);
-  overflow: hidden;
-}
-
-.tier-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 20px;
-  cursor: pointer;
-  background: var(--card);
-  transition: background 0.15s;
-  user-select: none;
-}
-
-.tier-header:hover { background: rgba(232,88,10,0.06); }
-
-.tier-header .tier-name {
-  font-family: 'Orbitron', monospace;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: var(--orange);
-}
-
-.tier-header .tier-badge {
-  font-size: 11px;
-  padding: 2px 8px;
-  border: 1px solid var(--border);
-  color: var(--muted);
-  letter-spacing: 1px;
-}
-
-.tier-header .chevron {
-  color: var(--muted);
-  font-size: 12px;
-  transition: transform 0.2s;
-}
-
-.tier-block.open .chevron { transform: rotate(180deg); }
-
-.tier-body {
-  display: none;
-  padding: 20px 24px;
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-}
-
-.tier-block.open .tier-body { display: block; }
-
-/* Info grid */
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 16px 0;
-}
-
-.info-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 14px 16px;
-}
-
-.info-card .label {
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--muted);
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-.info-card .value {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text);
-}
-
-/* Tip / warning callouts */
-.tip {
-  background: var(--tip);
-  border-left: 3px solid var(--tip-border);
-  padding: 10px 14px;
-  font-size: 14px;
-  color: #90d8a0;
-  margin: 14px 0;
-}
-
-.warn {
-  background: var(--warn);
-  border-left: 3px solid var(--warn-border);
-  padding: 10px 14px;
-  font-size: 14px;
-  color: #d8a060;
-  margin: 14px 0;
-}
-
-.tip::before { content: 'TIP  '; font-weight: 700; letter-spacing: 2px; }
-.warn::before { content: 'WARNING  '; font-weight: 700; letter-spacing: 2px; color: var(--orange); }
-
-/* Lists */
-ul, ol { padding-left: 20px; margin-bottom: 12px; }
-li { margin-bottom: 4px; color: var(--text); }
-
-/* Boss card */
-.boss-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-top: 2px solid var(--orange);
-  padding: 20px 22px;
-  margin: 16px 0;
-}
-
-.boss-card .boss-name {
-  font-family: 'Orbitron', monospace;
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: var(--orange);
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.boss-card h4 { margin-top: 12px; }
-
-/* Reward list */
-.rewards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 10px 0;
-}
-
-.reward-tag {
-  background: rgba(232,88,10,0.12);
-  border: 1px solid rgba(232,88,10,0.3);
-  padding: 4px 10px;
-  font-size: 12px;
-  color: var(--amber);
-}
-
-/* Elemental matchup table */
-.matchup-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 16px 0;
-  font-size: 14px;
-}
-
-.matchup-table th {
-  background: var(--card);
-  padding: 10px 14px;
-  text-align: left;
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--muted);
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--border);
-}
-
-.matchup-table td {
-  padding: 10px 14px;
-  border-bottom: 1px solid var(--border);
-  vertical-align: top;
-}
-
-.matchup-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
-.strong { color: #6ddc90; font-weight: 600; }
-.weak { color: #e06060; font-weight: 600; }
-
-/* FAQ */
-.faq-item {
-  border: 1px solid var(--border);
-  margin-bottom: 6px;
-  overflow: hidden;
-}
-
-.faq-q {
-  padding: 14px 18px;
-  cursor: pointer;
-  background: var(--card);
-  font-weight: 600;
-  font-size: 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.15s;
-}
-
-.faq-q:hover { background: rgba(232,88,10,0.06); }
-.faq-q .faq-chevron { color: var(--muted); font-size: 12px; transition: transform 0.2s; }
-.faq-item.open .faq-chevron { transform: rotate(180deg); }
-
-.faq-a {
-  display: none;
-  padding: 16px 18px;
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  font-size: 14px;
-}
-
-.faq-item.open .faq-a { display: block; }
-
-/* Loot table */
-.loot-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
-  margin: 12px 0;
-}
-
-.loot-table th {
-  background: var(--card);
-  padding: 8px 12px;
-  text-align: left;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--muted);
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--border);
-}
-
-.loot-table td {
-  padding: 8px 12px;
-  border-bottom: 1px solid var(--border);
-}
-
-.loot-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
-
-/* Tranq table */
-.tranq-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
-.tranq-table th { background: var(--card); padding: 8px 12px; text-align: left; font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; border-bottom: 1px solid var(--border); }
-.tranq-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
-.tranq-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
-
-/* Structure damage badge */
-.struct-badge {
-  display: inline-block;
-  background: rgba(232,88,10,0.12);
-  border: 1px solid rgba(232,88,10,0.25);
-  padding: 3px 10px;
-  font-size: 12px;
-  color: var(--orange);
-  margin-bottom: 14px;
-  letter-spacing: 1px;
-}
-
-/* Footer */
-.guide-footer {
-  margin-top: 80px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  font-size: 13px;
-  color: var(--muted);
-}
-
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border); }
-
-/* Mobile */
-@media (max-width: 768px) {
-  #sidebar { display: none; }
-  #main { margin-left: 0; padding: 24px 20px 80px; }
-  .info-grid { grid-template-columns: 1fr; }
-}
+:root{--bg:#0d0d12;--surface:#14141e;--card:#1a1a28;--border:#2a2a3e;--orange:#e8580a;--amber:#f0a020;--text:#d8d8e8;--muted:#7878a0;--tip:#0f2a1a;--tip-border:#1a6a30;--warn:#2a1a08;--warn-border:#8a4010;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;font-size:16px;line-height:1.7;display:flex;}
+#sidebar{position:fixed;top:0;left:0;width:240px;height:100vh;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;z-index:100;padding-bottom:40px;}
+#sidebar-header{padding:20px 16px 14px;border-bottom:1px solid var(--border);}
+.logo{font-family:'Orbitron',monospace;font-size:11px;color:var(--orange);letter-spacing:3px;}
+#sidebar-header h2{font-size:14px;font-weight:700;color:var(--text);margin-top:4px;}
+#sidebar nav a{display:block;padding:8px 16px;color:var(--muted);text-decoration:none;font-size:13px;font-weight:600;border-left:2px solid transparent;transition:all .15s;}
+#sidebar nav a:hover,#sidebar nav a.active{color:var(--orange);border-left-color:var(--orange);background:rgba(232,88,10,.06);}
+.nav-section{padding:12px 16px 4px;font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;opacity:.6;}
+#main{margin-left:240px;flex:1;max-width:860px;padding:48px 48px 120px;}
+#loading{text-align:center;padding:80px;font-family:'Orbitron',monospace;color:var(--orange);letter-spacing:3px;}
+#hero{text-align:center;padding:40px 0 48px;border-bottom:1px solid var(--border);margin-bottom:56px;}
+.eyebrow{font-family:'Orbitron',monospace;font-size:10px;letter-spacing:4px;color:var(--orange);text-transform:uppercase;margin-bottom:12px;}
+#hero h1{font-family:'Orbitron',monospace;font-size:36px;font-weight:900;color:#fff;text-shadow:0 0 40px rgba(232,88,10,.3);letter-spacing:2px;}
+.baseline-box{margin-top:20px;background:var(--card);border:1px solid var(--border);border-left:3px solid var(--amber);padding:12px 16px;font-size:13px;color:var(--muted);display:inline-block;text-align:left;}
+.section{margin-bottom:56px;}
+.section-title{font-family:'Orbitron',monospace;font-size:13px;letter-spacing:3px;color:var(--orange);text-transform:uppercase;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.section h3{font-size:16px;font-weight:700;color:var(--amber);margin:24px 0 10px;text-transform:uppercase;letter-spacing:1px;}
+.section h4{font-size:14px;font-weight:700;color:var(--text);margin:16px 0 6px;}
+.section p{margin-bottom:12px;color:var(--text);}
+.section ul,.section ol{padding-left:20px;margin-bottom:12px;}
+.section li{margin-bottom:4px;color:var(--text);}
+.section strong{color:var(--amber);}
+.tip{background:var(--tip);border-left:3px solid var(--tip-border);padding:10px 14px;font-size:14px;color:#90d8a0;margin:14px 0;}
+.tip::before{content:'TIP  ';font-weight:700;letter-spacing:2px;}
+.warn{background:var(--warn);border-left:3px solid var(--warn-border);padding:10px 14px;font-size:14px;color:#d8a060;margin:14px 0;}
+.warn::before{content:'WARNING  ';font-weight:700;letter-spacing:2px;color:var(--orange);}
+.struct-badge{display:inline-block;background:rgba(232,88,10,.12);border:1px solid rgba(232,88,10,.25);padding:3px 10px;font-size:12px;color:var(--orange);margin-bottom:14px;letter-spacing:1px;}
+.guide-footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--border);}
+@media(max-width:768px){#sidebar{display:none;}#main{margin-left:0;padding:24px 20px 80px;}}
 </style>
 </head>
 <body>
-
-<!-- Sidebar -->
 <aside id="sidebar">
   <div id="sidebar-header">
     <div class="logo">RokiArkNet</div>
     <h2>Primal Nemesis Guide</h2>
   </div>
-  <nav>
-    <div class="nav-section">Overview</div>
-    <a href="#tier-list">Tier List</a>
-    <a href="#getting-started">Getting Started</a>
-
-    <div class="nav-section">Progression</div>
-    <a href="#alpha">Alpha</a>
-    <a href="#apex">Apex</a>
-    <a href="#elemental">Elemental</a>
-    <a href="#plasma-ghost-plague" class="nav-sub">Plasma / Ghost / Plague</a>
-    <a href="#bionic">Bionic</a>
-    <a href="#celestial-demonic">Celestial / Demonic</a>
-    <a href="#godly">Godly</a>
-
-    <div class="nav-section">Reference</div>
-    <a href="#bosses">Boss Reference</a>
-    <a href="#loot">Loot System</a>
-    <a href="#resources">Resource Ores</a>
-    <a href="#charms">Charms & Totems</a>
-    <a href="#titans">Titans</a>
-    <a href="#faq">FAQ & Tips</a>
-  </nav>
+  <nav id="nav"></nav>
 </aside>
-
-<!-- Main -->
 <main id="main">
-
-  <!-- Hero -->
-  <div id="hero">
-    <div class="eyebrow">RokiArkNet Guide</div>
-    <h1>PRIMAL NEMESIS</h1>
-    <div class="baseline">
-      All stats based on <strong>Level 150 unboosted creatures</strong> — no server multipliers or custom imprints.<br>
-      Assumes working knowledge of basic ARK mechanics.
-    </div>
-  </div>
-
-  <!-- Tier List -->
-  <section class="section" id="tier-list">
-    <div class="section-title">Tier List</div>
-    <div class="tier-chain">
-<a href="#alpha" class="tier-link">Alpha</a>
-<span class="connector"> └─ </span><a href="#alpha" class="tier-link">Alpha Skeletal</a>
-<span style="display:block;padding-left:40px"><span class="connector">└─ </span><a href="#apex" class="tier-link">Apex</a></span>
-<span style="display:block;padding-left:80px"><span class="connector">└─ </span><a href="#apex" class="tier-link">Apex Skeletal</a></span>
-<span style="display:block;padding-left:120px"><span class="connector">└─ </span><a href="#elemental" class="tier-link">Storm</a> <span class="connector">|</span> <a href="#elemental" class="tier-link">Volcanic</a> <span class="connector">|</span> <a href="#elemental" class="tier-link">Frost</a> <span class="connector">|</span> <a href="#elemental" class="tier-link">Nature</a> <span class="connector">|</span> <a href="#elemental" class="tier-link">Earth</a> <span class="connector">|</span> <a href="#elemental" class="tier-link">Water</a></span>
-<span style="display:block;padding-left:160px"><span class="connector">└─ </span><a href="#plasma-ghost-plague" class="tier-link">Plasma</a> <span class="connector">|</span> <a href="#plasma-ghost-plague" class="tier-link">Ghost</a></span>
-<span style="display:block;padding-left:200px"><span class="connector">└─ </span><a href="#plasma-ghost-plague" class="tier-link">Plague</a></span>
-<span style="display:block;padding-left:240px"><span class="connector">└─ </span><a href="#bionic" class="tier-link">Bionic</a></span>
-<span style="display:block;padding-left:280px"><span class="connector">└─ </span><a href="#celestial-demonic" class="tier-link">Demonic</a> <span class="connector">|</span> <a href="#celestial-demonic" class="tier-link">Celestial</a></span>
-<span style="display:block;padding-left:320px"><span class="connector">└─ </span><a href="#godly" class="tier-link">Godly</a></span>
-    </div>
-    <div style="margin-top:12px;padding:12px 16px;background:var(--card);border:1px solid var(--border);font-size:13px;color:var(--muted);">
-      <strong style="color:var(--text)">Water Tiers (Non-Progression)</strong><br>
-      Pacific — Equivalent to Alpha Tier &nbsp;|&nbsp; Atlantic — Equivalent to Apex Tier
-    </div>
-  </section>
-
-  <!-- Getting Started -->
-  <section class="section" id="getting-started">
-    <div class="section-title">Getting Started</div>
-    <p>Focus on building a core crafting base, preparing for early hunts, and securing the resources required for future tiers.</p>
-
-    <h3>Core Crafting Structures</h3>
-    <p>Secure a safe starting base — land or raft — and prioritize these essential structures:</p>
-
-    <div class="info-grid">
-      <div class="info-card">
-        <div class="label">Primal Forge</div>
-        <div class="value" style="font-size:13px;margin-top:6px;font-weight:400;">Smelts metal and alloys. Crafts advanced ingots (Copper, Tin). Required for Zinc Ore.</div>
-      </div>
-      <div class="info-card">
-        <div class="label">Primal Cauldron</div>
-        <div class="value" style="font-size:13px;margin-top:6px;font-weight:400;">Brews custom kibbles, potions, dyes, and consumables.</div>
-      </div>
-      <div class="info-card">
-        <div class="label">Primal Bench</div>
-        <div class="value" style="font-size:13px;margin-top:6px;font-weight:400;">Primary station for modded gear, kibble, and boss item crafting.</div>
-      </div>
-    </div>
-
-    <h3>Loot System Overview</h3>
-    <p>All loot in Primal Nemesis rolls randomized stat bonuses — armor, weapons, tools, saddles, rings, and dino totems.</p>
-    <ul>
-      <li>Loot Bosses</li>
-      <li>Quests</li>
-      <li>Wild dino kills</li>
-    </ul>
-    <p>Higher tiers provide more stat slots and stronger values. Loot quality ranges from Common through Ancient. See the <a href="#loot" style="color:var(--orange)">Loot System</a> section for full details.</p>
-  </section>
-
-  <!-- Alpha -->
-  <section class="section" id="alpha">
-    <div class="section-title">Alpha Tier</div>
-    <p>Alpha-tier creatures mark your first major power spike. Their proximity buff increases damage and resistance for nearby dinos.</p>
-    <div class="struct-badge">Structure Damage — Wood</div>
-
-    <h3>Gear Up</h3>
-    <p>Prepare a basic combat kit before engaging Alphas:</p>
-    <div class="info-grid">
-      <div class="info-card">
-        <div class="label">Weapons</div>
-        <div class="value" style="font-size:13px;margin-top:6px;font-weight:400;">Primal Spear, Bow, Tranq Arrows</div>
-      </div>
-      <div class="info-card">
-        <div class="label">Utility</div>
-        <div class="value" style="font-size:13px;margin-top:6px;font-weight:400;">Primal Parachute, Primal Grappling Gun</div>
-      </div>
-      <div class="info-card">
-        <div class="label">Alpha Blood</div>
-        <div class="value" style="font-size:13px;margin-top:6px;font-weight:400;">Used to craft Alpha-tier tranq ammo</div>
-      </div>
-      <div class="info-card">
-        <div class="label">Alpha Hide</div>
-        <div class="value" style="font-size:13px;margin-top:6px;font-weight:400;">Used for essential items such as the Primal Bed</div>
-      </div>
-    </div>
-
-    <h3>First Tames</h3>
-    <p>Once Alpha Kibble is available from egg farms, prioritize core utility tames:</p>
-    <ul>
-      <li><strong>Flyers</strong> — Pteranodons for travel and scouting</li>
-      <li><strong>Gatherers</strong> — Parasaurs, Trikes, or Stegos for berry farming</li>
-    </ul>
-    <div class="tip">Alpha tames provide the Alpha Buff — doubles damage and resistance for all nearby tamed dinos. Keep one nearby during any boss fight.</div>
-
-    <h3>Recommended DPS Tames</h3>
-    <p>Bring dedicated combat dinos for boss fights — Rexes, Spinos, or other high-damage Alpha-tier fighters. Focus on high health, high melee, good saddles, and Alpha Health Potions. Utility tames should stay at base.</p>
-
-    <div class="boss-card">
-      <div class="boss-name">The Alpha Boss</div>
-      <p>Primary progression gate of the Alpha tier. Defeating it unlocks Apex Kibble and the Primal Incubator.</p>
-      <h4>Preparation</h4>
-      <ul>
-        <li>Craft the summon at the Primal Bench</li>
-        <li>Use a secure, enclosed arena</li>
-        <li>Bring saddled dinos and Alpha Health Potions</li>
-      </ul>
-      <h4>Phases</h4>
-      <ul>
-        <li><strong>Phase 1</strong> — Defeat the Alpha Boss</li>
-        <li><strong>Phase 2</strong> — Immediate respawn as Skeletal Alpha Boss. Both phases required for full rewards.</li>
-      </ul>
-      <h4>Rewards</h4>
-      <div class="rewards">
-        <span class="reward-tag">Alpha Boss Skull</span>
-        <span class="reward-tag">Unlocks Apex Kibble</span>
-        <span class="reward-tag">Unlocks Primal Incubator</span>
-      </div>
-    </div>
-
-    <h3>Skeletal & Boss Variants</h3>
-    <p>Skeletal variants are stronger than normal counterparts and require Alpha/Apex Boss Kibble to tame. They drop Keratin and Blood when harvested.</p>
-    <p>Boss variants are stronger still, drop Element, and can be bred. Alpha Bosses require Alpha Boss Kibble; Apex Bosses require Apex Boss Kibble.</p>
-  </section>
-
-  <!-- Apex -->
-  <section class="section" id="apex">
-    <div class="section-title">Apex Tier</div>
-    <p>After mastering Alpha, progression moves into the Apex tier. Apex creatures provide increased strength and durability.</p>
-    <div class="struct-badge">Structure Damage — Stone</div>
-
-    <h3>Bloodrage Mechanic</h3>
-    <p>Apex creatures gain Bloodrage during combat.</p>
-    <ul>
-      <li>Each kill increases damage output</li>
-      <li>Provides health regeneration over time</li>
-    </ul>
-    <p>Bloodrage scales Apex dinos in sustained combat and multi-target encounters.</p>
-
-    <h3>Advancing to Apex</h3>
-    <ul>
-      <li>Target Rexes, Spinos, and other high-DPS Apex dinos</li>
-      <li>Replace weaker Alpha tames with higher-stat Apex variants</li>
-    </ul>
-
-    <div class="boss-card">
-      <div class="boss-name">The Apex Troll</div>
-      <p>First boss encounter in this tier — the next progression gate. Defeating it unlocks Elemental Kibble.</p>
-      <div class="warn">Boss fights apply a Grounded Debuff — disables flight, abilities, and mounting. No fliers.</div>
-    </div>
-
-    <h3>Apex Feather Farm</h3>
-    <p>Establish a reliable source of Apex Feathers before progressing — required for mid- to late-game crafting and kibble.</p>
-    <ul>
-      <li>Argentavis, Dodo, Terror Bird, Archaeopteryx</li>
-      <li>Apex Dodos are the easiest starting option</li>
-    </ul>
-  </section>
-
-  <!-- Elemental -->
-  <section class="section" id="elemental">
-    <div class="section-title">Elemental Tier</div>
-    <p>After defeating the Apex Troll, you unlock Elemental Kibble. The Elemental tier revolves around exploiting strengths and weaknesses between types — team composition is critical.</p>
-    <div class="struct-badge">Structure Damage — Stone</div>
-
-    <div class="tip">Any Elemental Blood can be used interchangeably — blood from any elemental type satisfies requirements calling for "Elemental Blood."</div>
-
-    <h3>Elemental Kibble</h3>
-    <p>Elemental creatures drop their respective cores (e.g., Volcanic Core, Hydro Core). In the Primal Cauldron: <strong>1 Core → 10 Essence</strong>. Elemental Essence crafts Elemental Kibble.</p>
-
-    <h3>Elemental Matchups</h3>
-    <table class="matchup-table">
-      <thead>
-        <tr><th>Type</th><th>Strong Against</th><th>Weak To</th><th>Key Abilities</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Storm</td><td class="strong">Water</td><td class="weak">Earth</td><td>Mobile power generation, scales range with melee</td></tr>
-        <tr><td>Volcanic</td><td class="strong">Frost</td><td class="weak">Hydro</td><td>Cook meat in inventory, mobile forge, temperature resist</td></tr>
-        <tr><td>Hydro</td><td class="strong">Volcanic</td><td class="weak">Storm</td><td>Water enhancement, store water, reduce O2 drain nearby</td></tr>
-        <tr><td>Frost</td><td class="strong">Nature</td><td class="weak">Volcanic</td><td>Food preservation (like a fridge), temperature resist</td></tr>
-        <tr><td>Nature</td><td class="strong">Earth</td><td class="weak">Frost</td><td>Crop growth boost, healing AoE, 150% greenhouse effect</td></tr>
-        <tr><td>Earth</td><td class="strong">Storm</td><td class="weak">Nature</td><td>Crafting speed boost, rock shield for nearby allies</td></tr>
-      </tbody>
-    </table>
-
-    <h3>Base Pairing Strategy</h3>
-    <ul>
-      <li><strong>Storm + Hydro</strong> — Power generation + water supply</li>
-      <li><strong>Earth + Nature</strong> — Faster crafting + improved crop production</li>
-      <li><strong>Frost + Volcanic</strong> — Full temperature control across all environments</li>
-    </ul>
-
-    <div class="warn">Nature dinos provide a 150% greenhouse effect that REPLACES existing greenhouse bonuses rather than stacking. Do not use near a full greenhouse (300%) — it will reduce efficiency.</div>
-
-    <div class="boss-card">
-      <div class="boss-name">Elemental Kaiju Bosses</div>
-      <p>Can be crafted at the Primal Bench and challenged in any order. Each fight requires proper preparation.</p>
-      <h4>Preparation</h4>
-      <ul>
-        <li>Fully saddled and healed tames</li>
-        <li>Stock Alpha and Nature Potions</li>
-        <li>Build a team of evolved Titans with high Health and Melee</li>
-      </ul>
-      <h4>Strategy</h4>
-      <ul>
-        <li>Prioritize Health and Melee for consistent DPS</li>
-        <li>Build a balanced team to counter elemental matchups</li>
-        <li>Use Alpha proximity buffs to enhance Elemental performance</li>
-      </ul>
-      <h4>Rewards</h4>
-      <div class="rewards">
-        <span class="reward-tag">Boss Skull</span>
-        <span class="reward-tag">Elemental Fruit Seeds</span>
-        <span class="reward-tag">Elemental Boss Essence</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Plasma / Ghost / Plague -->
-  <section class="section" id="plasma-ghost-plague">
-    <div class="section-title">Plasma / Ghost / Plague</div>
-    <p>The next trio of Nemesis tiers introduce corruption effects, unstable energy forms, and powerful spectral creatures.</p>
-    <div class="struct-badge">Structure Damage — Stone</div>
-
-    <p>These three tiers form an internal interaction triangle:</p>
-    <ul>
-      <li><strong>Plague</strong> beats Plasma</li>
-      <li><strong>Plasma</strong> beats Ghost</li>
-      <li><strong>Ghost</strong> beats Plague</li>
-    </ul>
-
-    <div class="tier-block" id="plasma-block">
-      <div class="tier-header" onclick="toggleTier('plasma-block')">
-        <span class="tier-name">Plasma</span>
-        <span class="tier-badge">Immune to Projectiles</span>
-        <span class="chevron">▼</span>
-      </div>
-      <div class="tier-body">
-        <p>Creatures composed of unstable plasma energy. Plasma beats Ghost. Immune to projectiles. Weak against Plague.</p>
-        <h4>New Tools</h4>
-        <ul>
-          <li><strong>Plasma Netgun</strong> — Used for trapping Ghosts</li>
-          <li><strong>GhostBuster 9000</strong> — Plasma-based KO tool</li>
-        </ul>
-        <div class="boss-card">
-          <div class="boss-name">Plasma Boss</div>
-          <p>Beware the shield — keep your distance and dodge all incoming attacks. Can summon Minions similar to the vanilla Overseer fight.</p>
-          <div class="warn">Huge health pool. Come fully stocked on potions.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="tier-block" id="ghost-block">
-      <div class="tier-header" onclick="toggleTier('ghost-block')">
-        <span class="tier-name">Ghost</span>
-        <span class="tier-badge">Nighttime Advantage</span>
-        <span class="chevron">▼</span>
-      </div>
-      <div class="tier-body">
-        <p>Spectral aquatic creatures with powerful nighttime advantages. Immune to projectiles and normal tranqs. Can fly out of water. Extremely strong at night.</p>
-        <h4>Taming Requirements</h4>
-        <ul>
-          <li>Plasma Netgun (to trap)</li>
-          <li>GhostBuster 9000 (to KO)</li>
-        </ul>
-        <div class="boss-card">
-          <div class="boss-name">Ghost Boss — Flyers Only</div>
-          <p>Must be fought with flying creatures. Ground tames are not viable. Weak to Plasma. Ghosts are strongest at night.</p>
-          <div class="warn">Non-flyer strategies will fail. Bring strong fliers — the boss has a large health pool.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="tier-block" id="plague-block">
-      <div class="tier-header" onclick="toggleTier('plague-block')">
-        <span class="tier-name">Plague</span>
-        <span class="tier-badge">Contact Virus</span>
-        <span class="chevron">▼</span>
-      </div>
-      <div class="tier-body">
-        <p>Creatures influenced by virulent corruption. Plague beats Plasma. Plague creatures spread a virus on contact — applies a short-duration damage-over-time debuff.</p>
-        <div class="boss-card">
-          <div class="boss-name">Plague Boss</div>
-          <div class="rewards"><span class="reward-tag">Unlocks Bionic Kibble</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bionic -->
-  <section class="section" id="bionic">
-    <div class="section-title">Bionic Tier</div>
-    <p>One of the most powerful stages in Primal Nemesis.</p>
-    <div class="struct-badge">Structure Damage — Stone</div>
-
-    <div class="boss-card">
-      <div class="boss-name">Bionic Progression — Boss Chain</div>
-      <p>Defeat bosses to acquire both Bionic Skulls. Then craft the Bionic God Scroll at the Primal Bench to unlock the final Bionic Boss — the Scion of Darkness.</p>
-      <h4>Victory Conditions — Scion of Darkness / Bionic God</h4>
-      <ul>
-        <li>High DPS for the boss phase</li>
-        <li>Fast tower-breakers for the shield phase</li>
-        <li>Strong mobility to dodge plasma fire</li>
-      </ul>
-      <div class="tip">This is a multi-phase fight. Victory marks mastery of the Bionic Tier.</div>
-      <h4>Rewards</h4>
-      <div class="rewards">
-        <span class="reward-tag">Bionic Boss Skull</span>
-        <span class="reward-tag">Bionic Boss Essence</span>
-        <span class="reward-tag">Unlocks Primal Bionic Forge</span>
-      </div>
-    </div>
-
-    <h3>Primal Bionic Forge</h3>
-    <p>Unlocked by defeating the Bionic God. The only station that can refine:</p>
-    <ul>
-      <li>Mithril Ore → Mithril Ingots</li>
-      <li>Gold Ore → Gold Ingots</li>
-    </ul>
-    <p><strong>Power Requirements:</strong> Storm Essence, Volcanic Essence, or a nearby Storm creature.</p>
-  </section>
-
-  <!-- Celestial / Demonic -->
-  <section class="section" id="celestial-demonic">
-    <div class="section-title">Celestial / Demonic</div>
-    <p>With Elemental and Bionic conquered, your next leap is into the Demonic and Celestial tiers.</p>
-    <div class="struct-badge">Structure Damage — Tek (AoE attacks)</div>
-
-    <h3>The Hunt for Honey</h3>
-    <p>To craft Demonic and Celestial Kibble, hunt Demonic Bees and Celestial Bees in the wild.</p>
-    <div class="warn">These bees hit hard — bring your best gear or prepare to respawn.</div>
-    <div class="info-grid">
-      <div class="info-card">
-        <div class="label">Required Gear</div>
-        <div class="value" style="font-size:13px;margin-top:6px;font-weight:400;">Strong Bionic-tier tame, Fabricated Sniper Rifle, High-tier Bionic+ Tranqs</div>
-      </div>
-      <div class="info-card">
-        <div class="label">Two Paths</div>
-        <div class="value" style="font-size:13px;margin-top:6px;font-weight:400;">Full Assault (kill directly) or Tranq and Finish. Both yield 2 Honey per bee.</div>
-      </div>
-    </div>
-
-    <h3>Tame Your First Bees</h3>
-    <p>KO and tame Demonic and Celestial Bees. Once tamed, convert them into a Beehive via radial menu and insert Celestial or Demonic Flowers for passive honey production.</p>
-    <div class="tip">Tame as many variants as possible — each has unique abilities, and some are game-changers.</div>
-
-    <div class="boss-card">
-      <div class="boss-name">Demonic & Celestial Bosses</div>
-      <h4>Prep</h4>
-      <ul>
-        <li>Bring strongest Bionic/Demonic/Celestial creatures with high-quality saddles and imprints</li>
-        <li>Stockpile Alpha Health Potions and Nature Buffs</li>
-        <li>Use Alpha Buffs mid-fight to tip the balance</li>
-      </ul>
-      <h4>Rewards</h4>
-      <div class="rewards">
-        <span class="reward-tag">Demonic / Celestial Boss Skull</span>
-        <span class="reward-tag">Boss Essence</span>
-        <span class="reward-tag">Celestial & Demonic Seeds (for Godly Kibble)</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Godly -->
-  <section class="section" id="godly">
-    <div class="section-title">Godly Tier</div>
-    <p>The final step in Nemesis progression — a culmination of your power, tames, and strategy. Health potions recommended due to high stats and projectile damage.</p>
-
-    <h3>Godly Bosses</h3>
-    <p>Six Godly Bosses roam the map — only one of each at a time. You'll be notified when one spawns. On death, each boss summons a tameable version of itself.</p>
-
-    <div class="boss-card">
-      <div class="boss-name">Nemesis — The Godly Boss</div>
-      <p>Collect tokens from all six Godly Bosses to summon Nemesis — the ultimate early-game fight designed to test everything you've learned. Conquer it to complete the early-game arc.</p>
-      <h4>Rewards</h4>
-      <div class="rewards">
-        <span class="reward-tag">Godly Potions</span>
-        <span class="reward-tag">Max XP Potions</span>
-        <span class="reward-tag">Godly Boss Essence</span>
-        <span class="reward-tag">Godly Boss Skull</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Boss Reference -->
-  <section class="section" id="bosses">
-    <div class="section-title">Boss Reference</div>
-
-    <h3>Loot Bosses</h3>
-    <p>Rare enemies that spawn naturally in the wild across all tiers. Project a red beam into the sky — when attacked, the beam disappears to signal engagement. Drops go into inventory, not on the ground.</p>
-
-    <h4>Saddles</h4>
-    <p>Crafted saddles are always Primitive. Loot bosses are the primary source of higher-quality saddles with randomized stats. Can drop both finished saddles and blueprints.</p>
-
-    <h4>Tame Helpers / Potions</h4>
-    <p>Basic Tame Helper (x10) can be crafted in the Primal Cauldron. Stronger versions are exclusive loot boss drops. Alpha and Nature potions craftable in Cauldron; Plasma, Celestial, and Godly potions are exclusive drops.</p>
-
-    <h3>Quests</h3>
-    <ul>
-      <li><strong>Common Resource Quests</strong> — Triggered by killing creatures. Focused on farming basic resources.</li>
-      <li><strong>High-Level Quests</strong> — Dropped by Imposter Loot Bosses (Alpha, Apex, Elemental, Bionic). Late-game progression content.</li>
-    </ul>
-    <div class="tip">Quest scrolls must be consumed from a dino's inventory. Quest UI is only visible and usable while riding that specific dino.</div>
-  </section>
-
-  <!-- Loot System -->
-  <section class="section" id="loot">
-    <div class="section-title">Loot System</div>
-    <p>All dropped loot rolls randomized stat bonuses — similar to MMO loot systems. Effects vary by item type: increased speed, damage, reduced elemental damage, luck bonuses, and more.</p>
-
-    <h3>Stat Slots by Tier</h3>
-    <table class="loot-table">
-      <thead><tr><th>Tier</th><th>Stat Slots</th><th>Number Range</th></tr></thead>
-      <tbody>
-        <tr><td>Alpha</td><td>2</td><td>Low</td></tr>
-        <tr><td>Apex</td><td>3</td><td>Medium</td></tr>
-        <tr><td>Elemental</td><td>More</td><td>Higher</td></tr>
-        <tr><td>Plasma / Ghost / Plague</td><td>More</td><td>Higher</td></tr>
-        <tr><td>Bionic</td><td>More</td><td>Higher</td></tr>
-        <tr><td>Demonic / Celestial</td><td>More</td><td>Higher</td></tr>
-        <tr><td>Godly</td><td>Most</td><td>Highest</td></tr>
-      </tbody>
-    </table>
-
-    <h3>Loot Quality Tiers</h3>
-    <p>Common → Uncommon → Rare → Epic → Legendary → Divine → Ancient</p>
-    <p>Ancient is only obtainable through quests. Divine is the new high-end tier above Legendary.</p>
-
-    <h3>Unique Weapons</h3>
-    <ul>
-      <li><strong>Zeus Spear</strong> — Throws lightning bolts where it lands</li>
-      <li><strong>Ragnarok Spear</strong> — Unleashes nukes or meteors on impact</li>
-    </ul>
-  </section>
-
-  <!-- Resource Ores -->
-  <section class="section" id="resources">
-    <div class="section-title">Resource Ores</div>
-
-    <div class="tier-block" id="nickel-block">
-      <div class="tier-header" onclick="toggleTier('nickel-block')">
-        <span class="tier-name">Nickel Ore</span>
-        <span class="tier-badge">Source: Resource Rock Golem</span>
-        <span class="chevron">▼</span>
-      </div>
-      <div class="tier-body">
-        <ul>
-          <li>Hover above a Resource Rock Golem with a flying mount to bait it into spawning Minions</li>
-          <li>Defeat and harvest Minions using a Modded Dino (Apex Rex recommended)</li>
-          <li>Kill and harvest the Golem itself — Modded Tools are bugged, use Modded Dinos</li>
-        </ul>
-        <div class="tip">Look for Resource Rock Golems that show "Can be tamed with Modded Ore" — tame one and use its ability to spawn your own Minions for unlimited Nickel.</div>
-        <h4>Taming the Golem</h4>
-        <ul>
-          <li>Griffin hover + shoot straight down with Rocket Launcher (aim for the head)</li>
-          <li>Or trap and use a Cannon for Torpor</li>
-          <li>Captain Reptile's Cannon mod can help</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="tier-block" id="starfire-block">
-      <div class="tier-header" onclick="toggleTier('starfire-block')">
-        <span class="tier-name">Starfire Metal / Mithril / Gold</span>
-        <span class="tier-badge">Source: DemiGod StarFire Golem</span>
-        <span class="chevron">▼</span>
-      </div>
-      <div class="tier-body">
-        <p>When fighting a Resource Rock Golem, there is a 25% chance it respawns as a DemiGod StarFire Golem. During the fight it periodically summons meteors — harvest these for Starfire Metal, Mithril Ore, and Gold Ore. Each meteor lasts 7 minutes.</p>
-        <div class="tip">The meteor ability fires every 3 minutes. Keep the DemiGod alive to farm multiple waves — the most efficient method for gathering these ores.</div>
-        <h4>Refining</h4>
-        <p>Mithril and Gold Ore can only be smelted in the Primal Bionic Forge. Requires Storm Essence, Volcanic Essence, or a nearby Storm creature.</p>
-      </div>
-    </div>
-
-    <h3>Rice / Kelp / Sushi</h3>
-    <p>Use a Berry Gatherer (Trike, Bronto, Parasaur) to collect Rice and Seaweed seeds from Berry Bushes. Plant in greenhouse. For Prime Fish Meat, target Basilosaurus, Deinosuchus, Mosasaurus, or Spine Croc with Pickaxe or Chainsaw.</p>
-    <div class="warn">Prime Fish Meat does NOT stack — plan inventory space accordingly.</div>
-    <p>Combine Prime Fish Meat, Rice, and Kelp in the Primal Cauldron. Cauldron holds 50 items max.</p>
-  </section>
-
-  <!-- Charms -->
-  <section class="section" id="charms">
-    <div class="section-title">Charms & Totems</div>
-    <p>All enhancers roll a value within a range when obtained — two items of the same type can have different strength levels.</p>
-
-    <h3>Player Ring System</h3>
-    <p>Rings are modular equipment with insertable charms. Ring tiers: Common → Uncommon → Rare → Epic → Legendary → Godly. Common rings start with 1 charm slot; each tier adds capacity.</p>
-
-    <h3>Enhancer Types</h3>
-    <table class="loot-table">
-      <thead><tr><th>Enhancer</th><th>Player</th><th>Dino</th><th>Effect</th></tr></thead>
-      <tbody>
-        <tr><td>XP</td><td>✓</td><td>✓</td><td>Increases experience gain</td></tr>
-        <tr><td>Weight</td><td>✓</td><td>✓</td><td>Increases carrying capacity</td></tr>
-        <tr><td>Speed</td><td>✓</td><td>✓</td><td>Increases movement speed</td></tr>
-        <tr><td>Healing</td><td>✓</td><td>✓</td><td>Gradual health regeneration</td></tr>
-        <tr><td>Dodge</td><td>✓</td><td>✓</td><td>Chance to evade incoming damage</td></tr>
-        <tr><td>Timestop</td><td>✓</td><td>✓</td><td>Stops time briefly when triggered</td></tr>
-        <tr><td>Gravity</td><td>✓</td><td>✓</td><td>Reduces gravity for higher jumps</td></tr>
-        <tr><td>Fall Damage</td><td>✓</td><td>✓</td><td>Reduces fall damage</td></tr>
-        <tr><td>Crafting</td><td>✓</td><td></td><td>Reduces crafting time and cost</td></tr>
-        <tr><td>Heat</td><td>✓</td><td></td><td>Reduces heat effects</td></tr>
-        <tr><td>Baby</td><td></td><td>✓</td><td>Affects baby growth and maturation</td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- Titans -->
-  <section class="section" id="titans">
-    <div class="section-title">Elemental Titans</div>
-
-    <h3>How to Tame a Titan</h3>
-    <ol>
-      <li><strong>Defeat the Elemental Boss</strong> — Unlocks the Elemental Incubator Engram and drops the Boss Skull (required for Whelpling recipe)</li>
-      <li><strong>Hunt a Wild Elemental Youngling</strong> — Cannot be crafted or summoned. On kill, automatically drops an Elemental Heart into your inventory</li>
-      <li><strong>Place Incubator strategically</strong> — Keep one at base for recipes (DO NOT hatch from it) and one in an open area for the actual hatch</li>
-      <li><strong>Craft the Whelpling</strong> — Spawns immediately as a wild creature. KO and feed matching Elemental Kibble</li>
-    </ol>
-
-    <div class="warn">Younglings hit HARDER than Elemental Bosses. Come fully geared with your best tames. Do NOT summon a Whelpling inside your base — it will destroy structures.</div>
-
-    <h3>Titan Evolution</h3>
-    <ul>
-      <li><strong>Whelpling</strong> — Baby/juvenile version</li>
-      <li><strong>Youngling</strong> — Use evolution item in inventory. Similar strength to wild variant</li>
-      <li><strong>Adult Titan</strong> — Gains ALL special attacks from boss variant. Ideal for Elemental boss fights</li>
-    </ul>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section" id="faq">
-    <div class="section-title">FAQ & Player Tips</div>
-
-    <div class="faq-item" id="faq-spawn">
-      <div class="faq-q" onclick="toggleFaq('faq-spawn')">How do dinos spawn? <span class="faq-chevron">▼</span></div>
-      <div class="faq-a">Modded creatures "piggyback" from vanilla dino spawns. A vanilla Argent spawning might result in an Alpha Argent or Apex Argent instead.</div>
-    </div>
-
-    <div class="faq-item" id="faq-eggs">
-      <div class="faq-q" onclick="toggleFaq('faq-eggs')">How do I get unfertilized eggs for kibble? <span class="faq-chevron">▼</span></div>
-      <div class="faq-a">
-        <ol>
-          <li>Set layegginterval to 0.3 in GAME INI</li>
-          <li>Ensure dinos are mate boosted (1 male + females)</li>
-          <li>Disable mating (unfertilized eggs needed)</li>
-          <li>Use an OviRaptor with egg-boost buff</li>
-          <li>Stay in render range unless using a mod</li>
-        </ol>
-      </div>
-    </div>
-
-    <div class="faq-item" id="faq-spawn2">
-      <div class="faq-q" onclick="toggleFaq('faq-spawn2')">Why aren't modded dinos spawning? <span class="faq-chevron">▼</span></div>
-      <div class="faq-a">Move the mod to 1st/top of mod order, then perform a dino wipe.</div>
-    </div>
-
-    <div class="faq-item" id="faq-boss">
-      <div class="faq-q" onclick="toggleFaq('faq-boss')">Can we take modded dinos into boss arenas? <span class="faq-chevron">▼</span></div>
-      <div class="faq-a">If their vanilla counterpart can enter, the modded version can also. Note: Due to size increases at higher tiers, some dinos become too large to enter the Tek Cave (e.g., Elemental Rexes).</div>
-    </div>
-
-    <div class="faq-item" id="faq-traits">
-      <div class="faq-q" onclick="toggleFaq('faq-traits')">What are Colossal & Pygmy traits? <span class="faq-chevron">▼</span></div>
-      <div class="faq-a">
-        Both have faster movement and increased melee damage.<br><br>
-        <strong>Colossal</strong> — Higher base health and melee. Suited for tanking.<br>
-        <strong>Pygmy</strong> — 10% chance to dodge incoming attacks. Effective in long fights.<br><br>
-        Can be applied via trait items or appear randomly through breeding.
-      </div>
-    </div>
-
-    <div class="faq-item" id="faq-dino-traits">
-      <div class="faq-q" onclick="toggleFaq('faq-dino-traits')">What are the new dino traits? <span class="faq-chevron">▼</span></div>
-      <div class="faq-a">
-        <strong>Nuclear</strong> — Builds an internal timer when aggressive or taking damage. Detonates in a nuclear explosion at zero. When tamed, triggers below 10% health.<br><br>
-        <strong>Volatile</strong> — Explodes on death. Both wild and tamed versions.<br><br>
-        <strong>Nightmare</strong> — Doubled stats during nighttime.<br><br>
-        <strong>Nighthunter</strong> — Extremely aggressive at night with increased aggro range.<br><br>
-        <strong>Chunky</strong> — Increased harvest health; yields more materials when harvested.
-      </div>
-    </div>
-
-    <div class="faq-item" id="faq-quality">
-      <div class="faq-q" onclick="toggleFaq('faq-quality')">How does the quality ranking system work? <span class="faq-chevron">▼</span></div>
-      <div class="faq-a">
-        Common → Uncommon → Rare → Epic → Legendary → Divine → Ancient<br><br>
-        Divine is the new high-end tier above Legendary. Ancient is only obtainable through quests.
-      </div>
-    </div>
-
-    <div class="faq-item" id="faq-tranq">
-      <div class="faq-q" onclick="toggleFaq('faq-tranq')">What are the Tranq Ammo values? <span class="faq-chevron">▼</span></div>
-      <div class="faq-a">
-        <table class="tranq-table">
-          <thead><tr><th>Ammo Type</th><th>Tier</th><th>Torpor Range</th></tr></thead>
-          <tbody>
-            <tr><td rowspan="4">Tranq Darts (Longneck)</td><td>Alpha</td><td>1.1k – 1.9k</td></tr>
-            <tr><td>Apex</td><td>1.9k – 5.7k</td></tr>
-            <tr><td>Elemental</td><td>4.6k – 15.4k</td></tr>
-            <tr><td>Demonic/Celestial</td><td>23k – 85k</td></tr>
-            <tr><td rowspan="4">Tranq Bullets (Sniper)</td><td>Alpha</td><td>1.2k – 4.4k</td></tr>
-            <tr><td>Apex</td><td>2.4k – 8.2k</td></tr>
-            <tr><td>Elemental</td><td>5k – 17.9k</td></tr>
-            <tr><td>Demonic/Celestial</td><td>25k – 87.5k</td></tr>
-            <tr><td rowspan="4">Compound Tranq Arrows</td><td>Alpha</td><td>1.5k – 6.9k</td></tr>
-            <tr><td>Apex</td><td>3k – 10.7k</td></tr>
-            <tr><td>Elemental</td><td>5.9k – 22.9k</td></tr>
-            <tr><td>Demonic/Celestial</td><td>30k – 97.5k</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <div class="guide-footer">
-    Last reviewed: 26 Mar 2026 &nbsp;|&nbsp; Contact @Rokitur on the Primal Nemesis Discord for corrections.<br>
-    Guide maintained by Rokitur — RokiArkNet
-  </div>
-
+  <div id="loading">LOADING GUIDE...</div>
+  <div id="content" style="display:none"></div>
 </main>
-
 <script>
-function toggleTier(id) {
-  const block = document.getElementById(id);
-  block.classList.toggle('open');
+const CONTENT_URL = 'https://raw.githubusercontent.com/rokiarknet/RokiArkNet/main/content/primal-nemesis.md';
+
+const NAV_SECTIONS = {
+  'Overview': ['tier-list','getting-started'],
+  'Progression': ['alpha','apex','elemental','plasma-ghost-plague','bionic','celestial-demonic','godly'],
+  'Reference': ['loot-bosses','loot-system','resource-ores','charms','titans','faq']
+};
+
+const SECTION_LABELS = {
+  'tier-list':'Tier List','getting-started':'Getting Started',
+  'alpha':'Alpha','apex':'Apex','elemental':'Elemental',
+  'plasma-ghost-plague':'Plasma / Ghost / Plague','bionic':'Bionic',
+  'celestial-demonic':'Celestial / Demonic','godly':'Godly',
+  'loot-bosses':'Boss Reference','loot-system':'Loot System',
+  'resource-ores':'Resource Ores','charms':'Charms & Totems',
+  'titans':'Titans','faq':'FAQ & Tips'
+};
+
+function buildNav() {
+  const nav = document.getElementById('nav');
+  for (const [group, ids] of Object.entries(NAV_SECTIONS)) {
+    const div = document.createElement('div');
+    div.className = 'nav-section';
+    div.textContent = group;
+    nav.appendChild(div);
+    ids.forEach(id => {
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.textContent = SECTION_LABELS[id] || id;
+      nav.appendChild(a);
+    });
+  }
 }
 
-function toggleFaq(id) {
-  const item = document.getElementById(id);
-  item.classList.toggle('open');
+function parseMarkdown(md) {
+  // Split into sections by ## headers
+  const sections = [];
+  const lines = md.split('\n');
+  let current = null;
+  for (const line of lines) {
+    if (line.startsWith('## ')) {
+      if (current) sections.push(current);
+      current = { id: line.slice(3).trim(), lines: [] };
+    } else if (current) {
+      current.lines.push(line);
+    }
+  }
+  if (current) sections.push(current);
+  return sections;
 }
 
-// Active nav highlight on scroll
-const sections = document.querySelectorAll('section[id], div[id="hero"]');
-const navLinks = document.querySelectorAll('#sidebar nav a');
+function renderSection(section) {
+  const div = document.createElement('div');
+  div.className = 'section';
+  div.id = section.id;
 
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 100) current = s.id;
+  const titleDiv = document.createElement('div');
+  titleDiv.className = 'section-title';
+  titleDiv.textContent = SECTION_LABELS[section.id] || section.id;
+  div.appendChild(titleDiv);
+
+  const raw = section.lines.join('\n');
+  const inner = document.createElement('div');
+
+  // Process line by line for special elements
+  const blocks = [];
+  let buffer = [];
+
+  const flushBuffer = () => {
+    if (buffer.length) {
+      blocks.push({ type: 'md', content: buffer.join('\n') });
+      buffer = [];
+    }
+  };
+
+  for (const line of section.lines) {
+    if (line.startsWith('> ⚠️ WARNING:') || line.startsWith('> ⚠️ WARNING')) {
+      flushBuffer();
+      blocks.push({ type: 'warn', content: line.replace(/^> ⚠️ WARNING:?\s*/, '') });
+    } else if (line.startsWith('> STRUCTURE DAMAGE:')) {
+      flushBuffer();
+      blocks.push({ type: 'struct', content: line.replace(/^> STRUCTURE DAMAGE:\s*/, '') });
+    } else if (line.startsWith('> ')) {
+      flushBuffer();
+      blocks.push({ type: 'tip', content: line.slice(2) });
+    } else {
+      buffer.push(line);
+    }
+  }
+  flushBuffer();
+
+  blocks.forEach(block => {
+    if (block.type === 'warn') {
+      const el = document.createElement('div');
+      el.className = 'warn';
+      el.textContent = block.content;
+      inner.appendChild(el);
+    } else if (block.type === 'tip') {
+      const el = document.createElement('div');
+      el.className = 'tip';
+      el.textContent = block.content;
+      inner.appendChild(el);
+    } else if (block.type === 'struct') {
+      const el = document.createElement('div');
+      el.className = 'struct-badge';
+      el.textContent = 'Structure Damage — ' + block.content;
+      inner.appendChild(el);
+    } else {
+      const el = document.createElement('div');
+      el.innerHTML = marked.parse(block.content);
+      // Restyle headings
+      el.querySelectorAll('h3').forEach(h => h.style.cssText = 'font-size:16px;font-weight:700;color:#f0a020;margin:24px 0 10px;text-transform:uppercase;letter-spacing:1px;');
+      el.querySelectorAll('h4').forEach(h => h.style.cssText = 'font-size:14px;font-weight:700;color:#d8d8e8;margin:16px 0 6px;');
+      el.querySelectorAll('p').forEach(p => p.style.cssText = 'margin-bottom:12px;color:#d8d8e8;');
+      el.querySelectorAll('ul,ol').forEach(l => l.style.cssText = 'padding-left:20px;margin-bottom:12px;');
+      el.querySelectorAll('li').forEach(l => l.style.cssText = 'margin-bottom:4px;color:#d8d8e8;');
+      el.querySelectorAll('strong').forEach(s => s.style.color = '#f0a020');
+      inner.appendChild(el);
+    }
   });
-  navLinks.forEach(a => {
-    a.classList.remove('active');
-    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-  });
-});
+
+  div.appendChild(inner);
+  return div;
+}
+
+async function loadGuide() {
+  try {
+    const resp = await fetch(CONTENT_URL + '?t=' + Date.now());
+    const md = await resp.text();
+    const sections = parseMarkdown(md);
+
+    const contentEl = document.getElementById('content');
+
+    // Hero
+    const hero = document.createElement('div');
+    hero.id = 'hero';
+    hero.innerHTML = '<div class="eyebrow">RokiArkNet Guide</div><h1>PRIMAL NEMESIS</h1>';
+
+    // Find baseline section
+    const baseline = sections.find(s => s.id === 'baseline');
+    if (baseline) {
+      const box = document.createElement('div');
+      box.className = 'baseline-box';
+      box.innerHTML = marked.parse(baseline.lines.join('\n'));
+      hero.appendChild(box);
+    }
+    contentEl.appendChild(hero);
+
+    // Render all sections except baseline
+    sections.filter(s => s.id !== 'baseline').forEach(section => {
+      contentEl.appendChild(renderSection(section));
+    });
+
+    // Footer
+    const footer = document.createElement('div');
+    footer.className = 'guide-footer';
+    footer.textContent = 'Last reviewed: 26 Mar 2026 | Contact @Rokitur on the Primal Nemesis Discord for corrections. Guide maintained by Rokitur — RokiArkNet';
+    contentEl.appendChild(footer);
+
+    document.getElementById('loading').style.display = 'none';
+    contentEl.style.display = 'block';
+    buildNav();
+
+    // Active nav
+    const navLinks = document.querySelectorAll('#nav a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      document.querySelectorAll('.section[id]').forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    });
+
+  } catch(e) {
+    document.getElementById('loading').textContent = 'Failed to load guide. ' + e.message;
+  }
+}
+
+loadGuide();
 </script>
 </body>
 </html>

@@ -18,6 +18,7 @@ nav:
   - Home: index.md
   - Guides:
     - Primal Nemesis: primal-nemesis.html
+    - Primal Chaos: primal-chaos.html
 
 markdown_extensions:
   - admonition

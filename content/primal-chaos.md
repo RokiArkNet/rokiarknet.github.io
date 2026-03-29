@@ -72,21 +72,15 @@ With Elemental Kibble ready, build your elemental army and push into the first r
 
 > STRUCTURE DAMAGE: N/A
 
-### Elemental Types
+### Elemental Matchups
 
-**Hydro** — Gains buffs near water, suffocates enemy riders and dinos in close range
+**Hydro** — Strong vs Volcanic | Weak to Electric | Gains buffs near water, suffocates enemy riders and dinos in close range
 
-**Volcanic** — Applies the Enflamed debuff, dealing burn damage over time; great for sustained DPS
+**Volcanic** — Strong vs Electric | Weak to Hydro | Applies the Enflamed debuff, dealing burn damage over time; great for sustained DPS
 
-**Electric** — Moves quickly and can stun targets; excellent for mobility and crowd control
+**Electric** — Strong vs Hydro | Weak to Volcanic | Moves quickly and can stun targets; excellent for mobility and crowd control
 
 > Aim to tame at least one of each type to prepare for bosses and counter a variety of threats.
-
-### Elemental Strength Chart
-
-Hydro beats Volcanic beats Electric beats Hydro
-
-Use this triangle to pick the best counter-element for each fight.
 
 ### Elemental Bosses
 

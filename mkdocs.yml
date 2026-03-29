@@ -15,7 +15,7 @@ theme:
     - search.highlight
 
 nav:
-  - Home: index.md
+  - Home: index.html
   - Guides:
     - Primal Nemesis: primal-nemesis.html
     - Primal Chaos: primal-chaos.html

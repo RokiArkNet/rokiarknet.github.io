@@ -19,6 +19,7 @@ nav:
   - Guides:
     - Primal Nemesis: primal-nemesis.html
     - Primal Chaos: primal-chaos.html
+    - Ark Supreme: ark-supreme.html
 
 markdown_extensions:
   - admonition

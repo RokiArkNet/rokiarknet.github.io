@@ -21,6 +21,7 @@ nav:
     - Primal Chaos: primal-chaos.html
     - Ark Descended: ark-descended.html
     - Ark Supreme: ark-supreme.html
+    - Cataclysm 2.0: cataclysm-2.html
 
 markdown_extensions:
   - admonition

@@ -105,7 +105,7 @@ Elemental creatures drop their respective cores (e.g. Volcanic Core, Hydro Core)
 
 ### Elemental Matchups
 
-![Elemental Wheel](images/elemental_wheel_nemesis.png)
+<img src="images/elemental_wheel_nemesis.png" alt="Elemental Wheel" width="200">
 
 Storm — Strong vs Hydro | Weak to Earth | Mobile power generation, scales range with melee
 
@@ -145,7 +145,7 @@ Only the Plague Boss is required to progress to Bionic.
 
 ### Type Triangle
 
-![Plasma Ghost Plague Triangle](images/pgp_triangle.png)
+<img src="images/pgp_triangle.png" alt="Plasma Ghost Plague Triangle" width="200">
 
 Plague beats Plasma | Plasma beats Ghost | Ghost beats Plague
 

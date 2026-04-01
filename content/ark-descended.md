@@ -42,7 +42,7 @@ Ordinary and Descended creatures make up your starting roster. They tame with va
 
 > See the [Special Taming Mechanics](#faq) section for creatures that require unique mechanics to tame.
 
-### Passive Production
+### Early Production Setup
 
 Start building your production farm as early as possible. Begin collecting Descended Essence early — it's a key resource you'll need throughout progression. All Descended dinos passively produce Descended Essence, but some come with extra resources.
 

@@ -40,7 +40,7 @@ Ordinary and Descended creatures make up your starting roster. They tame with va
 
 **Descended dinos** — Vary in strength and utility, each brings unique advantages that help bridge the path to higher tiers
 
-> See the Special Taming section for creatures that require unique mechanics to tame.
+> See the [Special Taming Mechanics](#special-taming-mechanics) section for creatures that require unique mechanics to tame.
 
 ### Passive Production
 
@@ -64,8 +64,6 @@ The creatures you gather in T1 will form the core of your army for the Excellent
 
 ## t2-excellent
 
-Power awakens — strength, resilience, and your first taste of evolution.
-
 > STRUCTURE DAMAGE: N/A
 
 ### Excellent Essence Boss
@@ -88,9 +86,9 @@ When defeated, the Excellent Essence Boss will spawn a tameable Excellent Dodo. 
 
 Once able, breed and level Excellent creatures heavily. These are your main force for taking on the bosses ahead.
 
-> With access to Excellent Kibble, you can now tame a Descended DodoWyvern — a powerful, mobile flier perfect for the T1 Loot Boss and Unreal Boss fights.
+> With access to Excellent Kibble, you can now tame a [Descended DodoWyvern](#descended-dodowyvern) — a powerful, mobile flier perfect for the [T1 Loot Boss](#t1-loot-boss) and Unreal Boss fights.
 
-Once tamed, your DodoWyvern opens the path to new opportunities: use it to safely tame a Descended Rock Drake, allowing you to obtain your very own Descended Reaper Prince or Princess.
+Once tamed, your DodoWyvern opens the path to new opportunities: use it to safely tame a [Descended Rock Drake](#descended-rock-drake), allowing you to obtain your very own [Descended Reaper Prince or Princess](#descended-reaper-princeprincess).
 
 ### Unlocking the War Generator
 
@@ -252,13 +250,13 @@ With the Oracle Boss defeated, you enter Tier 3, where Divine and Devilish creat
 
 At Tier 3, multiple progression paths open up:
 
-**Beta Supply Drops** — Five-wave loot runs for Ancient Token Clusters and resources
+**[Beta Supply Drops](#beta-supply-drop)** — Five-wave loot runs for Ancient Token Clusters and resources
 
-**The Infected Line** — Dimorph to Ptero to Infected Divine Argentavis
+**[The Infected Line](#infected-evolution)** — Dimorph to Ptero to Infected Divine Argentavis
 
-**Legendary Path** — Begins with Alpha Dodorexy toward Alpha Trex Ascend
+**[Legendary Path](#legendary-evolution)** — Begins with Alpha Dodorexy toward Alpha Trex Ascend
 
-> See Evolution Paths sections for detailed progression guides.
+> See Evolution Paths sections for detailed progression guides: [Reaper](#reaper-evolution), [Ice Titan](#ice-titan-evolution), [Managarmr](#managarmr-evolution), [Legendary](#legendary-evolution), [Infected](#infected-evolution), [Ancient](#ancient-evolution).
 
 ### Additional T3 Encounters
 
@@ -266,9 +264,9 @@ At Tier 3, multiple progression paths open up:
 
 **Ascended Poison Drake** — T4 battle unlocked at T3, drops soul required for Evolution
 
-**Descended Mega Reaper** — Summoned via War Generator, required for Reaper Evolution
+**Descended Mega Reaper** — Summoned via War Generator, required for [Reaper Evolution](#reaper-evolution)
 
-**Wild Alpha DodoRexy** — Chance to drop Fertilized Legendary Dodo Egg, which hatches a Little DodoRex for passive Legendary Essence production
+**Wild Alpha DodoRexy** — Chance to drop Fertilized Legendary Dodo Egg, which hatches a Little DodoRex for [passive Legendary Essence production](#passive-production)
 
 ### The Divine & Devilish Divide
 
@@ -314,7 +312,7 @@ Hunt wild Celestial and Abyssal creatures to collect Souls, Essences, and Hides 
 
 > Begin with mid-tier Celestials and Abyssals to safely gather materials before targeting elite versions.
 
-At this time, you can summon the Descended Degenerate Managarmr from the War Generator to evolve your Descended Managarmr.
+At this time, you can summon the Descended Degenerate Managarmr from the War Generator to evolve your [Descended Managarmr](#managarmr-evolution).
 
 ### Celestial & Abyssal Boss Encounters
 
@@ -357,9 +355,9 @@ Face the final T4 challenges — Celestial Element and Abyssal Element — summo
 
 Prep your evolutions first:
 
-**Ancient Line:** Craft Evo Core: Ancient Evo Spino, then defeat Ancient Phantom for Ancient Descended Gigant Soul + Celestial Gigant Trophies to evolve Spino to Ancient Evo Giga. Next defeat T4 Celestial Gigant to unlock Evo Core: Celestial Giga. Place Ancient Evo Giga near Celestial Giga and select "Sacrifice" to evolve into Celestial Evo Giga.
+**[Ancient Line](#ancient-evolution):** Craft Evo Core: Ancient Evo Spino, then defeat Ancient Phantom for Ancient Descended Gigant Soul + Celestial Gigant Trophies to evolve Spino to Ancient Evo Giga. Next defeat T4 Celestial Gigant to unlock Evo Core: Celestial Giga. Place Ancient Evo Giga near Celestial Giga and select "Sacrifice" to evolve into Celestial Evo Giga.
 
-**Infected Line:** Craft Evo Core: Infected Divine Argentavis, then defeat Descended Infected Wyvern for Infected Celestial Wyvern's Soul + Trophies to evolve into Infected Celestial Wyvern.
+**[Infected Line](#infected-evolution):** Craft Evo Core: Infected Divine Argentavis, then defeat Descended Infected Wyvern for Infected Celestial Wyvern's Soul + Trophies to evolve into Infected Celestial Wyvern.
 
 **Targeted Boss Counters:** Both Descended Infected Wyvern and Ancient Phantom are vulnerable to Purified Evolved dinos.
 
@@ -381,13 +379,13 @@ Tier 5 marks the entry into the Warchief Trials and the path toward Havoc and Sp
 
 ### T5 Progression Paths
 
-**Degenerate Ice Titan** — Evolve your Descended Ice Titan, then imbue with Flame or Lightning for unparalleled siege capability
+**[Degenerate Ice Titan](#ice-titan-evolution)** — Evolve your Descended Ice Titan, then imbue with Flame or Lightning for unparalleled siege capability
 
-**Deeply Degenerate Managarmr** — Craft Evo Core for high-speed burst-damage flier
+**[Deeply Degenerate Managarmr](#deeply-degenerate-managarmr)** — Craft Evo Core for high-speed burst-damage flier
 
-**Alpha Supply Drops** — Unlock Alpha-tier loot runs for rare crafting resources
+**[Alpha Supply Drops](#alpha-supply-drop)** — Unlock Alpha-tier loot runs for rare crafting resources
 
-**Alpha DodoRexy Evolution** — Advance to Alpha T-Rex using Order and Chaos Warchief Souls
+**[Alpha DodoRexy Evolution](#legendary-evolution)** — Advance to Alpha T-Rex using Order and Chaos Warchief Souls
 
 ### Eternal Light Armor
 
@@ -403,9 +401,9 @@ Your T4 warfighters (Celestial & Abyssal variants of Excellent Bosses) form the 
 
 ### Alternative Paths
 
-**Primordial Reaper Evolution** — Evolve your Alpha King or Queen Reaper into the Primordial Reaper, one of the strongest tanks available.
+**[Primordial Reaper](#primordial-reaper) Evolution** — Evolve your Alpha King or Queen Reaper into the Primordial Reaper, one of the strongest tanks available.
 
-**Alpha Tyrannosaurus Evolution** — Evolve your Alpha DodoRexy into the Alpha Tyrannosaurus for pure destructive output.
+**[Alpha Tyrannosaurus](#alpha-trex) Evolution** — Evolve your Alpha DodoRexy into the Alpha Tyrannosaurus for pure destructive output.
 
 > Choose based on playstyle — Primordial Reaper dominates through resilience, Alpha Tyrannosaurus embodies relentless offense.
 
@@ -675,9 +673,9 @@ With Warchiefs and Elemental Gods behind you, Tier 7 marks entry into the Warden
 
 By the end of T7, two of your mightiest allies can transcend their limits:
 
-**Primordial Reaper to Warden Reaper** — Tank of near-immortal fortitude
+**[Primordial Reaper](#primordial-reaper) to [Warden Reaper](#warden-reaper)** — Tank of near-immortal fortitude
 
-**Celestial Evo Giga to Warden Giga** — Fusion of celestial and ancient essence
+**[Celestial Evo Giga](#celestial-evo-giga) to [Warden Giga](#warden-giga)** — Fusion of celestial and ancient essence
 
 These evolutions require Warden Essences and Legacy items from the Warden Trials.
 
@@ -759,11 +757,11 @@ Witness ascension and descension collide — challenge the gods themselves.
 
 ### T8 Evolution Paths
 
-**Warden Reaper to Supreme Warden Reaper** — Unmatched durability and rapid regeneration
+**[Warden Reaper](#warden-reaper) to [Supreme Warden Reaper](#supreme-warden-reaper)** — Unmatched durability and rapid regeneration
 
-**Warden Giga to Supreme Warden Giga** — Pinnacle of raw strength
+**[Warden Giga](#warden-giga) to [Supreme Warden Giga](#supreme-warden-giga)** — Pinnacle of raw strength
 
-**Alpha T-Rex to Supreme Alpha T-Rex** — Unparalleled burst damage and AoE roar scaling
+**[Alpha T-Rex](#alpha-trex) to [Supreme Alpha T-Rex](#alpha-trex-ascend)** — Unparalleled burst damage and AoE roar scaling
 
 ### God Trial Requirements
 
@@ -1076,7 +1074,7 @@ The Ice Titan line has three true variants, each a massive leap in power.
 **Notes:**
 
 - Can equip Advanced Excellent Boss Armor and Unreal Evo Cube
-- Excels at Beta Supply Drops
+- Excels at [Beta Supply Drops](#beta-supply-drop)
 
 ### Degenerate Ice Titan
 
@@ -1090,7 +1088,7 @@ The Ice Titan line has three true variants, each a massive leap in power.
 
 **Kill Count Requirement:** Must reach 1,000 kills (wild dinos +1, corrupted +2, T4 Ancients +10) before progressing
 
-**Notes:** Excels at Alpha Supply Drops
+**Notes:** Excels at [Alpha Supply Drops](#alpha-supply-drop)
 
 ### Flame / Lightning Ice Titan
 
@@ -1098,7 +1096,7 @@ The Ice Titan line has three true variants, each a massive leap in power.
 
 **Result:** 50% chance to evolve into either Flame Ice Titan or Lightning Ice Titan — both are devastating siege tames
 
-**Notes:** Excels at God Supply Drops
+**Notes:** Excels at [God Supply Drops](#god-supply-drops)
 
 > Each stage demands heavy preparation. Stockpile mats, bring backup tames, prepare freeze counters.
 
@@ -1481,9 +1479,13 @@ Creatures with special abilities and passive production.
 
 ### Special Taming Mechanics
 
-**Descended DodoWyvern:** Requires Excellent Kibble, Grapples + Crossbow. Grapple onto it in open airspace, wait for "Feed Kibble" prompt, feed once then again when prompted. Can swap between Flame, Lightning, and Poison breaths (Ctrl on PC).
+#### Descended DodoWyvern
 
-**Descended Rock Drake:** Summon Rock Drake Emperor via War Generator. Requires 500 Descended Essence, 300 Excellent Essence, 2 Generic Artifacts, 10 Excellent Souls, 25 Rock Drake Feathers. Defeat with Descended DodoWyvern. Loot Fertilized Descended Rock Drake Egg from floor.
+Requires Excellent Kibble, Grapples + Crossbow. Grapple onto it in open airspace, wait for "Feed Kibble" prompt, feed once then again when prompted. Can swap between Flame, Lightning, and Poison breaths (Ctrl on PC).
+
+#### Descended Rock Drake
+
+Summon Rock Drake Emperor via War Generator. Requires 500 Descended Essence, 300 Excellent Essence, 2 Generic Artifacts, 10 Excellent Souls, 25 Rock Drake Feathers. Defeat with Descended DodoWyvern. Loot Fertilized Descended Rock Drake Egg from floor.
 
 ### Poison Evolutions
 

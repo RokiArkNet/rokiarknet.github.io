@@ -122,7 +122,15 @@ function renderCreatureList(section){
     }else if(line.trim() && !line.startsWith('#') && currentTier){
       // Parse comma-separated creatures or special format
       if(line.startsWith('**Boss')||line.startsWith('**Tames')){
-        currentCreatures.push({type:'label',text:line.replace(/\*\*/g,'')});
+        // Extract label and creatures from same line (e.g., "**Boss:** Gorilla" or "**Tames:** Rex, Raptor")
+        const match=line.match(/^\*\*([^*]+)\*\*\s*(.*)$/);
+        if(match){
+          currentCreatures.push({type:'label',text:match[1]});
+          if(match[2]){
+            const names=match[2].split(',').map(n=>n.trim()).filter(n=>n);
+            names.forEach(n=>currentCreatures.push({type:'creature',name:n}));
+          }
+        }
       }else{
         const names=line.split(',').map(n=>n.trim()).filter(n=>n);
         names.forEach(n=>currentCreatures.push({type:'creature',name:n}));

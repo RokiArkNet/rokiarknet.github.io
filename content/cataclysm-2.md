@@ -520,46 +520,46 @@ Artifact Queen Bee, Resource Goat, Resource Otter, Treasure Goat, Treasure Stag,
 
 Pegomastax
 
-### T1 Runt (50 creatures)
+### T1 Runt
 
 Allosaurus, Ankylosaurus, Argentavis, Baryonyx, Basilosaurus, Bigfoot, Camelsaurus, Carnotaurus, Cat, Cave Wolf, Crystal Wyvern, Daeodon, Deinotherium, Direbear, Direwolf, Dodo, Doedicurus, Dolphin, Dunkleosteus, Equus, Featherlight, Fire Wyvern, Gacha, Gigantoraptor (Aberrant), Griffin, Hatchling, Maelizard, Mammoth, Mantis, Megalodon, Megalosaurus, Megatherium, Mosasaurus, Moschops, Owl, Parasaur, Pelagornis, Phoenix, Procoptodon, Pteranodon, Rex, Rhino, Sabertooth, Scorpion, Spiney Lizard, Stegosaurus, Tapejara, Therizinosaur, Thrall, Thylacoleo, Trike, Turtle, Xenomorph
 
-### T2 Tidal (46 creatures)
+### T2 Tidal
 
 Allosaurus, Ankylosaurus, Argentavis, Baryonyx, Basilosaurus, Bigfoot, Camelsaurus, Carcharodontosaurus, Carnotaurus, Cave Wolf, Crystal Wyvern, Daeodon, Direbear, Direwolf, Doedicurus, Dolphin, Dunkleosteus, Equus, Griffin, Hatchling, Mammoth, Mantis, Megalodon, Megalosaurus, Megatherium, Mosasaurus, Moschops, Owl, Parasaur, Pelagornis, Procoptodon, Pteranodon, Rex, Rhino, Sabertooth, Scorpion, Shoulder Dragon, Spiney Lizard, Spinosaurus, Stegosaurus, Tapejara, Therizinosaur, Thylacoleo, Trike, Turtle
 
-### T3 Rapid (24 creatures)
+### T3 Rapid
 
 Ankylosaurus, Argentavis, Bulbdog, Crystal Wyvern, Direwolf, Dolphin, Dragonfly, Dunkleosteus, Equus, Giganotosaurus, Griffin, Megalodon, Moschops, Owl, Parasaur, Pelagornis, Procoptodon, Pteranodon, Rock Drake, Sabertooth, Sauropod, Tapejara, Turtle, Xenomorph
 
-### T4 Cyclonic — Boss Gate (21 creatures)
+### T4 Cyclonic — Boss Gate
 
 **Boss:** Cyclonic Gorilla
 
 **Tames:** Basilisk, Basilosaurus, DodoRexy, Dragon, Giganotosaurus, Griffin, Ice Jumper, Phoenix, Quetzal, Raptor, Rex, Rhynio, Rock Drake, Rock Golem, Spider, Spindles, Toad, Wyvern (Lightning)
 
-### T5 Glacial (26 creatures)
+### T5 Glacial
 
 Andrewsarchus, Argentavis, Basilosaurus, Ceratosaurus, Crystal Wyvern, Desmodus, Direbear, DodoRexy, Fae Drake, Giganotosaurus, Gigantoraptor, Griffin, Hatchling, Milk Glider, Nunatak, Owl, Phoenix, Pteranodon, Rex, Rock Drake, Spiney Lizard, Spirit Bear, Tropeognathus, Unicorn, Val Megaraptor, Young Ice Fox
 
-### T6 Undead (17 creatures)
+### T6 Undead
 
 Ceratosaurus, Crystal Wyvern, Dragonfly, Giganotosaurus, Griffin, Hatchling, Manticore, Mantis, Megatherium, Moschops, Rex, Rock Drake, Spiney Lizard, Spinosaurus, Therizinosaur, Xenomorph
 
-### T7 Soaring (8 creatures)
+### T7 Soaring
 
 Ankylosaurus, Archelon, Basilosaurus, Bison, Deinosuchus, Direwolf, Mosasaurus, Shastasaurus
 
-### T8 Maelstrom — Boss Gate (31 creatures)
+### T8 Maelstrom — Boss Gate
 
 **Bosses:** Gacha, Gorilla, Manticore, Titanosaur
 
 **Tames:** Argentavis, Boss Ankylo, Boss DodoRex, Boss Golem, Carcharodontosaurus, Direbear, Direwolf, Dragon, Forest Kaiju, Giganotosaurus, Griffin, Kaiju, Mammoth, Mantis, Megalosaurus, Megatherium, Moschops, Raptor, Rex, Spiney Lizard, Spinosaurus, Stegosaurus, Tame Golem, Therizinosaur, Thylacoleo, Trike, Yutyrannus
 
-### T9 Sumerian (53 creatures)
+### T9 Sumerian
 
 Allosaurus, Argentavis, Bison, Boss Ankylo, Carcharodontosaurus, Ceratosaurus, Cherufe, Crystal Wyvern, Dark Pegasus, Direbear, Direwolf, DodoWyvern, Dragon, Dragonfly, Dreadnoughtus, Fire Lion, Giant Turtle, Giganotosaurus, Gigantoraptor, Gorilla, Griffin, Hyaenodon, Jerboa, Liopleurodon, Mammoth, Manticore, Megalodon, Megatherium, Mole Rat, Mosasaurus, Nunatak, Owl, Parasaur, Pelagornis, Pteranodon, Quetzal, Raptor, Rex, Rock Drake, Sabertooth, Spindles, Spiney Lizard, Stegosaurus, Tapejara, Tek Wyvern, Therizinosaur, Thylacoleo, Titanosaur, Trike, Turtle, Xenomorph, Yutyrannus
 
-### T10 Tsunami (52 creatures)
+### T10 Tsunami
 
 Allosaurus, Andrewsarchus, Angel Fox, Ankylosaurus, Argentavis, Boss Bat, Carcharodontosaurus, Cherufe, Cryolophosaurus, Crystal Wyvern, Defender, Desmodus, Devil Fox, Direbear, Direwolf, Dragon, Enforcer, Fire Lion, Giganotosaurus, Gigantoraptor, Gorilla, Griffin, Helicoprion, Ice Golem, Indominus Rex, Mammoth, Mantis, Megalodon, Megatherium, Mek, Milk Glider, Mosasaurus, Neophyte, Owl, Pelagornis, Phoenix, Plesiosaur, Pteranodon, Rex, Rock Drake, Sabertooth, Shastasaurus, Shoulder Dragon, Snow Dragon, Snow Monster, Space Whale, Spirit Bear, Therizinosaur, Thylacoleo, Val Megaraptor, Wyvern (Ice), Yutyrannus

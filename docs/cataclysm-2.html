@@ -49,10 +49,13 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;fo
 .mobile-back a{color:var(--orange);text-decoration:none;font-size:14px;font-weight:600;}
 .creature-tier{margin-bottom:32px;}
 .creature-tier-title{font-family:'Orbitron',monospace;font-size:11px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:14px;}
+.creature-sub-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--amber);margin:14px 0 8px;}
 .creature-grid{display:flex;flex-wrap:wrap;gap:5px;}
 .creature{background:var(--card);border:1px solid var(--border);padding:4px 10px;font-size:11px;font-weight:600;color:var(--text);border-radius:3px;}
 .creature.boss{border-color:var(--orange);color:var(--orange);}
 .creature.loot{border-color:#fbbf24;color:#fbbf24;}
+.boss-block{background:rgba(232,88,10,.05);border:1px solid rgba(232,88,10,.2);padding:10px 12px;margin-top:10px;border-radius:3px;}
+.boss-block-label{font-size:9px;font-weight:700;color:var(--orange);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
 </style>
 </head>
 <body>
@@ -145,22 +148,38 @@ function renderCreatureList(section){
     const tierTitle=document.createElement('div');tierTitle.className='creature-tier-title';tierTitle.textContent=tier.title;
     tierDiv.appendChild(tierTitle);
 
+    const isBossTier=tier.title.toLowerCase().includes('boss');
     let grid=document.createElement('div');grid.className='creature-grid';
+    let currentBlock=null;
+
     tier.creatures.forEach(c=>{
       if(c.type==='label'){
-        if(grid.children.length){tierDiv.appendChild(grid);grid=document.createElement('div');grid.className='creature-grid';}
-        const label=document.createElement('div');label.style.cssText='font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#f0a020;margin:14px 0 8px;width:100%;';
-        label.textContent=c.text;tierDiv.appendChild(label);
+        if(grid.children.length){
+          if(currentBlock){currentBlock.appendChild(grid);}else{tierDiv.appendChild(grid);}
+          grid=document.createElement('div');grid.className='creature-grid';
+        }
+        if(isBossTier && (c.text.includes('Boss')||c.text.includes('Tames'))){
+          currentBlock=document.createElement('div');currentBlock.className='boss-block';
+          const blockLabel=document.createElement('div');blockLabel.className='boss-block-label';blockLabel.textContent=c.text;
+          currentBlock.appendChild(blockLabel);
+          tierDiv.appendChild(currentBlock);
+        }else{
+          currentBlock=null;
+          const label=document.createElement('div');label.className='creature-sub-title';label.textContent=c.text;
+          tierDiv.appendChild(label);
+        }
       }else{
         const el=document.createElement('div');
         el.className='creature';
         if(tier.title.toLowerCase().includes('loot'))el.className+=' loot';
-        if(tier.title.toLowerCase().includes('boss'))el.className+=' boss';
+        if(currentBlock && c.text && c.text.includes('Boss'))el.className+=' boss';
         el.textContent=c.name;
         grid.appendChild(el);
       }
     });
-    if(grid.children.length)tierDiv.appendChild(grid);
+    if(grid.children.length){
+      if(currentBlock){currentBlock.appendChild(grid);}else{tierDiv.appendChild(grid);}
+    }
     inner.appendChild(tierDiv);
   });
 

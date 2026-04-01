@@ -158,19 +158,9 @@ Excellent Bosses are the next major hurdle. Common bosses to aim for initially a
 
 These creatures become your backbone for tackling the Three Sins and beyond.
 
-### Ghost Evolutions
+### Unlocking Ghost Forms
 
-With your Excellent Bosses secured, you can evolve select species into their Ghost variants — powerful spectral echoes of their former selves.
-
-**Available Evolutions:**
-
-- Ghost Dodorexy
-- Ghost Wyvern
-- Ghost Drake
-
-Ghost Evolutions deal increased damage against the Oracle Boss, making them excellent for farming Oracle-related fights.
-
-> WARNING: They lose their ability to apply torpor upon Ghost Evolution.
+With your Excellent Bosses secured, you can evolve select species into their Ghost variants — powerful spectral echoes of their former selves. See [Ghost Evolutions](#ghost-evolutions) in the FAQ for full details.
 
 ### The Three Sins
 
@@ -1486,6 +1476,22 @@ Requires Excellent Kibble, Grapples + Crossbow. Grapple onto it in open airspace
 #### Descended Rock Drake
 
 Summon Rock Drake Emperor via War Generator. Requires 500 Descended Essence, 300 Excellent Essence, 2 Generic Artifacts, 10 Excellent Souls, 25 Rock Drake Feathers. Defeat with Descended DodoWyvern. Loot Fertilized Descended Rock Drake Egg from floor.
+
+### Ghost Evolutions
+
+Excellent Bosses with elemental variants (Lightning, Poison, Flame) can evolve into Ghost forms after defeating Sin of Element.
+
+**Available Evolutions:**
+
+- Ghost Dodorexy
+- Ghost Wyvern
+- Ghost Drake
+
+**To Evolve:** Apply Ghost Cores (dropped from Sin of Element) to Lightning, Poison, or Flame variants. Transforms them into Ghost forms with combined triple-element breath attack.
+
+> WARNING: Ghost Evolutions lose their ability to apply torpor.
+
+> Ghost Evolutions deal increased damage against the Oracle Boss.
 
 ### Poison Evolutions
 

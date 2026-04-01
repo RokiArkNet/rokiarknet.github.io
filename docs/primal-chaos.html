@@ -40,7 +40,9 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;fo
 .struct-badge{display:inline-block;background:rgba(232,88,10,.12);border:1px solid rgba(232,88,10,.25);padding:3px 10px;font-size:12px;color:var(--orange);margin-bottom:14px;letter-spacing:1px;}
 .guide-footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);}
 ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--border);}
-@media(max-width:768px){#sidebar{display:none;}#main{margin-left:0;padding:24px 20px 80px;}}
+@media(max-width:768px){#sidebar{display:none;}#main{margin-left:0;padding:60px 20px 80px;}.mobile-back{display:block;}}
+.mobile-back{display:none;position:fixed;top:0;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:12px 20px;z-index:100;}
+.mobile-back a{color:var(--orange);text-decoration:none;font-size:14px;font-weight:600;}
 .creature-legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px;font-size:12px;color:var(--muted);align-items:center;}
 .creature-legend-item{display:flex;align-items:center;gap:6px;}
 .creature-tier{margin-bottom:32px;}
@@ -55,6 +57,7 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;fo
 </style>
 </head>
 <body>
+<div class="mobile-back"><a href="index.html">← All Guides</a></div>
 <aside id="sidebar">
   <div id="sidebar-header">
     <a href="index.html" class="home-link">← All Guides</a>

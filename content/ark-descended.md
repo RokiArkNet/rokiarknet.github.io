@@ -519,8 +519,6 @@ Killing certain creatures spawns their Havoc/Spectral variants:
 
 **Abyssal Broodmother** — Spectral Broodmother
 
-**Abyssal Carcha** — Havoc Carcha
-
 **Celestial Gigant** — Havoc Griffin
 
 **Celestial Wyvern** — Spectral DodoWyvern

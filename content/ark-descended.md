@@ -10,13 +10,13 @@ T1 Ordinary/Descended | T2 Excellent | T3 Divine/Devilish | T4 Celestial/Abyssal
 
 ## getting-started
 
-Your first steps in Ark Descended set the tone for the entire journey. Your early focus is on taming Ordinary and Descended creatures, laying the foundation of your Passive Production farm, and preparing for your first major challenge: the Excellent Essence Boss (Excellent Dodo).
+Focus on taming Ordinary and Descended creatures, building your Passive Production farm, and preparing for the Excellent Essence Boss (Excellent Dodo).
 
 > STRUCTURE DAMAGE: N/A
 
 ### T1: Ordinary & Descended
 
-As you establish your first foothold, craft the Descend Smithy as soon as possible — it's the cornerstone of Ark Descended's entire progression system.
+Craft the Descend Smithy first — it's the cornerstone of Ark Descended's progression.
 
 Use it to make Descended Tools (5x harvest rate) and the Tranq Pike, then spec into melee damage to improve knockout power.
 
@@ -30,7 +30,7 @@ Use it to make Descended Tools (5x harvest rate) and the Tranq Pike, then spec i
 
 ### Early Farming & Potion Prep
 
-Get your crop plots running as soon as possible — veggies and kibble ingredients power much of your crafting later. Stock up on Hunger Potions early — they're incredibly useful throughout the game for forcing tames to eat faster.
+Get crop plots running early — veggies and kibble ingredients power later crafting. Stock Hunger Potions — they force tames to eat faster.
 
 Ordinary and Descended creatures make up your starting roster. They tame with vanilla foods and vanilla kibble.
 
@@ -38,29 +38,29 @@ Ordinary and Descended creatures make up your starting roster. They tame with va
 
 **Ordinary dinos** — 2x the stats of their normal forms, providing sturdier baseline tames
 
-**Descended dinos** — Vary in strength and utility, each brings unique advantages that help bridge the path to higher tiers
+**Descended dinos** — Vary in strength and utility, bridging the path to higher tiers
 
 > See the [Special Taming Mechanics](#faq) section for creatures that require unique mechanics to tame.
 
 ### Early Production Setup
 
-Start building your production farm as early as possible. Begin collecting Descended Essence early — it's a key resource you'll need throughout progression. All Descended dinos passively produce Descended Essence, but some come with extra resources.
+All Descended dinos passively produce Descended Essence — a key resource throughout progression. Some produce extra resources.
 
-Easy starter tames like the Descended Dodo and Bob (Descended Phiomia) are perfect first picks to get your essence production rolling.
+Descended Dodo and Bob (Descended Phiomia) are easy starter producers.
 
 > All creatures in T1 (and most everything in T2) use vanilla saddles.
 
-Equipping a shoulder pet is recommended early on. Descended lightpets grant a permanent 10% damage boost and 10% damage resistance to your mount (not your survivor). This "Critter Bonus" buff scales across all tiers.
+Descended lightpets grant permanent 10% damage boost and 10% damage resistance to your mount (not survivor). This "Critter Bonus" scales across all tiers.
 
 Health Potions can be used both from your hotbar and directly inside your dino's inventory — alternating between the two helps bypass potion cooldowns.
 
-> A Descended Griffin or Ordinary Snow Owl are great early tames — fast, maneuverable, and excellent for scouting and travel.
+> Descended Griffin or Ordinary Snow Owl make great early fliers for scouting.
 
 ### First Boss Prep
 
-The creatures you gather in T1 will form the core of your army for the Excellent Essence Boss — the first true progression gate.
+Your T1 creatures form the army for the Excellent Essence Boss — the first progression gate.
 
-**Descended Phoenix** — One of the strongest starter tames if you can get Extraordinary Kibble. Especially useful against the Excellent Essence Boss and beyond.
+**Descended Phoenix** — Strong starter tame with Extraordinary Kibble. Excellent against early bosses.
 
 ## t2-excellent
 
@@ -68,9 +68,9 @@ The creatures you gather in T1 will form the core of your army for the Excellent
 
 ### Excellent Essence Boss
 
-The first gate in Tier 2 is the Excellent Essence Boss (Excellent Dodo) — your introduction to mid-tier combat and passive production.
+The Excellent Essence Boss (Excellent Dodo) introduces mid-tier combat and passive production.
 
-When defeated, the Excellent Essence Boss will spawn a tameable Excellent Dodo. Tame it immediately (passive tame) — Excellent Dodos passively produce Excellent Essence and Rare Flowers.
+Defeating it spawns a tameable Excellent Dodo (passive tame). It produces Excellent Essence and Rare Flowers.
 
 **Notable Rewards:**
 
@@ -92,13 +92,11 @@ Once tamed, your DodoWyvern opens the path to new opportunities: use it to safel
 
 ### Unlocking the War Generator
 
-Once you've defeated the Excellent Essence Boss and obtained Excellent Essence, you can craft the War Generator — one of the most important structures in Ark Descended.
-
-The War Generator serves as your battle interface for nearly every future boss encounter. Keep it in a secure area, as it becomes your main summoning hub from Tier 3 onward.
+Craft the War Generator with Excellent Essence — it's your boss summoning hub from T3 onward.
 
 ### Combat Bosses — Spider, Gorilla & Dragon
 
-The next challenge in T2 is the Combat Bosses — empowered versions of the vanilla Spider, Gorilla, and Dragon.
+Combat Bosses are empowered versions of vanilla Spider, Gorilla, and Dragon.
 
 **Combat Boss Rules:**
 
@@ -107,9 +105,9 @@ The next challenge in T2 is the Combat Bosses — empowered versions of the vani
 - Damage scales with your tames' HP, armor, and drag weight — stacking pure tank stats can make them hit harder
 - Defeating any Combat Boss unlocks the Unreal tier
 
-**Recommended Strategy:** Use a Therizinosaurus pack strategy to kill the Spider boss first. Three to four groups of six to eight Therizinos will overwhelm it through sustained damage and bleed.
+**Recommended Strategy:** Kill Spider first with Therizino packs (3-4 groups of 6-8) — sustained damage and bleed overwhelm it.
 
-Alternatively, a Charge-Adapted Reaper offers a safer solo strategy. Its ranged acid projectile allows distance damage while its energy shield blocks incoming poison and crowd damage. Ensure you have a light pet active.
+Alternatively, Charge-Adapted Reaper offers safer solo play — ranged acid + energy shield. Keep a light pet active.
 
 **Key Drops:**
 
@@ -123,20 +121,20 @@ Alternatively, a Charge-Adapted Reaper offers a safer solo strategy. Its ranged 
 
 > These tributes and essences are required for summoning and crafting later-tier bosses.
 
-Use the same strategy on the Gorilla and avoid the rock throw (30 second cooldown). Circle back to Dragon after you've killed the Sin of Power. Any Unreal Excellent Boss is more than enough to finish the trio.
+Same strategy for Gorilla — avoid rock throw (30s cooldown). Return to Dragon after Sin of Power; any Unreal Excellent Boss finishes the trio easily.
 
 > With Combat Essence, you can now summon a Mek from the War Generator — defeat it to obtain its Mek Blueprint.
 
 ### Unreal Tier — Harnessing the Power of Nightmares
 
-Defeating any Combat Boss unlocks Unreal Kibble, opening up Unreal Dinos. These creatures are empowered but cursed with the Unreal Debuff — a constant health drain negated by Descended Milk.
+Combat Bosses unlock Unreal Kibble for Unreal Dinos. They have the Unreal Debuff — constant health drain negated by Descended Milk.
 
 **Unreal creatures offer:**
 
 - Passive production of Unreal Essence, essential for Excellent Boss Kibble
 - Passive Unreal ability: if enemy attacks miss, they begin to regenerate health
 
-Once you've secured a strong Unreal tame, craft Unreal Armor for them. This armor significantly increases survivability while farming Lootbosses, Excellent Bosses, and other encounters.
+Craft Unreal Armor for your Unreal tames — significantly increases survivability for farming.
 
 You'll need BioToxin for Excellent Tranq Arrows — tame a BioToxin Bug.
 
@@ -144,13 +142,13 @@ You'll need BioToxin for Excellent Tranq Arrows — tame a BioToxin Bug.
 
 ### Excellent Bosses
 
-Excellent Bosses are the next major hurdle. Common bosses to aim for initially are Indoms and Gigas. They use the unique Torpid Activate system:
+Excellent Bosses (start with Indoms or Gigas) use the Torpid Activate system:
 
 - Can only take torpor once health drops below 50%
 - Every torpor hit triggers a Torpid Activate timer — reapply torpor before it expires or progress resets
 - Once knocked out, you have ~10 seconds to place Excellent Boss Kibble and use a Hunger Potion
 
-**Recommended Strategy:** Kite Excellent Bosses into deep water — it slows movement, reduces melee pressure, and gives room to safely reposition.
+**Recommended Strategy:** Kite into deep water — slows movement and gives room to reposition.
 
 **Notable Rewards:**
 
@@ -160,15 +158,15 @@ These creatures become your backbone for tackling the Three Sins and beyond.
 
 ### Unlocking Ghost Forms
 
-With your Excellent Bosses secured, you can evolve select species into their Ghost variants — powerful spectral echoes of their former selves. See [Ghost Evolutions](#ghost-evolutions) in the FAQ for full details.
+Evolve select Excellent Bosses into Ghost variants. See [Ghost Evolutions](#ghost-evolutions) for details.
 
 ### The Three Sins
 
-After taming your first Excellent Boss, you'll gain access to the Three Sins. Each Sin escalates in difficulty and drops armor upgrades needed for the next fight.
+Each Sin escalates in difficulty and drops armor upgrades for the next fight.
 
 ### Sin of Unreal (First Sin)
 
-Best tackled with an Excellent Boss (Giga is a strong option). Since it's an Unreal-tier fight, bringing Descended Milk helps mitigate debuff ticks. Otherwise straightforward with a properly leveled Excellent Boss.
+Use an Excellent Boss (Giga recommended). Bring Descended Milk for debuff ticks. Straightforward fight.
 
 **Reward:** Unlocks the engram for Basic Excellent Boss Armor. Crafting this armor is mandatory for the Sin of Power. Also unlocks Ancient Token Clusters.
 
@@ -180,7 +178,7 @@ Craft your Basic Excellent Boss Armor in the Descend Smithy. Transfer to invento
 
 ### Sin of Power (Second Sin)
 
-A noticeable difficulty spike. Even with Advanced Excellent Boss Armor, this fight is grueling and tests your sustain and damage output.
+Difficulty spike — grueling even with Advanced Excellent Boss Armor.
 
 **Notable Rewards:**
 
@@ -192,9 +190,8 @@ A noticeable difficulty spike. Even with Advanced Excellent Boss Armor, this fig
 
 **Unreal Buff Effects:**
 
-- Greatly increased passive dodge chance
-- Each successful dodge triggers powerful regeneration
-- This dodge-regen synergy is the core powerhouse of the Unreal stage
+- Increased passive dodge chance
+- Dodges trigger powerful regeneration
 
 ### Sin of Element (Third Sin)
 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ark Supreme Guide</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap');
+:root{--bg:#0d0d12;--surface:#14141e;--card:#1a1a28;--border:#2a2a3e;--orange:#e8580a;--amber:#f0a020;--text:#d8d8e8;--muted:#7878a0;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;font-size:16px;line-height:1.7;display:flex;}
+#sidebar{position:fixed;top:0;left:0;width:240px;height:100vh;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;z-index:100;padding-bottom:40px;}
+#sidebar-header{padding:20px 16px 14px;border-bottom:1px solid var(--border);}
+.logo{font-family:'Orbitron',monospace;font-size:11px;color:var(--orange);letter-spacing:3px;}
+#sidebar-header h2{font-size:14px;font-weight:700;color:var(--text);margin-top:4px;}
+.home-link{display:block;font-size:11px;color:var(--muted);text-decoration:none;margin-bottom:8px;transition:color .15s;}
+.home-link:hover{color:var(--orange);}
+#sidebar nav a{display:block;padding:8px 16px;color:var(--muted);text-decoration:none;font-size:13px;font-weight:600;border-left:2px solid transparent;transition:all .15s;}
+#sidebar nav a:hover,#sidebar nav a.active{color:var(--orange);border-left-color:var(--orange);background:rgba(232,88,10,.06);}
+.nav-section{padding:12px 16px 4px;font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;opacity:.6;}
+#main{margin-left:240px;flex:1;max-width:860px;padding:48px 48px 120px;}
+#hero{text-align:center;padding:40px 0 48px;border-bottom:1px solid var(--border);margin-bottom:56px;}
+.eyebrow{font-family:'Orbitron',monospace;font-size:10px;letter-spacing:4px;color:var(--orange);text-transform:uppercase;margin-bottom:12px;}
+#hero h1{font-family:'Orbitron',monospace;font-size:36px;font-weight:900;color:#fff;text-shadow:0 0 40px rgba(232,88,10,.3);letter-spacing:2px;}
+.coming-soon{margin-top:60px;text-align:center;}
+.coming-soon-badge{display:inline-block;background:var(--card);border:2px solid var(--border);padding:20px 40px;font-family:'Orbitron',monospace;font-size:18px;letter-spacing:4px;color:var(--muted);text-transform:uppercase;}
+.coming-soon p{margin-top:24px;color:var(--muted);font-size:14px;}
+.guide-footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--border);}
+@media(max-width:768px){#sidebar{display:none;}#main{margin-left:0;padding:60px 20px 80px;}.mobile-back{display:block;}}
+.mobile-back{display:none;position:fixed;top:0;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:12px 20px;z-index:100;}
+.mobile-back a{color:var(--orange);text-decoration:none;font-size:14px;font-weight:600;}
+</style>
+</head>
+<body>
+<div class="mobile-back"><a href="index.html">← All Guides</a></div>
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <a href="index.html" class="home-link">← All Guides</a>
+    <h2>Ark Supreme Guide</h2>
+  </div>
+  <nav>
+    <div class="nav-section">Guide</div>
+    <a href="#" class="active">Overview</a>
+  </nav>
+</aside>
+<main id="main">
+  <div id="hero">
+    <h1>ARK SUPREME</h1>
+  </div>
+  <div class="coming-soon">
+    <div class="coming-soon-badge">Coming Soon</div>
+    <p>This guide is currently under development. Check back later for full progression documentation.</p>
+  </div>
+  <div class="guide-footer">
+    Guide maintained by Rokitur — RokiArkNet<br>Questions or corrections? Contact @Rokitur on Discord
+  </div>
+</main>
+</body>
+</html>

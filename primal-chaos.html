@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primal Chaos Guide</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap');
+:root{--bg:#0d0d12;--surface:#14141e;--card:#1a1a28;--border:#2a2a3e;--orange:#e8580a;--amber:#f0a020;--text:#d8d8e8;--muted:#7878a0;--tip:#0f2a1a;--tip-border:#1a6a30;--warn:#2a1a08;--warn-border:#8a4010;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;font-size:16px;line-height:1.7;display:flex;}
+#sidebar{position:fixed;top:0;left:0;width:240px;height:100vh;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;z-index:100;padding-bottom:40px;}
+#sidebar-header{padding:20px 16px 14px;border-bottom:1px solid var(--border);}
+.logo{font-family:'Orbitron',monospace;font-size:11px;color:var(--orange);letter-spacing:3px;}
+#sidebar-header h2{font-size:14px;font-weight:700;color:var(--text);margin-top:4px;}
+.home-link{display:block;font-size:11px;color:var(--muted);text-decoration:none;margin-bottom:8px;transition:color .15s;}
+.home-link:hover{color:var(--orange);}
+#sidebar nav a{display:block;padding:8px 16px;color:var(--muted);text-decoration:none;font-size:13px;font-weight:600;border-left:2px solid transparent;transition:all .15s;}
+#sidebar nav a:hover,#sidebar nav a.active{color:var(--orange);border-left-color:var(--orange);background:rgba(232,88,10,.06);}
+.nav-section{padding:12px 16px 4px;font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;opacity:.6;}
+#main{margin-left:240px;flex:1;max-width:860px;padding:48px 48px 120px;}
+#loading{text-align:center;padding:80px;font-family:'Orbitron',monospace;color:var(--orange);letter-spacing:3px;}
+#hero{text-align:center;padding:40px 0 48px;border-bottom:1px solid var(--border);margin-bottom:56px;}
+.eyebrow{font-family:'Orbitron',monospace;font-size:10px;letter-spacing:4px;color:var(--orange);text-transform:uppercase;margin-bottom:12px;}
+#hero h1{font-family:'Orbitron',monospace;font-size:36px;font-weight:900;color:#fff;text-shadow:0 0 40px rgba(232,88,10,.3);letter-spacing:2px;}
+.baseline-box{margin-top:20px;background:var(--card);border:1px solid var(--border);border-left:3px solid var(--amber);padding:12px 16px;font-size:13px;color:var(--muted);display:inline-block;text-align:left;}
+.section{margin-bottom:56px;}
+.section-title{font-family:'Orbitron',monospace;font-size:13px;letter-spacing:3px;color:var(--orange);text-transform:uppercase;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.section h3{font-size:16px;font-weight:700;color:var(--amber);margin:24px 0 10px;text-transform:uppercase;letter-spacing:1px;}
+.section h4{font-size:14px;font-weight:700;color:var(--text);margin:16px 0 6px;}
+.section p{margin-bottom:12px;color:var(--text);}
+.section ul,.section ol{padding-left:20px;margin-bottom:12px;}
+.section li{margin-bottom:4px;color:var(--text);}
+.section strong{color:var(--amber);}
+.tip{background:var(--tip);border-left:3px solid var(--tip-border);padding:10px 14px;font-size:14px;color:#90d8a0;margin:14px 0;}
+.tip::before{content:'TIP  ';font-weight:700;letter-spacing:2px;}
+.warn{background:var(--warn);border-left:3px solid var(--warn-border);padding:10px 14px;font-size:14px;color:#d8a060;margin:14px 0;}
+.warn::before{content:'WARNING  ';font-weight:700;letter-spacing:2px;color:var(--orange);}
+.struct-badge{display:inline-block;background:rgba(232,88,10,.12);border:1px solid rgba(232,88,10,.25);padding:3px 10px;font-size:12px;color:var(--orange);margin-bottom:14px;letter-spacing:1px;}
+.guide-footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--border);}
+@media(max-width:768px){#sidebar{display:none;}#main{margin-left:0;padding:60px 20px 80px;}.mobile-back{display:block;}}
+.mobile-back{display:none;position:fixed;top:0;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:12px 20px;z-index:100;}
+.mobile-back a{color:var(--orange);text-decoration:none;font-size:14px;font-weight:600;}
+.creature-legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px;font-size:12px;color:var(--muted);align-items:center;}
+.creature-legend-item{display:flex;align-items:center;gap:6px;}
+.creature-tier{margin-bottom:32px;}
+.creature-tier-title{font-family:'Orbitron',monospace;font-size:11px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:14px;}
+.creature-sub-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--amber);margin:14px 0 8px;}
+.creature-grid{display:flex;flex-wrap:wrap;gap:5px;}
+.creature{background:var(--card);border:1px solid var(--border);padding:4px 10px;font-size:11px;font-weight:600;color:var(--text);border-radius:3px;}
+.creature.egg{border-color:#3B6D11;color:#97C459;}
+.boss-block{background:rgba(232,88,10,.05);border:1px solid rgba(232,88,10,.2);padding:10px 12px;margin-top:10px;border-radius:3px;}
+.boss-block-label{font-size:9px;font-weight:700;color:var(--orange);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.water-block{background:rgba(24,95,165,.08);border:1px solid #2a2a3e;padding:10px 12px;margin-top:10px;border-radius:3px;}
+</style>
+</head>
+<body>
+<div class="mobile-back"><a href="index.html">← All Guides</a></div>
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <a href="index.html" class="home-link">← All Guides</a>
+    <h2>Primal Chaos Guide</h2>
+  </div>
+  <nav id="nav"></nav>
+</aside>
+<main id="main">
+  <div id="loading">LOADING GUIDE...</div>
+  <div id="content" style="display:none"></div>
+</main>
+<script>
+const CONTENT_URL='https://raw.githubusercontent.com/rokiarknet/rokiarknet.github.io/main/content/primal-chaos.md';
+const NAV_SECTIONS={
+  'Overview':['tier-list','getting-started'],
+  'Progression':['toxic-alpha','elemental','shadow-fairy','mythic-fabled-legendary','demonic-angelic','spirit-chaos','origins','nightmares'],
+  'Reference':['loot-bosses','special-encounters','faq','creature-reference']
+};
+const SECTION_LABELS={
+  'tier-list':'Tier List',
+  'getting-started':'Getting Started',
+  'toxic-alpha':'Toxic & Alpha',
+  'elemental':'Elemental',
+  'shadow-fairy':'Shadow & Fairy',
+  'mythic-fabled-legendary':'Mythic / Fabled / Legendary',
+  'demonic-angelic':'Demonic & Angelic',
+  'spirit-chaos':'Spirit & Chaos',
+  'origins':'Origins',
+  'nightmares':'Nightmares',
+  'loot-bosses':'Loot Bosses',
+  'special-encounters':'Special Encounters',
+  'faq':'FAQ & Tips',
+  'creature-reference':'Creature Reference'
+};
+
+function buildNav(){
+  const nav=document.getElementById('nav');
+  for(const[group,ids]of Object.entries(NAV_SECTIONS)){
+    const div=document.createElement('div');div.className='nav-section';div.textContent=group;nav.appendChild(div);
+    ids.forEach(id=>{const a=document.createElement('a');a.href='#'+id;a.textContent=SECTION_LABELS[id]||id;nav.appendChild(a);});
+  }
+}
+
+function renderTierDiagram(){
+  const wrap=document.createElement('div');
+  wrap.style.cssText='background:#14141e;border:1px solid #2a2a3e;padding:16px 12px;margin:8px 0;overflow-x:auto;';
+
+  const svg=`<svg width="100%" viewBox="0 0 760 220" xmlns="http://www.w3.org/2000/svg" style="min-width:680px;display:block;">
+<defs>
+  <marker id="ta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#3a3a50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<!-- COL 1: Toxic → Alpha -->
+<a href="#toxic-alpha"><g style="cursor:pointer">
+  <rect x="6" y="56" width="96" height="26" rx="3" fill="#1a1a28" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="54" y="69" text-anchor="middle" dominant-baseline="central" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#22c55e">Toxic</text>
+</g></a>
+<line x1="54" y1="82" x2="54" y2="98" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+<a href="#toxic-alpha"><g style="cursor:pointer">
+  <rect x="6" y="98" width="96" height="26" rx="3" fill="#1a1a28" stroke="#e8580a" stroke-width="1.5"/>
+  <text x="54" y="111" text-anchor="middle" dominant-baseline="central" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#e8580a">Alpha</text>
+</g></a>
+<line x1="102" y1="111" x2="130" y2="95" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+
+<!-- COL 2: Electric / Volcanic / Hydro stacked -->
+<a href="#elemental"><g style="cursor:pointer">
+  <rect x="130" y="58" width="100" height="22" rx="3" fill="#1a1a28" stroke="#534AB7" stroke-width="1"/>
+  <text x="180" y="69" text-anchor="middle" dominant-baseline="central" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="#AFA9EC">Electric</text>
+</g></a>
+<a href="#elemental"><g style="cursor:pointer">
+  <rect x="130" y="84" width="100" height="22" rx="3" fill="#1a1a28" stroke="#993C1D" stroke-width="1"/>
+  <text x="180" y="95" text-anchor="middle" dominant-baseline="central" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="#F0997B">Volcanic</text>
+</g></a>
+<a href="#elemental"><g style="cursor:pointer">
+  <rect x="130" y="110" width="100" height="22" rx="3" fill="#1a1a28" stroke="#185FA5" stroke-width="1"/>
+  <text x="180" y="121" text-anchor="middle" dominant-baseline="central" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="#85B7EB">Hydro</text>
+</g></a>
+<!-- converge → col3 -->
+<line x1="230" y1="69" x2="246" y2="69" stroke="#3a3a50" stroke-width="1"/>
+<line x1="230" y1="95" x2="246" y2="95" stroke="#3a3a50" stroke-width="1"/>
+<line x1="230" y1="121" x2="246" y2="121" stroke="#3a3a50" stroke-width="1"/>
+<line x1="246" y1="69" x2="246" y2="121" stroke="#3a3a50" stroke-width="1"/>
+<line x1="246" y1="95" x2="258" y2="95" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+
+<!-- COL 3: Shadow → Fairy stacked -->
+<a href="#shadow-fairy"><g style="cursor:pointer">
+  <rect x="258" y="69" width="96" height="22" rx="3" fill="#1a1a28" stroke="#5F5E5A" stroke-width="1.5"/>
+  <text x="306" y="80" text-anchor="middle" dominant-baseline="central" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="#B4B2A9">Shadow</text>
+</g></a>
+<line x1="306" y1="91" x2="306" y2="99" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+<a href="#shadow-fairy"><g style="cursor:pointer">
+  <rect x="258" y="99" width="96" height="22" rx="3" fill="#1a1a28" stroke="#d946ef" stroke-width="1.5"/>
+  <text x="306" y="110" text-anchor="middle" dominant-baseline="central" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="#e879f9">Fairy</text>
+</g></a>
+<line x1="354" y1="95" x2="382" y2="95" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+
+<!-- COL 4: Mythic / Fabled / Legendary stacked -->
+<a href="#mythic-fabled-legendary"><g style="cursor:pointer">
+  <rect x="382" y="58" width="100" height="22" rx="3" fill="#1a1a28" stroke="#7c3aed" stroke-width="1"/>
+  <text x="432" y="69" text-anchor="middle" dominant-baseline="central" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="#a78bfa">Mythic</text>
+</g></a>
+<a href="#mythic-fabled-legendary"><g style="cursor:pointer">
+  <rect x="382" y="84" width="100" height="22" rx="3" fill="#1a1a28" stroke="#0891b2" stroke-width="1"/>
+  <text x="432" y="95" text-anchor="middle" dominant-baseline="central" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="#67e8f9">Fabled</text>
+</g></a>
+<a href="#mythic-fabled-legendary"><g style="cursor:pointer">
+  <rect x="382" y="110" width="100" height="22" rx="3" fill="#1a1a28" stroke="#854F0B" stroke-width="1"/>
+  <text x="432" y="121" text-anchor="middle" dominant-baseline="central" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="#fbbf24">Legendary</text>
+</g></a>
+<!-- converge → col5 -->
+<line x1="482" y1="69" x2="498" y2="69" stroke="#3a3a50" stroke-width="1"/>
+<line x1="482" y1="95" x2="498" y2="95" stroke="#3a3a50" stroke-width="1"/>
+<line x1="482" y1="121" x2="498" y2="121" stroke="#3a3a50" stroke-width="1"/>
+<line x1="498" y1="69" x2="498" y2="121" stroke="#3a3a50" stroke-width="1"/>
+<line x1="498" y1="95" x2="510" y2="95" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+
+<!-- COL 5: Demonic|Angelic → Origin → Spirit|Chaos → Nightmare -->
+<a href="#demonic-angelic"><g style="cursor:pointer">
+  <rect x="510" y="22" width="80" height="22" rx="3" fill="#1a1a28" stroke="#e8580a" stroke-width="1"/>
+  <text x="550" y="33" text-anchor="middle" dominant-baseline="central" font-family="Rajdhani,sans-serif" font-size="8.5" font-weight="700" fill="#F0997B">Demonic</text>
+</g></a>
+<a href="#demonic-angelic"><g style="cursor:pointer">
+  <rect x="600" y="22" width="80" height="22" rx="3" fill="#1a1a28" stroke="#7c3aed" stroke-width="1"/>
+  <text x="640" y="33" text-anchor="middle" dominant-baseline="central" font-family="Rajdhani,sans-serif" font-size="8.5" font-weight="700" fill="#c4b5fd">Angelic</text>
+</g></a>
+<!-- converge → Origin -->
+<line x1="550" y1="44" x2="550" y2="56" stroke="#3a3a50" stroke-width="1"/>
+<line x1="640" y1="44" x2="640" y2="56" stroke="#3a3a50" stroke-width="1"/>
+<line x1="550" y1="56" x2="640" y2="56" stroke="#3a3a50" stroke-width="1"/>
+<line x1="595" y1="56" x2="595" y2="66" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+<!-- Origin -->
+<a href="#origins"><g style="cursor:pointer">
+  <rect x="543" y="66" width="104" height="26" rx="3" fill="#1a1a28" stroke="#e8580a" stroke-width="2"/>
+  <text x="595" y="79" text-anchor="middle" dominant-baseline="central" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#e8580a">Origin</text>
+</g></a>
+<line x1="595" y1="92" x2="595" y2="104" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+<!-- Spirit | Chaos side by side -->
+<a href="#spirit-chaos"><g style="cursor:pointer">
+  <rect x="510" y="104" width="78" height="22" rx="3" fill="#1a1a28" stroke="#06b6d4" stroke-width="1"/>
+  <text x="549" y="115" text-anchor="middle" dominant-baseline="central" font-family="Rajdhani,sans-serif" font-size="8.5" font-weight="700" fill="#67e8f9">Spirit</text>
+</g></a>
+<a href="#spirit-chaos"><g style="cursor:pointer">
+  <rect x="602" y="104" width="78" height="22" rx="3" fill="#1a1a28" stroke="#ef4444" stroke-width="1"/>
+  <text x="641" y="115" text-anchor="middle" dominant-baseline="central" font-family="Rajdhani,sans-serif" font-size="8.5" font-weight="700" fill="#fca5a5">Chaos</text>
+</g></a>
+<!-- converge → Nightmare -->
+<line x1="549" y1="126" x2="549" y2="140" stroke="#3a3a50" stroke-width="1"/>
+<line x1="641" y1="126" x2="641" y2="140" stroke="#3a3a50" stroke-width="1"/>
+<line x1="549" y1="140" x2="641" y2="140" stroke="#3a3a50" stroke-width="1"/>
+<line x1="595" y1="140" x2="595" y2="150" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+<!-- Nightmare -->
+<a href="#nightmares"><g style="cursor:pointer">
+  <rect x="535" y="150" width="120" height="26" rx="3" fill="#1a1a28" stroke="#9333ea" stroke-width="2"/>
+  <text x="595" y="163" text-anchor="middle" dominant-baseline="central" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#a855f7">Nightmare</text>
+</g></a>
+
+<!-- Water note bottom left -->
+<rect x="6" y="190" width="160" height="13" rx="2" fill="#14141e" stroke="#2a2a3e" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="86" y="196.5" text-anchor="middle" dominant-baseline="central" font-family="Rajdhani,sans-serif" font-size="7.5" fill="#5F5E5A">Beta~Toxic (water equivalent)</text>
+</svg>`;
+
+  wrap.innerHTML=svg;
+  return wrap;
+}
+
+function renderCreatureReference(){
+  const wrap=document.createElement('div');
+  wrap.innerHTML=`
+<div class="creature-legend">
+  <div class="creature-legend-item"><div class="creature egg">Dino</div><span>passively lays eggs</span></div>
+</div>
+<div class="creature-tier"><div class="creature-tier-title">Toxic / Beta</div><div class="creature-sub-title">Toxic (Land)</div><div class="creature-grid"><div class="creature">Achatina</div><div class="creature egg">Allosaurus</div><div class="creature egg">Ankylosaurus</div><div class="creature">Araneo</div><div class="creature egg">Archaeopteryx</div><div class="creature egg">Argentavis</div><div class="creature">Arthropluera</div><div class="creature egg">Baryonyx</div><div class="creature">Beelzebufo</div><div class="creature egg">Brontosaurus</div><div class="creature egg">Carbonemys</div><div class="creature egg">Carcharodontosaurus</div><div class="creature egg">Carnotaurus</div><div class="creature">Castoroides</div><div class="creature">Chalicotherium</div><div class="creature egg">Compy</div><div class="creature">Daeodon</div><div class="creature egg">Dilophosaur</div><div class="creature egg">Dimetrodon</div><div class="creature egg">Dimorphodon</div><div class="creature">Diplocaulus</div><div class="creature egg">Diplodocus</div><div class="creature">Direbear</div><div class="creature">Direwolf</div><div class="creature egg">Dodo</div><div class="creature">Doedicurus</div><div class="creature">Dung Beetle</div><div class="creature">Equus</div><div class="creature egg">Gallimimus</div><div class="creature egg">Giganotosaurus</div><div class="creature">Gigantopithecus</div><div class="creature egg">Hesperornis</div><div class="creature">Hyaenodon</div><div class="creature egg">Iguanodon</div><div class="creature egg">Kairuku</div><div class="creature egg">Kaprosuchus</div><div class="creature egg">Kentrosaurus</div><div class="creature egg">Lystrosaurus</div><div class="creature">Mammoth</div><div class="creature egg">Megalania</div><div class="creature">Megaloceros</div><div class="creature egg">Megalosaurus</div><div class="creature">Meganeura</div><div class="creature">Megatherium</div><div class="creature">Mesopithecus</div><div class="creature egg">Moschops</div><div class="creature">Onyc</div><div class="creature">Otter</div><div class="creature egg">OviRaptor</div><div class="creature">Ovis</div><div class="creature egg">Pachy</div><div class="creature egg">Pachyrhinosaurus</div><div class="creature">Paraceratherium</div><div class="creature egg">Parasaur</div><div class="creature egg">Pegomastax</div><div class="creature egg">Pelagornis</div><div class="creature">Phiomia</div><div class="creature">Procoptodon</div><div class="creature egg">Pteranodon</div><div class="creature">Pulmonoscorpius</div><div class="creature">Purlovia</div><div class="creature egg">Quetzal</div><div class="creature egg">Raptor</div><div class="creature egg">Rex</div><div class="creature">Rhyniognatha</div><div class="creature">Sabertooth</div><div class="creature egg">Sarco</div><div class="creature egg">Spino</div><div class="creature egg">Stegosaurus</div><div class="creature egg">Tapejara</div><div class="creature egg">Terror Bird</div><div class="creature egg">Therizinosaur</div><div class="creature">Thylacoleo</div><div class="creature egg">Titanoboa</div><div class="creature">Titanomyrma Drone</div><div class="creature">Titanosaur</div><div class="creature egg">Triceratops</div><div class="creature egg">Troodon</div><div class="creature egg">Turkey</div><div class="creature">Woolly Rhino</div><div class="creature egg">Yutyrannus</div></div><div class="water-block"><div class="creature-sub-title" style="margin-top:0;">Beta (Water)</div><div class="creature-grid"><div class="creature">Basilosaurus</div><div class="creature">Cnidaria</div><div class="creature">Dunkleosteus</div><div class="creature">Electrophorus</div><div class="creature">Eurypterid</div><div class="creature">Leech</div><div class="creature">Liopleurodon</div><div class="creature">Manta</div><div class="creature">Megalodon</div><div class="creature">Mosasaurus</div><div class="creature">Piranha</div><div class="creature">Plesiosaur</div><div class="creature">Trilobite</div><div class="creature">Tusoteuthis</div></div></div></div>
+<div class="creature-tier"><div class="creature-tier-title">Alpha</div><div class="creature-grid"><div class="creature egg">Allosaurus</div><div class="creature egg">Ankylosaurus</div><div class="creature">Araneo</div><div class="creature egg">Archaeopteryx</div><div class="creature egg">Argentavis</div><div class="creature">Arthropluera</div><div class="creature egg">Baryonyx</div><div class="creature">Basilosaurus</div><div class="creature">Beelzebufo</div><div class="creature egg">Brontosaurus</div><div class="creature egg">Carbonemys</div><div class="creature egg">Carcharodontosaurus</div><div class="creature egg">Carnotaurus</div><div class="creature">Castoroides</div><div class="creature">Chalicotherium</div><div class="creature">Cnidaria</div><div class="creature egg">Compy</div><div class="creature">Daeodon</div><div class="creature egg">Dilophosaur</div><div class="creature egg">Dimetrodon</div><div class="creature egg">Dimorphodon</div><div class="creature">Diplocaulus</div><div class="creature egg">Diplodocus</div><div class="creature">Direbear</div><div class="creature">Direwolf</div><div class="creature egg">Dodo</div><div class="creature">Doedicurus</div><div class="creature">Dung Beetle</div><div class="creature">Dunkleosteus</div><div class="creature">Electrophorus</div><div class="creature">Equus</div><div class="creature">Eurypterid</div><div class="creature egg">Gallimimus</div><div class="creature egg">Giganotosaurus</div><div class="creature">Gigantopithecus</div><div class="creature egg">Hesperornis</div><div class="creature">Hyaenodon</div><div class="creature egg">Iguanodon</div><div class="creature egg">Kairuku</div><div class="creature egg">Kaprosuchus</div><div class="creature egg">Kentrosaurus</div><div class="creature">Leech</div><div class="creature">Liopleurodon</div><div class="creature egg">Lystrosaurus</div><div class="creature">Mammoth</div><div class="creature">Manta</div><div class="creature egg">Megalania</div><div class="creature">Megaloceros</div><div class="creature">Megalodon</div><div class="creature egg">Megalosaurus</div><div class="creature">Meganeura</div><div class="creature">Megatherium</div><div class="creature">Mesopithecus</div><div class="creature">Mosasaur</div><div class="creature egg">Moschops</div><div class="creature">Onyc</div><div class="creature">Otter</div><div class="creature egg">OviRaptor</div><div class="creature">Ovis</div><div class="creature egg">Pachy</div><div class="creature egg">Pachyrhinosaurus</div><div class="creature">Paraceratherium</div><div class="creature egg">Parasaur</div><div class="creature egg">Pegomastax</div><div class="creature egg">Pelagornis</div><div class="creature">Phiomia</div><div class="creature">Piranha</div><div class="creature">Plesiosaur</div><div class="creature">Procoptodon</div><div class="creature egg">Pteranodon</div><div class="creature">Pulmonoscorpius</div><div class="creature">Purlovia</div><div class="creature egg">Quetzal</div><div class="creature egg">Raptor</div><div class="creature egg">Rex</div><div class="creature">Rhyniognatha</div><div class="creature">Sabertooth</div><div class="creature egg">Sarco</div><div class="creature egg">Spino</div><div class="creature egg">Stegosaurus</div><div class="creature egg">Tapejara</div><div class="creature egg">Terror Bird</div><div class="creature egg">Therizinosaur</div><div class="creature">Thylacoleo</div><div class="creature egg">Titanoboa</div><div class="creature">Titanomyrma Drone</div><div class="creature">Titanosaur</div><div class="creature egg">Triceratops</div><div class="creature">Trilobite</div><div class="creature egg">Troodon</div><div class="creature egg">Turkey</div><div class="creature">Tusoteuthis</div><div class="creature">Woolly Rhino</div><div class="creature egg">Yutyrannus</div></div></div>
+<div class="creature-tier"><div class="creature-tier-title">Elemental</div><div class="creature-sub-title">Electric</div><div class="creature-grid"><div class="creature egg">Allosaurus</div><div class="creature egg">Argentavis</div><div class="creature">Basilosaurus</div><div class="creature">Cnidaria</div><div class="creature">Diplocaulus</div><div class="creature">Direbear</div><div class="creature egg">Dodo Rex</div><div class="creature egg">Dodowyvern</div><div class="creature egg">Dragon</div><div class="creature">Dunkleosteus</div><div class="creature">Electrophorus</div><div class="creature">Eurypterid</div><div class="creature egg">Fasola</div><div class="creature egg">Gigantoraptor</div><div class="creature">Griffin</div><div class="creature">Liopleurodon</div><div class="creature">Manta</div><div class="creature">Megalodon</div><div class="creature">Mosasaur</div><div class="creature">Piranha</div><div class="creature">Plesiosaur</div><div class="creature">Ravager</div><div class="creature egg">Rex</div><div class="creature">Sabertooth</div><div class="creature">Thylacoleo</div><div class="creature">Trilobite</div><div class="creature">Tusoteuthis</div><div class="creature egg">YiLing</div></div><div class="creature-sub-title">Hydro</div><div class="creature-grid"><div class="creature egg">Allosaurus</div><div class="creature egg">Baryonyx</div><div class="creature">Basilosaurus</div><div class="creature">Beelzebufo</div><div class="creature egg">Carbonemys</div><div class="creature">Castoroides</div><div class="creature">Cnidaria</div><div class="creature">Diplocaulus</div><div class="creature egg">Dragon</div><div class="creature">Dunkleosteus</div><div class="creature">Electrophorus</div><div class="creature">Eurypterid</div><div class="creature egg">Kairuku</div><div class="creature egg">Kaprosuchus</div><div class="creature">Liopleurodon</div><div class="creature">Manta</div><div class="creature">Megalodon</div><div class="creature">Mosasaur</div><div class="creature">Otter</div><div class="creature">Piranha</div><div class="creature">Plesiosaur</div><div class="creature egg">Rex</div><div class="creature egg">Sarco</div><div class="creature egg">Spino</div><div class="creature">Trilobite</div><div class="creature">Tusoteuthis</div></div><div class="creature-sub-title">Volcanic</div><div class="creature-grid"><div class="creature egg">Allosaurus</div><div class="creature egg">Basilisk</div><div class="creature">Basilosaurus</div><div class="creature egg">Cerato</div><div class="creature">Cnidaria</div><div class="creature">Deathworm</div><div class="creature egg">Diplocaulus</div><div class="creature egg">Dodo Rex</div><div class="creature egg">Dragon</div><div class="creature">Dunkleosteus</div><div class="creature">Electrophorus</div><div class="creature">Eurypterid</div><div class="creature">Golem</div><div class="creature">Liopleurodon</div><div class="creature egg">Maeguana</div><div class="creature">Manta</div><div class="creature">Megalodon</div><div class="creature">Mosasaur</div><div class="creature">Piranha</div><div class="creature">Plesiosaur</div><div class="creature egg">Ptera</div><div class="creature egg">Raptor</div><div class="creature">Ravager</div><div class="creature egg">Rex</div><div class="creature egg">Rockdrake</div><div class="creature egg">Spino</div><div class="creature egg">Tapejara</div><div class="creature">Trilobite</div><div class="creature">Tusoteuthis</div><div class="creature egg">Wyvern</div></div></div>
+<div class="creature-tier"><div class="creature-tier-title">Shadow / Fairy</div><div class="creature-sub-title">Fairy</div><div class="creature-grid"><div class="creature egg">Argycorn</div><div class="creature">Doedicorn</div><div class="creature">Grifficorn</div><div class="creature">Jerboacorn</div><div class="creature">Pegasus</div><div class="creature egg">Wyvern</div></div><div class="creature-sub-title">Shadow</div><div class="creature-grid"><div class="creature egg">Arthropluera</div><div class="creature egg">Broodmother</div><div class="creature">Gorilla</div><div class="creature">Rock Elemental</div><div class="creature egg">Turkey</div></div></div>
+<div class="creature-tier"><div class="creature-tier-title">Fabled / Legendary / Mythic</div><div class="creature-sub-title">Fabled</div><div class="creature-grid"><div class="creature egg">Ankylosaurus</div><div class="creature egg">Argentavis</div><div class="creature">Beelzebufo</div><div class="creature egg">Brontosaurus</div><div class="creature">Castoroides</div><div class="creature">Doedicurus</div><div class="creature">Gigantopithecus</div><div class="creature">Jerboa</div><div class="creature">Leech</div><div class="creature">Mammoth</div><div class="creature">Mantis</div><div class="creature">Megaloceros</div><div class="creature">Paraceratherium</div><div class="creature egg">Pteranodon</div><div class="creature egg">Quetzal</div><div class="creature egg">Stegosaurus</div><div class="creature egg">Tapejara</div><div class="creature egg">Therizinosaur</div><div class="creature egg">Triceratops</div></div><div class="creature-sub-title">Legendary</div><div class="creature-grid"><div class="creature egg">Allosaurus</div><div class="creature">Araneo</div><div class="creature egg">Baryonyx</div><div class="creature egg">Carnotaurus</div><div class="creature egg">Dilophosaur</div><div class="creature egg">Indominus Rex</div><div class="creature egg">Kairuku</div><div class="creature egg">Kaprosuchus</div><div class="creature egg">Pachy</div><div class="creature egg">Pteranodon</div><div class="creature">Pulmonoscorpius</div><div class="creature egg">Raptor</div><div class="creature egg">Sarco</div><div class="creature egg">Spino</div><div class="creature egg">Stegosaurus</div><div class="creature egg">Thorny Dragon</div><div class="creature egg">Triceratops</div><div class="creature egg">Wyvern</div></div><div class="creature-sub-title">Mythic</div><div class="creature-grid"><div class="creature egg">Ankylosaurus</div><div class="creature egg">Argentavis</div><div class="creature">Beelzebufo</div><div class="creature egg">Brontosaurus</div><div class="creature">Castoroides</div><div class="creature">Doedicurus</div><div class="creature">Gigantopithecus</div><div class="creature">Jerboa</div><div class="creature">Leech</div><div class="creature">Mammoth</div><div class="creature">Megaloceros</div><div class="creature">Paraceratherium</div><div class="creature egg">Pteranodon</div><div class="creature egg">Quetzal</div><div class="creature egg">Stegosaurus</div><div class="creature egg">Tapejara</div><div class="creature egg">Therizinosaur</div><div class="creature egg">Triceratops</div></div></div>
+<div class="creature-tier"><div class="creature-tier-title">Angelic / Demonic</div><div class="creature-sub-title">Angelic</div><div class="creature-grid"><div class="creature egg">Allosaurus</div><div class="creature egg">Argentavis</div><div class="creature">Dire Bear</div><div class="creature">Direwolf</div><div class="creature egg">Griffin</div><div class="creature">Manticore</div><div class="creature">Pegasus</div><div class="creature egg">Rex</div><div class="creature egg">Spino</div><div class="creature egg">Therizinosaur</div><div class="creature">Thylacoleo</div><div class="creature egg">Wyvern</div><div class="creature egg">Yutyrannus</div></div><div class="creature-sub-title">Demonic</div><div class="creature-grid"><div class="creature">Bulbdog</div><div class="creature egg">Dilophosaur</div><div class="creature egg">Dodo</div><div class="creature">Equus</div><div class="creature">Ferox (Kill Rex to encourage spawns)</div><div class="creature egg">Glowtail</div><div class="creature">Gorilla (Kill Yuty to encourage spawns)</div><div class="creature">Hyaenodon</div><div class="creature egg">Kaprosuchus</div><div class="creature">Megatherium</div><div class="creature">Mesopithecus</div><div class="creature">Ovis</div><div class="creature egg">Parasaur</div><div class="creature egg">Reaper Queen (Kill Allos to encourage pawns)</div><div class="creature">Shinehorn</div><div class="creature egg">Thorny Dragon</div></div></div>
+<div class="creature-tier"><div class="creature-tier-title">Spirit / Chaos</div><div class="creature-sub-title">Spirit</div><div class="creature-grid"><div class="creature">Brontosaurus</div><div class="creature">Carnotaurus</div><div class="creature">Dodo Rex</div><div class="creature">Giganotosaurus</div><div class="creature">Indominus Rex</div><div class="creature">Jerboa</div><div class="creature">Quetzal</div><div class="creature">Raptor</div><div class="creature">Rex</div><div class="creature">Stegosaurus</div><div class="creature">Triceratops</div><div class="creature">Wyvern</div></div><div class="creature-sub-title">Chaos</div><div class="creature-grid"><div class="creature">Dodo Rex</div><div class="creature">Griffin</div><div class="creature">Indominus Rex</div><div class="creature">Rex</div><div class="creature">Rockdrake</div><div class="creature">Spino</div><div class="creature">Therizinosaur</div><div class="creature">Thylacoleo</div><div class="creature">Wyvern</div></div></div>
+<div class="creature-tier"><div class="creature-tier-title">Primal / Origin / Resurrected</div><div class="creature-sub-title">Primal</div><div class="creature-grid"><div class="creature">Allosaurus</div><div class="creature">Carnotaurus</div><div class="creature">Dire Bear</div><div class="creature">Giganotosaurus</div><div class="creature">Kentrosaurus</div><div class="creature">Liopleurodon</div><div class="creature">Megalodon</div><div class="creature">Mosasaurus</div><div class="creature">Raptor</div></div><div class="creature-sub-title">Origin / Nightmare</div><div class="creature-grid"><div class="creature">Argentavis</div><div class="creature">Carnotaurus</div><div class="creature">Dire Bear</div><div class="creature">Dodo Reaper</div><div class="creature">Kairuku</div><div class="creature">Raptor</div><div class="creature">Rex</div><div class="creature">Spino</div><div class="creature">Triceratops</div><div class="creature">Wyvern</div><div class="creature">Yutyrannus</div></div><div class="creature-sub-title">Primal Resurrected</div><div class="creature-grid"><div class="creature">Brontosaurus</div><div class="creature">Carnotaurus</div><div class="creature">Giganotosaurus</div><div class="creature">Raptor</div><div class="creature">Rex</div><div class="creature">Stego</div><div class="creature">Trike</div><div class="creature">Wyvern</div></div></div>
+`;
+  return wrap;
+}
+
+function parseMarkdown(md){
+  const sections=[];const lines=md.split('\n');let current=null;
+  for(const line of lines){
+    if(line.startsWith('## ')){if(current)sections.push(current);current={id:line.slice(3).trim(),lines:[]};}
+    else if(current){current.lines.push(line);}
+  }
+  if(current)sections.push(current);
+  return sections;
+}
+
+function renderSection(section){
+  const div=document.createElement('div');div.className='section';div.id=section.id;
+  const titleDiv=document.createElement('div');titleDiv.className='section-title';titleDiv.textContent=SECTION_LABELS[section.id]||section.id;div.appendChild(titleDiv);
+  const inner=document.createElement('div');
+  const blocks=[];let buffer=[];
+  const flush=()=>{if(buffer.length){blocks.push({type:'md',content:buffer.join('\n')});buffer=[];}};
+  for(const line of section.lines){
+    if(line.includes('WARNING:')){flush();blocks.push({type:'warn',content:line.replace(/^> ⚠️ WARNING:?\s*/,'').replace(/^> WARNING:?\s*/,'')});}
+    else if(line.startsWith('> STRUCTURE DAMAGE:')){flush();blocks.push({type:'struct',content:line.replace(/^> STRUCTURE DAMAGE:\s*/,'')});}
+    else if(line.startsWith('> ')){flush();blocks.push({type:'tip',content:line.slice(2)});}
+    else{buffer.push(line);}
+  }
+  flush();
+  blocks.forEach(block=>{
+    if(block.type==='warn'){const el=document.createElement('div');el.className='warn';el.textContent=block.content;inner.appendChild(el);}
+    else if(block.type==='tip'){const el=document.createElement('div');el.className='tip';el.textContent=block.content;inner.appendChild(el);}
+    else if(block.type==='struct'){const el=document.createElement('div');el.className='struct-badge';el.textContent='Structure Damage — '+block.content;inner.appendChild(el);}
+    else{const el=document.createElement('div');el.innerHTML=marked.parse(block.content);
+      el.querySelectorAll('h3').forEach(h=>h.style.cssText='font-size:16px;font-weight:700;color:#f0a020;margin:24px 0 10px;text-transform:uppercase;letter-spacing:1px;');
+      el.querySelectorAll('h4').forEach(h=>h.style.cssText='font-size:14px;font-weight:700;color:#d8d8e8;margin:16px 0 6px;');
+      el.querySelectorAll('p').forEach(p=>p.style.cssText='margin-bottom:12px;color:#d8d8e8;');
+      el.querySelectorAll('ul,ol').forEach(l=>l.style.cssText='padding-left:20px;margin-bottom:12px;');
+      el.querySelectorAll('li').forEach(l=>l.style.cssText='margin-bottom:4px;color:#d8d8e8;');
+      el.querySelectorAll('strong').forEach(s=>s.style.color='#f0a020');
+      inner.appendChild(el);}
+  });
+  div.appendChild(inner);return div;
+}
+
+async function loadGuide(){
+  try{
+    const resp=await fetch(CONTENT_URL+'?t='+Date.now());
+    const md=await resp.text();
+    const sections=parseMarkdown(md);
+    const contentEl=document.getElementById('content');
+    const hero=document.createElement('div');hero.id='hero';
+    hero.innerHTML='<h1>PRIMAL CHAOS</h1>';
+    const baseline=sections.find(s=>s.id==='baseline');
+    if(baseline){const box=document.createElement('div');box.className='baseline-box';box.innerHTML=marked.parse(baseline.lines.join('\n'));hero.appendChild(box);}
+    contentEl.appendChild(hero);
+    sections.filter(s=>s.id!=='baseline').forEach(section=>{
+      if(section.id==='tier-list'){
+        const td=document.createElement('div');td.className='section';td.id='tier-list';
+        const tt=document.createElement('div');tt.className='section-title';tt.textContent='Tier List';
+        td.appendChild(tt);td.appendChild(renderTierDiagram());contentEl.appendChild(td);return;
+      }
+      contentEl.appendChild(renderSection(section));
+    });
+    // Add creature reference section
+    const crSec=document.createElement('div');crSec.className='section';crSec.id='creature-reference';
+    const crTitle=document.createElement('div');crTitle.className='section-title';crTitle.textContent='Creature Reference';
+    crSec.appendChild(crTitle);crSec.appendChild(renderCreatureReference());contentEl.appendChild(crSec);
+    const footer=document.createElement('div');footer.className='guide-footer';
+    footer.innerHTML='Guide maintained by Rokitur — RokiArkNet<br>Questions or corrections? Contact @Rokitur on Discord';
+    contentEl.appendChild(footer);
+    document.getElementById('loading').style.display='none';
+    contentEl.style.display='block';
+    buildNav();
+    const navLinks=document.querySelectorAll('#nav a');
+    window.addEventListener('scroll',()=>{
+      let current='';
+      document.querySelectorAll('.section[id]').forEach(s=>{if(window.scrollY>=s.offsetTop-100)current=s.id;});
+      navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+current);});
+    });
+  }catch(e){document.getElementById('loading').textContent='Failed to load guide. '+e.message;}
+}
+loadGuide();
+</script>
+</body>
+</html>

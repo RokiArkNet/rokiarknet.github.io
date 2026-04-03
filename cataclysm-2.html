@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cataclysm 2.0 Guide</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap');
+:root{--bg:#0d0d12;--surface:#14141e;--card:#1a1a28;--border:#2a2a3e;--orange:#e8580a;--amber:#f0a020;--text:#d8d8e8;--muted:#7878a0;--tip:#0f2a1a;--tip-border:#1a6a30;--warn:#2a1a08;--warn-border:#8a4010;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;font-size:16px;line-height:1.7;display:flex;}
+#sidebar{position:fixed;top:0;left:0;width:240px;height:100vh;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;z-index:100;padding-bottom:40px;}
+#sidebar-header{padding:20px 16px 14px;border-bottom:1px solid var(--border);}
+.logo{font-family:'Orbitron',monospace;font-size:11px;color:var(--orange);letter-spacing:3px;}
+#sidebar-header h2{font-size:14px;font-weight:700;color:var(--text);margin-top:4px;}
+.home-link{display:block;font-size:11px;color:var(--muted);text-decoration:none;margin-bottom:8px;transition:color .15s;}
+.home-link:hover{color:var(--orange);}
+#sidebar nav a{display:block;padding:8px 16px;color:var(--muted);text-decoration:none;font-size:13px;font-weight:600;border-left:2px solid transparent;transition:all .15s;}
+#sidebar nav a:hover,#sidebar nav a.active{color:var(--orange);border-left-color:var(--orange);background:rgba(232,88,10,.06);}
+.nav-section{padding:12px 16px 4px;font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;opacity:.6;}
+#main{margin-left:240px;flex:1;max-width:860px;padding:48px 48px 120px;}
+#loading{text-align:center;padding:80px;font-family:'Orbitron',monospace;color:var(--orange);letter-spacing:3px;}
+#hero{text-align:center;padding:40px 0 48px;border-bottom:1px solid var(--border);margin-bottom:56px;}
+.eyebrow{font-family:'Orbitron',monospace;font-size:10px;letter-spacing:4px;color:var(--orange);text-transform:uppercase;margin-bottom:12px;}
+#hero h1{font-family:'Orbitron',monospace;font-size:36px;font-weight:900;color:#fff;text-shadow:0 0 40px rgba(232,88,10,.3);letter-spacing:2px;}
+.baseline-box{margin-top:20px;background:var(--card);border:1px solid var(--border);border-left:3px solid var(--amber);padding:12px 16px;font-size:13px;color:var(--muted);display:inline-block;text-align:left;}
+.section{margin-bottom:56px;}
+.section-title{font-family:'Orbitron',monospace;font-size:13px;letter-spacing:3px;color:var(--orange);text-transform:uppercase;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.section h3{font-size:16px;font-weight:700;color:var(--amber);margin:24px 0 10px;text-transform:uppercase;letter-spacing:1px;}
+.section h4{font-size:14px;font-weight:700;color:var(--text);margin:16px 0 6px;}
+.section p{margin-bottom:12px;color:var(--text);}
+.section ul,.section ol{padding-left:20px;margin-bottom:12px;}
+.section li{margin-bottom:4px;color:var(--text);}
+.section strong{color:var(--amber);}
+.section table{width:100%;border-collapse:collapse;margin:16px 0;}
+.section th,.section td{border:1px solid var(--border);padding:8px 12px;text-align:left;}
+.section th{background:var(--card);color:var(--amber);font-weight:700;}
+.section td{color:var(--text);}
+.tip{background:var(--tip);border-left:3px solid var(--tip-border);padding:10px 14px;font-size:14px;color:#90d8a0;margin:14px 0;}
+.tip::before{content:'TIP  ';font-weight:700;letter-spacing:2px;}
+.warn{background:var(--warn);border-left:3px solid var(--warn-border);padding:10px 14px;font-size:14px;color:#d8a060;margin:14px 0;}
+.warn::before{content:'WARNING  ';font-weight:700;letter-spacing:2px;color:var(--orange);}
+.struct-badge{display:inline-block;background:rgba(232,88,10,.12);border:1px solid rgba(232,88,10,.25);padding:3px 10px;font-size:12px;color:var(--orange);margin-bottom:14px;letter-spacing:1px;}
+.guide-footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--border);}
+@media(max-width:768px){#sidebar{display:none;}#main{margin-left:0;padding:60px 20px 80px;}.mobile-back{display:block;}}
+.mobile-back{display:none;position:fixed;top:0;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:12px 20px;z-index:100;}
+.mobile-back a{color:var(--orange);text-decoration:none;font-size:14px;font-weight:600;}
+.creature-tier{margin-bottom:32px;}
+.creature-tier-title{font-family:'Orbitron',monospace;font-size:11px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:14px;}
+.creature-sub-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--amber);margin:14px 0 8px;}
+.creature-grid{display:flex;flex-wrap:wrap;gap:5px;}
+.creature{background:var(--card);border:1px solid var(--border);padding:4px 10px;font-size:11px;font-weight:600;color:var(--text);border-radius:3px;cursor:pointer;transition:all .15s;}
+.creature:hover{border-color:var(--orange);background:rgba(232,88,10,.1);}
+.creature.boss{border-color:var(--orange);color:var(--orange);}
+.creature.loot{border-color:#fbbf24;color:#fbbf24;}
+.creature.no-spawn{cursor:default;opacity:.6;}
+.creature.no-spawn:hover{border-color:var(--border);background:var(--card);}
+.boss-block{background:rgba(232,88,10,.05);border:1px solid rgba(232,88,10,.2);padding:10px 12px;margin-top:10px;border-radius:3px;}
+.boss-block-label{font-size:9px;font-weight:700;color:var(--orange);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+#modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.8);z-index:1000;align-items:center;justify-content:center;}
+#modal-overlay.show{display:flex;}
+#modal{background:var(--surface);border:1px solid var(--border);padding:24px;max-width:600px;width:90%;border-radius:4px;}
+#modal-title{font-family:'Orbitron',monospace;font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;}
+#modal-tier{font-size:11px;color:var(--muted);margin-bottom:16px;letter-spacing:1px;}
+#spawn-cmd{background:var(--bg);border:1px solid var(--border);padding:12px;font-family:monospace;font-size:12px;color:var(--text);word-break:break-all;margin-bottom:16px;border-radius:3px;}
+#modal-buttons{display:flex;gap:10px;}
+#modal-buttons button{padding:8px 16px;font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;transition:all .15s;border-radius:3px;}
+#modal-buttons button:hover{border-color:var(--orange);color:var(--orange);}
+#copy-btn.copied{background:var(--tip);border-color:var(--tip-border);color:#90d8a0;}
+</style>
+</head>
+<body>
+<div class="mobile-back"><a href="index.html">← All Guides</a></div>
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <a href="index.html" class="home-link">← All Guides</a>
+    <h2>Cataclysm 2.0 Guide</h2>
+  </div>
+  <nav id="nav"></nav>
+</aside>
+<main id="main">
+  <div id="loading">LOADING GUIDE...</div>
+  <div id="content" style="display:none"></div>
+</main>
+<div id="modal-overlay">
+  <div id="modal">
+    <div id="modal-title"></div>
+    <div id="modal-tier"></div>
+    <div id="spawn-cmd"></div>
+    <div id="modal-buttons">
+      <button id="copy-btn">Copy Command</button>
+      <button id="close-btn">Close</button>
+    </div>
+  </div>
+</div>
+<script>
+const CONTENT_URL='https://raw.githubusercontent.com/rokiarknet/rokiarknet.github.io/main/content/cataclysm-2.md';
+const NAV_SECTIONS={
+  'Overview':['overview','tier-list','core-mechanics','getting-started'],
+  'Progression':['tier-2-tidal','tier-3-rapid','tier-3-5-avatar','tier-4-cyclonic-boss','tier-5-glacial','tier-6-undead','tier-7-soaring','tier-8-maelstrom-boss','tier-9-sumerian','tier-10-tsunami'],
+  'Reference':['loot-dinos','tranqs','weapons-potions','kibble-chart','bosses','faq','creature-list']
+};
+const SECTION_LABELS={
+  'overview':'Overview',
+  'tier-list':'Tier List',
+  'core-mechanics':'Core Mechanics',
+  'getting-started':'Getting Started',
+  'tier-2-tidal':'T2 Tidal',
+  'tier-3-rapid':'T3 Rapid',
+  'tier-3-5-avatar':'Avatar',
+  'tier-4-cyclonic-boss':'T4 Cyclonic Boss',
+  'tier-5-glacial':'T5 Glacial',
+  'tier-6-undead':'T6 Undead',
+  'tier-7-soaring':'T7 Soaring',
+  'tier-8-maelstrom-boss':'T8 Maelstrom Boss',
+  'tier-9-sumerian':'T9 Sumerian',
+  'tier-10-tsunami':'T10 Tsunami',
+  'loot-dinos':'Loot Dinos',
+  'tranqs':'Tranqs',
+  'weapons-potions':'Weapons & Potions',
+  'kibble-chart':'Kibble Chart',
+  'bosses':'Bosses',
+  'creature-list':'Creature List',
+  'tek-unlocks':'Tek Unlocks',
+  'dlc-creatures':'DLC Creatures',
+  'dino-depot-setup':'Dino Depot Setup',
+  'spoil-settings':'Spoil Settings',
+  'mod-compatibility':'Mod Compatibility',
+  'faq':'FAQ'
+};
+
+const SPAWN_DATA={
+  // Loot Creatures
+  "Loot Creatures:Artifact Queen Bee":"'Blueprint'/Cataclysm2/Runt/ArtifactBee_Queen_Character_BP'",
+  "Loot Creatures:Resource Goat":"'Blueprint'/Cataclysm2/Runt/ResourceGoat_Character_BP'",
+  "Loot Creatures:Resource Otter":"'Blueprint'/Cataclysm2/Runt/ResourceOtter_Character_BP'",
+  "Loot Creatures:Treasure Goat":"'Blueprint'/Cataclysm2/Runt/TreasureGoat_Character_BP'",
+  "Loot Creatures:Treasure Stag":"'Blueprint'/Cataclysm2/Runt/TreasureStag_Character_BP'",
+  "Loot Creatures:Mega Treasure Rex":"'Blueprint'/Cataclysm2/Sumerian/MegaTreasureRex_Character_BP'",
+  // Avatar
+  "Avatar:Pegomastax":"'Blueprint'/Cataclysm2/Avatars/RuntPegomastax_Character_BP'",
+  // T1 Runt
+  "T1 Runt:Allosaurus":"'Blueprint'/Cataclysm2/Runt/RuntAllo_Character_BP'",
+  "T1 Runt:Ankylosaurus":"'Blueprint'/Cataclysm2/Runt/RuntAnkylo_Character_BP'",
+  "T1 Runt:Argentavis":"'Blueprint'/Cataclysm2/Runt/RuntArgent_Character_BP'",
+  "T1 Runt:Baryonyx":"'Blueprint'/Cataclysm2/Runt/RuntBaryonyx_Character_BP'",
+  "T1 Runt:Basilosaurus":"'Blueprint'/Cataclysm2/Runt/RuntBasilosaurus_Character_BP'",
+  "T1 Runt:Bigfoot":"'Blueprint'/Cataclysm2/Runt/RuntBigfoot_Character_BP'",
+  "T1 Runt:Camelsaurus":"'Blueprint'/Cataclysm2/Runt/Runtcamelsaurus_Character_BP'",
+  "T1 Runt:Carnotaurus":"'Blueprint'/Cataclysm2/Runt/RuntCarno_Character_BP'",
+  "T1 Runt:Cat":"'Blueprint'/Cataclysm2/Runt/RuntCat_Character_BP'",
+  "T1 Runt:Cave Wolf":"'Blueprint'/Cataclysm2/Runt/RuntCaveWolf_Character_BP'",
+  "T1 Runt:Crystal Wyvern":"'Blueprint'/Cataclysm2/Runt/RuntCrystalWyvern_Character_BP'",
+  "T1 Runt:Daeodon":"'Blueprint'/Cataclysm2/Runt/RuntDaeodon_Character_BP'",
+  "T1 Runt:Deinotherium":"'Blueprint'/Cataclysm2/Runt/RuntDeinotheriumASA_Character_BP'",
+  "T1 Runt:Direbear":"'Blueprint'/Cataclysm2/Runt/RuntDirebear_Character_BP'",
+  "T1 Runt:Direwolf":"'Blueprint'/Cataclysm2/Runt/RuntDirewolf_Character_BP'",
+  "T1 Runt:Dodo":"'Blueprint'/Cataclysm2/Runt/RuntDodo_Character_BP'",
+  "T1 Runt:Doedicurus":"'Blueprint'/Cataclysm2/Runt/RuntDoed_Character_BP'",
+  "T1 Runt:Dolphin":"'Blueprint'/Cataclysm2/Runt/RuntDolphin_Character_BP'",
+  "T1 Runt:Dunkleosteus":"'Blueprint'/Cataclysm2/Runt/RuntDunkle_Character_BP'",
+  "T1 Runt:Equus":"'Blueprint'/Cataclysm2/Runt/RuntEquus_Character_BP'",
+  "T1 Runt:Featherlight":"'Blueprint'/Cataclysm2/Runt/RuntFeatherlite_Character_BP'",
+  "T1 Runt:Fire Wyvern":"'Blueprint'/Cataclysm2/Runt/RuntFireWyvern_Character_BP'",
+  "T1 Runt:Gacha":"'Blueprint'/Cataclysm2/Runt/RuntGacha_Character_BP'",
+  "T1 Runt:Gigantoraptor (Aberrant)":"'Blueprint'/Cataclysm2/Runt/RuntGigantoraptor_Character_BP_Aberrant'",
+  "T1 Runt:Griffin":"'Blueprint'/Cataclysm2/Runt/RuntGriffin_Character_BP'",
+  "T1 Runt:Hatchling":"'Blueprint'/Cataclysm2/Runt/RuntHatchling_Character_BP'",
+  "T1 Runt:Maelizard":"'Blueprint'/Cataclysm2/Runt/RuntMaelizard_Character_BP'",
+  "T1 Runt:Mammoth":"'Blueprint'/Cataclysm2/Runt/RuntMammoth_Character_BP'",
+  "T1 Runt:Mantis":"'Blueprint'/Cataclysm2/Runt/RuntMantis_Character_BP'",
+  "T1 Runt:Megalodon":"'Blueprint'/Cataclysm2/Runt/RuntMegalodon_Character_BP'",
+  "T1 Runt:Megalosaurus":"'Blueprint'/Cataclysm2/Runt/RuntMegalosaurus_Character_BP'",
+  "T1 Runt:Megatherium":"'Blueprint'/Cataclysm2/Runt/RuntMegatherium_Character_BP'",
+  "T1 Runt:Mosasaurus":"'Blueprint'/Cataclysm2/Runt/RuntMosa_Character_BP'",
+  "T1 Runt:Moschops":"'Blueprint'/Cataclysm2/Runt/RuntMoschops_Character_BP'",
+  "T1 Runt:Owl":"'Blueprint'/Cataclysm2/Runt/RuntOwl_Character_BP'",
+  "T1 Runt:Parasaur":"'Blueprint'/Cataclysm2/Runt/RuntPara_Character_BP'",
+  "T1 Runt:Pelagornis":"'Blueprint'/Cataclysm2/Runt/RuntPela_Character_BP'",
+  "T1 Runt:Phoenix":"'Blueprint'/Cataclysm2/Runt/RuntPhoenix_Character_BP'",
+  "T1 Runt:Procoptodon":"'Blueprint'/Cataclysm2/Runt/RuntProcoptodon_Character_BP'",
+  "T1 Runt:Pteranodon":"'Blueprint'/Cataclysm2/Runt/RuntPtero_Character_BP'",
+  "T1 Runt:Rex":"'Blueprint'/Cataclysm2/Runt/RuntRex_Character_BP'",
+  "T1 Runt:Rhino":"'Blueprint'/Cataclysm2/Runt/RuntRhino_Character_BP'",
+  "T1 Runt:Sabertooth":"'Blueprint'/Cataclysm2/Runt/RuntSaber_Character_BP'",
+  "T1 Runt:Scorpion":"'Blueprint'/Cataclysm2/Runt/RuntScorpion_Character_BP'",
+  "T1 Runt:Spiney Lizard":"'Blueprint'/Cataclysm2/Runt/RuntSpineyLizard_Character_BP'",
+  "T1 Runt:Stegosaurus":"'Blueprint'/Cataclysm2/Runt/RuntStego_Character_BP'",
+  "T1 Runt:Tapejara":"'Blueprint'/Cataclysm2/Runt/RuntTapejara_Character_BP'",
+  "T1 Runt:Therizinosaur":"'Blueprint'/Cataclysm2/Runt/RuntTherizino_Character_BP'",
+  "T1 Runt:Thrall":"'Blueprint'/Cataclysm2/Runt/RuntThrall_Character_BP_SoldierWithPistol'",
+  "T1 Runt:Thylacoleo":"'Blueprint'/Cataclysm2/Runt/RuntThylacoleo_Character_BP'",
+  "T1 Runt:Trike":"'Blueprint'/Cataclysm2/Runt/RuntTrike_Character_BP'",
+  "T1 Runt:Turtle":"'Blueprint'/Cataclysm2/Runt/RuntTurtle_Character_BP'",
+  "T1 Runt:Xenomorph":"'Blueprint'/Cataclysm2/Runt/RuntXenomorph_Character_BP_Male_Surface'",
+  // T2 Tidal
+  "T2 Tidal:Allosaurus":"'Blueprint'/Cataclysm2/Tidal/TidalAllo_Character_BP'",
+  "T2 Tidal:Ankylosaurus":"'Blueprint'/Cataclysm2/Tidal/TidalAnkylo_Character_BP'",
+  "T2 Tidal:Argentavis":"'Blueprint'/Cataclysm2/Tidal/TidalArgent_Character_BP'",
+  "T2 Tidal:Baryonyx":"'Blueprint'/Cataclysm2/Tidal/TidalBaryonyx_Character_BP'",
+  "T2 Tidal:Basilosaurus":"'Blueprint'/Cataclysm2/Tidal/TidalBasilosaurus_Character_BP'",
+  "T2 Tidal:Bigfoot":"'Blueprint'/Cataclysm2/Tidal/TidalBigfoot_Character_BP'",
+  "T2 Tidal:Camelsaurus":"'Blueprint'/Cataclysm2/Tidal/Tidalcamelsaurus_Character_BP'",
+  "T2 Tidal:Carcharodontosaurus":"'Blueprint'/Cataclysm2/Tidal/TidalCarcha_Character_BP'",
+  "T2 Tidal:Carnotaurus":"'Blueprint'/Cataclysm2/Tidal/TidalCarno_Character_BP'",
+  "T2 Tidal:Cave Wolf":"'Blueprint'/Cataclysm2/Tidal/TidalCaveWolf_Character_BP'",
+  "T2 Tidal:Crystal Wyvern":"'Blueprint'/Cataclysm2/Tidal/TidalCrystalWyvern_Character_BP'",
+  "T2 Tidal:Daeodon":"'Blueprint'/Cataclysm2/Tidal/TidalDaeodon_Character_BP'",
+  "T2 Tidal:Direbear":"'Blueprint'/Cataclysm2/Tidal/TidalDirebear_Character_BP'",
+  "T2 Tidal:Direwolf":"'Blueprint'/Cataclysm2/Tidal/TidalDirewolf_Character_BP'",
+  "T2 Tidal:Doedicurus":"'Blueprint'/Cataclysm2/Tidal/TidalDoed_Character_BP'",
+  "T2 Tidal:Dolphin":"'Blueprint'/Cataclysm2/Tidal/TidalDolphin_Character_BP'",
+  "T2 Tidal:Dunkleosteus":"'Blueprint'/Cataclysm2/Tidal/TidalDunkle_Character_BP'",
+  "T2 Tidal:Equus":"'Blueprint'/Cataclysm2/Tidal/TidalEquus_Character_BP'",
+  "T2 Tidal:Griffin":"'Blueprint'/Cataclysm2/Tidal/TidalGriffin_Character_BP'",
+  "T2 Tidal:Hatchling":"'Blueprint'/Cataclysm2/Tidal/TidalHatchling_Character_BP'",
+  "T2 Tidal:Mammoth":"'Blueprint'/Cataclysm2/Tidal/TidalMammoth_Character_BP'",
+  "T2 Tidal:Mantis":"'Blueprint'/Cataclysm2/Tidal/TidalMantis_Character_BP'",
+  "T2 Tidal:Megalodon":"'Blueprint'/Cataclysm2/Tidal/TidalMegalodon_Character_BP'",
+  "T2 Tidal:Megalosaurus":"'Blueprint'/Cataclysm2/Tidal/TidalMegalosaurus_Character_BP'",
+  "T2 Tidal:Megatherium":"'Blueprint'/Cataclysm2/Tidal/TidalMegatherium_Character_BP'",
+  "T2 Tidal:Mosasaurus":"'Blueprint'/Cataclysm2/Tidal/TidalMosa_Character_BP'",
+  "T2 Tidal:Moschops":"'Blueprint'/Cataclysm2/Tidal/TidalMoschops_Character_BP'",
+  "T2 Tidal:Owl":"'Blueprint'/Cataclysm2/Tidal/TidalOwl_Character_BP'",
+  "T2 Tidal:Parasaur":"'Blueprint'/Cataclysm2/Tidal/TidalPara_Character_BP'",
+  "T2 Tidal:Pelagornis":"'Blueprint'/Cataclysm2/Tidal/TidalPela_Character_BP'",
+  "T2 Tidal:Procoptodon":"'Blueprint'/Cataclysm2/Tidal/TidalProcoptodon_Character_BP'",
+  "T2 Tidal:Pteranodon":"'Blueprint'/Cataclysm2/Tidal/TidalPtero_Character_BP'",
+  "T2 Tidal:Rex":"'Blueprint'/Cataclysm2/Tidal/TidalRex_Character_BP'",
+  "T2 Tidal:Rhino":"'Blueprint'/Cataclysm2/Tidal/TidalRhino_Character_BP'",
+  "T2 Tidal:Sabertooth":"'Blueprint'/Cataclysm2/Tidal/TidalSaber_Character_BP'",
+  "T2 Tidal:Scorpion":"'Blueprint'/Cataclysm2/Tidal/TidalScorpion_Character_BP'",
+  "T2 Tidal:Shoulder Dragon":"'Blueprint'/Cataclysm2/Tidal/TidalShoulderDragon_Character_BP_Winter'",
+  "T2 Tidal:Spiney Lizard":"'Blueprint'/Cataclysm2/Tidal/TidalSpineyLizard_Character_BP'",
+  "T2 Tidal:Spinosaurus":"'Blueprint'/Cataclysm2/Tidal/TidalSpino_Character_BP'",
+  "T2 Tidal:Stegosaurus":"'Blueprint'/Cataclysm2/Tidal/TidalStego_Character_BP'",
+  "T2 Tidal:Tapejara":"'Blueprint'/Cataclysm2/Tidal/TidalTapejara_Character_BP'",
+  "T2 Tidal:Therizinosaur":"'Blueprint'/Cataclysm2/Tidal/TidalTherizino_Character_BP'",
+  "T2 Tidal:Thylacoleo":"'Blueprint'/Cataclysm2/Tidal/TidalThylacoleo_Character_BP'",
+  "T2 Tidal:Trike":"'Blueprint'/Cataclysm2/Tidal/TidalTrike_Character_BP'",
+  "T2 Tidal:Turtle":"'Blueprint'/Cataclysm2/Tidal/TidalTurtle_Character_BP'",
+  // T3 Rapid
+  "T3 Rapid:Ankylosaurus":"'Blueprint'/Cataclysm2/Rapid/RapidAnkylo_Character_BP'",
+  "T3 Rapid:Argentavis":"'Blueprint'/Cataclysm2/Rapid/RapidArgent_Character_BP'",
+  "T3 Rapid:Bulbdog":"'Blueprint'/Cataclysm2/Rapid/RapidBulbdog_Character_BP'",
+  "T3 Rapid:Crystal Wyvern":"'Blueprint'/Cataclysm2/Rapid/RapidCrystalWyvern_Character_BP'",
+  "T3 Rapid:Direwolf":"'Blueprint'/Cataclysm2/Rapid/RapidDirewolf_Character_BP'",
+  "T3 Rapid:Dolphin":"'Blueprint'/Cataclysm2/Rapid/RapidDolphin_Character_BP'",
+  "T3 Rapid:Dragonfly":"'Blueprint'/Cataclysm2/Rapid/RapidDragonfly_Character_BP'",
+  "T3 Rapid:Dunkleosteus":"'Blueprint'/Cataclysm2/Rapid/RapidDunkle_Character_BP'",
+  "T3 Rapid:Equus":"'Blueprint'/Cataclysm2/Rapid/RapidEquus_Character_BP'",
+  "T3 Rapid:Giganotosaurus":"'Blueprint'/Cataclysm2/Rapid/RapidGigant_Character_BP'",
+  "T3 Rapid:Griffin":"'Blueprint'/Cataclysm2/Rapid/RapidGriffin_Character_BP'",
+  "T3 Rapid:Megalodon":"'Blueprint'/Cataclysm2/Rapid/RapidMegalodon_Character_BP'",
+  "T3 Rapid:Moschops":"'Blueprint'/Cataclysm2/Rapid/RapidMoschops_Character_BP'",
+  "T3 Rapid:Owl":"'Blueprint'/Cataclysm2/Rapid/RapidOwl_Character_BP'",
+  "T3 Rapid:Parasaur":"'Blueprint'/Cataclysm2/Rapid/RapidPara_Character_BP'",
+  "T3 Rapid:Pelagornis":"'Blueprint'/Cataclysm2/Rapid/RapidPela_Character_BP'",
+  "T3 Rapid:Procoptodon":"'Blueprint'/Cataclysm2/Rapid/RapidProcoptodon_Character_BP'",
+  "T3 Rapid:Pteranodon":"'Blueprint'/Cataclysm2/Rapid/RapidPtero_Character_BP'",
+  "T3 Rapid:Rock Drake":"'Blueprint'/Cataclysm2/Rapid/RapidRockDrake_Character_BP'",
+  "T3 Rapid:Sabertooth":"'Blueprint'/Cataclysm2/Rapid/RapidSaber_Character_BP'",
+  "T3 Rapid:Sauropod":"'Blueprint'/Cataclysm2/Rapid/RapidSauropod_Character_BP'",
+  "T3 Rapid:Tapejara":"'Blueprint'/Cataclysm2/Rapid/RapidTapejara_Character_BP'",
+  "T3 Rapid:Turtle":"'Blueprint'/Cataclysm2/Rapid/RapidTurtle_Character_BP'",
+  "T3 Rapid:Xenomorph":"'Blueprint'/Cataclysm2/Rapid/RapidXenomorph_Character_BP_Male_Surface'",
+  // T4 Cyclonic — Boss Gate
+  "T4 Cyclonic — Boss Gate:Basilisk":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicBasilisk_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Basilosaurus":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicBasilosaurus_Character_BP'",
+  "T4 Cyclonic — Boss Gate:DodoRexy":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicDodoRexy_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Dragon":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicDragon_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Giganotosaurus":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicGigant_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Griffin":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicGriffin_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Ice Jumper":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicIceJumper_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Phoenix":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicPhoenix_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Quetzal":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicQuetz_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Raptor":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicRaptor_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Rex":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicRex_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Rhynio":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicRhynio_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Rock Drake":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicRockDrake_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Rock Golem":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicRockGolem_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Spider":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicSpiderL_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Spindles":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicSpindles_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Toad":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicToad_Character_BP'",
+  "T4 Cyclonic — Boss Gate:Wyvern (Lightning)":"'Blueprint'/Cataclysm2/Cyclonic/CyclonicWyvern_Character_BP_Lightning'",
+  "T4 Cyclonic — Boss Gate:Cyclonic Gorilla":"'Blueprint'/Cataclysm2/Cyclonic/BossCyclonicGorilla_Character_BP'",
+  // T5 Glacial
+  "T5 Glacial:Andrewsarchus":"'Blueprint'/Cataclysm2/Glacial/GlacialAndrewsarchus_Character_BP'",
+  "T5 Glacial:Argentavis":"'Blueprint'/Cataclysm2/Glacial/GlacialArgent_Character_BP'",
+  "T5 Glacial:Basilosaurus":"'Blueprint'/Cataclysm2/Glacial/GlacialBasilosaurus_Character_BP'",
+  "T5 Glacial:Ceratosaurus":"'Blueprint'/Cataclysm2/Glacial/GlacialCeratosaurus_Character_BP'",
+  "T5 Glacial:Crystal Wyvern":"'Blueprint'/Cataclysm2/Glacial/GlacialCrystalWyvern_Character_BP'",
+  "T5 Glacial:Desmodus":"'Blueprint'/Cataclysm2/Glacial/GlacialDesmodus_Character_BP'",
+  "T5 Glacial:Direbear":"'Blueprint'/Cataclysm2/Glacial/GlacialDirebear_Character_BP'",
+  "T5 Glacial:DodoRexy":"'Blueprint'/Cataclysm2/Glacial/GlacialDodoRexy_Character_BP'",
+  "T5 Glacial:Fae Drake":"'Blueprint'/Cataclysm2/Glacial/GlacialFaeDrake_Character_BP_Winter'",
+  "T5 Glacial:Giganotosaurus":"'Blueprint'/Cataclysm2/Glacial/GlacialGigant_Character_BP'",
+  "T5 Glacial:Gigantoraptor":"'Blueprint'/Cataclysm2/Glacial/GlacialGigantoraptor_Character_BP'",
+  "T5 Glacial:Griffin":"'Blueprint'/Cataclysm2/Glacial/GlacialGriffin_Character_BP'",
+  "T5 Glacial:Hatchling":"'Blueprint'/Cataclysm2/Glacial/GlacialHatchling_Character_BP'",
+  "T5 Glacial:Milk Glider":"'Blueprint'/Cataclysm2/Glacial/GlacialMilkGlider_Character_BP'",
+  "T5 Glacial:Nunatak":"'Blueprint'/Cataclysm2/Glacial/GlacialNunatak_Character_BP'",
+  "T5 Glacial:Owl":"'Blueprint'/Cataclysm2/Glacial/GlacialOwl_Character_BP'",
+  "T5 Glacial:Phoenix":"'Blueprint'/Cataclysm2/Glacial/GlacialPhoenix_Character_BP'",
+  "T5 Glacial:Pteranodon":"'Blueprint'/Cataclysm2/Glacial/GlacialPtero_Character_BP'",
+  "T5 Glacial:Rex":"'Blueprint'/Cataclysm2/Glacial/GlacialRex_Character_BP'",
+  "T5 Glacial:Rock Drake":"'Blueprint'/Cataclysm2/Glacial/GlacialRockDrake_Character_BP'",
+  "T5 Glacial:Spiney Lizard":"'Blueprint'/Cataclysm2/Glacial/GlacialSpineyLizard_Character_BP'",
+  "T5 Glacial:Spirit Bear":"'Blueprint'/Cataclysm2/Glacial/GlacialSpiritBear_Character_BP'",
+  "T5 Glacial:Tropeognathus":"'Blueprint'/Cataclysm2/Glacial/GlacialTropeognathus_Character_BP'",
+  "T5 Glacial:Val Megaraptor":"'Blueprint'/Cataclysm2/Glacial/GlacialValMegaraptor_Character_BP'",
+  "T5 Glacial:Young Ice Fox":"'Blueprint'/Cataclysm2/Glacial/GlacialYoungIceFox_DinoCompanion_Character_BP'",
+  // T6 Undead
+  "T6 Undead:Ceratosaurus":"'Blueprint'/Cataclysm2/Undead/UndeadCeratosaurus_Character_BP'",
+  "T6 Undead:Crystal Wyvern":"'Blueprint'/Cataclysm2/Undead/UndeadCrystalWyvern_Character_BP'",
+  "T6 Undead:Dragonfly":"'Blueprint'/Cataclysm2/Undead/UndeadDragonfly_Character_BP'",
+  "T6 Undead:Giganotosaurus":"'Blueprint'/Cataclysm2/Undead/UndeadGigant_Character_BP'",
+  "T6 Undead:Griffin":"'Blueprint'/Cataclysm2/Undead/UndeadGriffin_Character_BP'",
+  "T6 Undead:Hatchling":"'Blueprint'/Cataclysm2/Undead/UndeadHatchling_Character_BP'",
+  "T6 Undead:Manticore":"'Blueprint'/Cataclysm2/Undead/UndeadManticore_Character_BP'",
+  "T6 Undead:Mantis":"'Blueprint'/Cataclysm2/Undead/UndeadMantis_Character_BP'",
+  "T6 Undead:Megatherium":"'Blueprint'/Cataclysm2/Undead/UndeadMegatherium_Character_BP'",
+  "T6 Undead:Moschops":"'Blueprint'/Cataclysm2/Undead/UndeadMoschops_Character_BP'",
+  "T6 Undead:Rex":"'Blueprint'/Cataclysm2/Undead/UndeadRex_Character_BP'",
+  "T6 Undead:Rock Drake":"'Blueprint'/Cataclysm2/Undead/UndeadRockDrake_Character_BP'",
+  "T6 Undead:Spiney Lizard":"'Blueprint'/Cataclysm2/Undead/UndeadSpineyLizard_Character_BP'",
+  "T6 Undead:Spinosaurus":"'Blueprint'/Cataclysm2/Undead/UndeadSpino_Character_BP'",
+  "T6 Undead:Therizinosaur":"'Blueprint'/Cataclysm2/Undead/UndeadTherizino_Character_BP'",
+  "T6 Undead:Xenomorph":"'Blueprint'/Cataclysm2/Undead/UndeadXenomorph_Character_BP_Male_Surface'",
+  // T7 Soaring
+  "T7 Soaring:Ankylosaurus":"'Blueprint'/Cataclysm2/Soaring/SoaringAnkylo_Character_BP'",
+  "T7 Soaring:Archelon":"'Blueprint'/Cataclysm2/Soaring/SoaringArchelon_Character_BP_ASA'",
+  "T7 Soaring:Basilosaurus":"'Blueprint'/Cataclysm2/Soaring/SoaringBasilosaurus_Character_BP'",
+  "T7 Soaring:Bison":"'Blueprint'/Cataclysm2/Soaring/SoaringBison_Character_BP'",
+  "T7 Soaring:Deinosuchus":"'Blueprint'/Cataclysm2/Soaring/SoaringDeinosuchusASA_Character_BP'",
+  "T7 Soaring:Direwolf":"'Blueprint'/Cataclysm2/Soaring/SoaringDirewolf_Character_BP'",
+  "T7 Soaring:Mosasaurus":"'Blueprint'/Cataclysm2/Soaring/SoaringMosa_Character_BP'",
+  "T7 Soaring:Shastasaurus":"'Blueprint'/Cataclysm2/Soaring/SoaringShastasaurus_Character_BP'",
+  // T8 Maelstrom — Boss Gate
+  "T8 Maelstrom — Boss Gate:Argentavis":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromArgent_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Boss Ankylo":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromBossAnkylo_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Boss DodoRex":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromBossDodoRex_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Boss Golem":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromBossGolem_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Carcharodontosaurus":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromCarcha_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Direbear":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromDirebear_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Direwolf":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromDirewolf_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Dragon":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromDragon_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Forest Kaiju":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromForestKaiju_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Giganotosaurus":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromGigant_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Griffin":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromGriffin_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Kaiju":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromKaiju_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Mammoth":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromMammoth_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Mantis":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromMantis_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Megalosaurus":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromMegalosaurus_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Megatherium":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromMegatherium_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Moschops":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromMoschops_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Raptor":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromRaptor_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Rex":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromRex_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Spiney Lizard":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromSpineyLizard_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Spinosaurus":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromSpino_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Stegosaurus":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromStego_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Tame Golem":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromTameGolem_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Therizinosaur":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromTherizino_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Thylacoleo":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromThylacoleo_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Trike":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromTrike_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Yutyrannus":"'Blueprint'/Cataclysm2/Maelstrom/MaelstromYutyrannus_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Gacha":"'Blueprint'/Cataclysm2/Maelstrom/BossGacha_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Gorilla":"'Blueprint'/Cataclysm2/Maelstrom/BossGorilla_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Manticore":"'Blueprint'/Cataclysm2/Maelstrom/BossManticore_Character_BP'",
+  "T8 Maelstrom — Boss Gate:Titanosaur":"'Blueprint'/Cataclysm2/Maelstrom/BossTitanosaur_Character_BP'",
+  // T9 Sumerian
+  "T9 Sumerian:Allosaurus":"'Blueprint'/Cataclysm2/Sumerian/SumerianAllo_Character_BP'",
+  "T9 Sumerian:Argentavis":"'Blueprint'/Cataclysm2/Sumerian/SumerianArgent_Character_BP'",
+  "T9 Sumerian:Bison":"'Blueprint'/Cataclysm2/Sumerian/SumerianBison_Character_BP'",
+  "T9 Sumerian:Boss Ankylo":"'Blueprint'/Cataclysm2/Sumerian/SumerianBossAnkylo_Character_BP'",
+  "T9 Sumerian:Carcharodontosaurus":"'Blueprint'/Cataclysm2/Sumerian/SumerianCarcha_Character_BP'",
+  "T9 Sumerian:Ceratosaurus":"'Blueprint'/Cataclysm2/Sumerian/SumerianCeratosaurus_Character_BP'",
+  "T9 Sumerian:Cherufe":"'Blueprint'/Cataclysm2/Sumerian/SumerianCherufe_Character_BP'",
+  "T9 Sumerian:Crystal Wyvern":"'Blueprint'/Cataclysm2/Sumerian/SumerianCrystalWyvern_Character_BP'",
+  "T9 Sumerian:Dark Pegasus":"'Blueprint'/Cataclysm2/Sumerian/SumerianDarkPegasus_Character_BP'",
+  "T9 Sumerian:Direbear":"'Blueprint'/Cataclysm2/Sumerian/SumerianDirebear_Character_BP'",
+  "T9 Sumerian:Direwolf":"'Blueprint'/Cataclysm2/Sumerian/SumerianDirewolf_Character_BP'",
+  "T9 Sumerian:DodoWyvern":"'Blueprint'/Cataclysm2/Sumerian/SumerianDodoWyvern_Character_BP'",
+  "T9 Sumerian:Dragon":"'Blueprint'/Cataclysm2/Sumerian/SumerianDragon_Character_BP'",
+  "T9 Sumerian:Dragonfly":"'Blueprint'/Cataclysm2/Sumerian/SumerianDragonfly_Character_BP'",
+  "T9 Sumerian:Dreadnoughtus":"'Blueprint'/Cataclysm2/Sumerian/SumerianDreadnoughtus_Character_BP'",
+  "T9 Sumerian:Fire Lion":"'Blueprint'/Cataclysm2/Sumerian/SumerianFireLion_Character_BP'",
+  "T9 Sumerian:Giant Turtle":"'Blueprint'/Cataclysm2/Sumerian/SumerianGiantTurtle_Character_BP'",
+  "T9 Sumerian:Giganotosaurus":"'Blueprint'/Cataclysm2/Sumerian/SumerianGigant_Character_BP'",
+  "T9 Sumerian:Gigantoraptor":"'Blueprint'/Cataclysm2/Sumerian/SumerianGigantoraptor_Character_BP'",
+  "T9 Sumerian:Gorilla":"'Blueprint'/Cataclysm2/Sumerian/SumerianGorilla_Character_BP'",
+  "T9 Sumerian:Griffin":"'Blueprint'/Cataclysm2/Sumerian/SumerianGriffin_Character_BP'",
+  "T9 Sumerian:Hyaenodon":"'Blueprint'/Cataclysm2/Sumerian/SumerianHyaenodon_Character_BP'",
+  "T9 Sumerian:Jerboa":"'Blueprint'/Cataclysm2/Sumerian/SumerianJerboa_Character_BP'",
+  "T9 Sumerian:Liopleurodon":"'Blueprint'/Cataclysm2/Sumerian/SumerianLiopleurodon_Character_BP'",
+  "T9 Sumerian:Mammoth":"'Blueprint'/Cataclysm2/Sumerian/SumerianMammoth_Character_BP'",
+  "T9 Sumerian:Manticore":"'Blueprint'/Cataclysm2/Sumerian/SumerianManticore_Character_BP'",
+  "T9 Sumerian:Megalodon":"'Blueprint'/Cataclysm2/Sumerian/SumerianMegalodon_Character_BP'",
+  "T9 Sumerian:Megatherium":"'Blueprint'/Cataclysm2/Sumerian/SumerianMegatherium_Character_BP'",
+  "T9 Sumerian:Mole Rat":"'Blueprint'/Cataclysm2/Sumerian/SumerianMoleRat_Character_BP'",
+  "T9 Sumerian:Mosasaurus":"'Blueprint'/Cataclysm2/Sumerian/SumerianMosa_Character_BP'",
+  "T9 Sumerian:Nunatak":"'Blueprint'/Cataclysm2/Sumerian/SumerianNunatak_Character_BP'",
+  "T9 Sumerian:Owl":"'Blueprint'/Cataclysm2/Sumerian/SumerianOwl_Character_BP'",
+  "T9 Sumerian:Parasaur":"'Blueprint'/Cataclysm2/Sumerian/SumerianPara_Character_BP'",
+  "T9 Sumerian:Pelagornis":"'Blueprint'/Cataclysm2/Sumerian/SumerianPela_Character_BP'",
+  "T9 Sumerian:Pteranodon":"'Blueprint'/Cataclysm2/Sumerian/SumerianPtero_Character_BP'",
+  "T9 Sumerian:Quetzal":"'Blueprint'/Cataclysm2/Sumerian/SumerianQuetz_Character_BP'",
+  "T9 Sumerian:Raptor":"'Blueprint'/Cataclysm2/Sumerian/SumerianRaptor_Character_BP'",
+  "T9 Sumerian:Rex":"'Blueprint'/Cataclysm2/Sumerian/SumerianRex_Character_BP'",
+  "T9 Sumerian:Rock Drake":"'Blueprint'/Cataclysm2/Sumerian/SumerianRockDrake_Character_BP'",
+  "T9 Sumerian:Sabertooth":"'Blueprint'/Cataclysm2/Sumerian/SumerianSaber_Character_BP'",
+  "T9 Sumerian:Spindles":"'Blueprint'/Cataclysm2/Sumerian/SumerianSpindles_Character_BP'",
+  "T9 Sumerian:Spiney Lizard":"'Blueprint'/Cataclysm2/Sumerian/SumerianSpineyLizard_Character_BP'",
+  "T9 Sumerian:Stegosaurus":"'Blueprint'/Cataclysm2/Sumerian/SumerianStego_Character_BP'",
+  "T9 Sumerian:Tapejara":"'Blueprint'/Cataclysm2/Sumerian/SumerianTapejara_Character_BP'",
+  "T9 Sumerian:Tek Wyvern":"'Blueprint'/Cataclysm2/Sumerian/SumerianTekWyvern_Character_BP'",
+  "T9 Sumerian:Therizinosaur":"'Blueprint'/Cataclysm2/Sumerian/SumerianTherizino_Character_BP'",
+  "T9 Sumerian:Thylacoleo":"'Blueprint'/Cataclysm2/Sumerian/SumerianThylacoleo_Character_BP'",
+  "T9 Sumerian:Titanosaur":"'Blueprint'/Cataclysm2/Sumerian/SumerianTitanosaur_Character_BP'",
+  "T9 Sumerian:Trike":"'Blueprint'/Cataclysm2/Sumerian/SumerianTrike_Character_BP'",
+  "T9 Sumerian:Turtle":"'Blueprint'/Cataclysm2/Sumerian/SumerianTurtle_Character_BP'",
+  "T9 Sumerian:Xenomorph":"'Blueprint'/Cataclysm2/Sumerian/SumerianXenomorph_Character_BP_Male_Surface'",
+  "T9 Sumerian:Yutyrannus":"'Blueprint'/Cataclysm2/Sumerian/SumerianYutyrannus_Character_BP'",
+  // T10 Tsunami
+  "T10 Tsunami:Allosaurus":"'Blueprint'/Cataclysm2/Tsunami/TsunamiAllo_Character_BP'",
+  "T10 Tsunami:Andrewsarchus":"'Blueprint'/Cataclysm2/Tsunami/TsunamiAndrewsarchus_Character_BP'",
+  "T10 Tsunami:Angel Fox":"'Blueprint'/Cataclysm2/Tsunami/TsunamiAngelFox_Character_BP'",
+  "T10 Tsunami:Ankylosaurus":"'Blueprint'/Cataclysm2/Tsunami/TsunamiAnkylo_Character_BP'",
+  "T10 Tsunami:Argentavis":"'Blueprint'/Cataclysm2/Tsunami/TsunamiArgent_Character_BP'",
+  "T10 Tsunami:Boss Bat":"'Blueprint'/Cataclysm2/Tsunami/TsunamiBossBat_Character_BP'",
+  "T10 Tsunami:Carcharodontosaurus":"'Blueprint'/Cataclysm2/Tsunami/TsunamiCarcha_Character_BP'",
+  "T10 Tsunami:Cherufe":"'Blueprint'/Cataclysm2/Tsunami/TsunamiCherufe_Character_BP'",
+  "T10 Tsunami:Cryolophosaurus":"'Blueprint'/Cataclysm2/Tsunami/TsunamiCryolophosaurus_Character_BP'",
+  "T10 Tsunami:Crystal Wyvern":"'Blueprint'/Cataclysm2/Tsunami/TsunamiCrystalWyvern_Character_BP'",
+  "T10 Tsunami:Defender":"'Blueprint'/Cataclysm2/Tsunami/TsunamiDefender_Character_BP'",
+  "T10 Tsunami:Desmodus":"'Blueprint'/Cataclysm2/Tsunami/TsunamiDesmodus_Character_BP'",
+  "T10 Tsunami:Devil Fox":"'Blueprint'/Cataclysm2/Tsunami/TsunamiDevilFox_Character_BP'",
+  "T10 Tsunami:Direbear":"'Blueprint'/Cataclysm2/Tsunami/TsunamiDirebear_Character_BP'",
+  "T10 Tsunami:Direwolf":"'Blueprint'/Cataclysm2/Tsunami/TsunamiDirewolf_Character_BP'",
+  "T10 Tsunami:Dragon":"'Blueprint'/Cataclysm2/Tsunami/TsunamiDragon_Character_BP'",
+  "T10 Tsunami:Enforcer":"'Blueprint'/Cataclysm2/Tsunami/TsunamiEnforcer_Character_BP'",
+  "T10 Tsunami:Fire Lion":"'Blueprint'/Cataclysm2/Tsunami/TsunamiFireLion_Character_BP'",
+  "T10 Tsunami:Giganotosaurus":"'Blueprint'/Cataclysm2/Tsunami/TsunamiGigant_Character_BP'",
+  "T10 Tsunami:Gigantoraptor":"'Blueprint'/Cataclysm2/Tsunami/TsunamiGigantoraptor_Character_BP'",
+  "T10 Tsunami:Gorilla":"'Blueprint'/Cataclysm2/Tsunami/TsunamiGorilla_Character_BP'",
+  "T10 Tsunami:Griffin":"'Blueprint'/Cataclysm2/Tsunami/TsunamiGriffin_Character_BP'",
+  "T10 Tsunami:Helicoprion":"'Blueprint'/Cataclysm2/Tsunami/TsunamiHelicoprion_Character_BP'",
+  "T10 Tsunami:Ice Golem":"'Blueprint'/Cataclysm2/Tsunami/TsunamiIceGolem_Character_BP'",
+  "T10 Tsunami:Indominus Rex":"'Blueprint'/Cataclysm2/Tsunami/TsunamiIndominusRex_Character_BP'",
+  "T10 Tsunami:Mammoth":"'Blueprint'/Cataclysm2/Tsunami/TsunamiMammoth_Character_BP'",
+  "T10 Tsunami:Mantis":"'Blueprint'/Cataclysm2/Tsunami/TsunamiMantis_Character_BP'",
+  "T10 Tsunami:Megalodon":"'Blueprint'/Cataclysm2/Tsunami/TsunamiMegalodon_Character_BP'",
+  "T10 Tsunami:Megatherium":"'Blueprint'/Cataclysm2/Tsunami/TsunamiMegatherium_Character_BP'",
+  "T10 Tsunami:Mek":"'Blueprint'/Cataclysm2/Tsunami/TsunamiMek_Character_BP'",
+  "T10 Tsunami:Milk Glider":"'Blueprint'/Cataclysm2/Tsunami/TsunamiMilkGlider_Character_BP'",
+  "T10 Tsunami:Mosasaurus":"'Blueprint'/Cataclysm2/Tsunami/TsunamiMosa_Character_BP'",
+  "T10 Tsunami:Neophyte":"'Blueprint'/Cataclysm2/Tsunami/TsunamiNeophyte_Character_BP'",
+  "T10 Tsunami:Owl":"'Blueprint'/Cataclysm2/Tsunami/TsunamiOwl_Character_BP'",
+  "T10 Tsunami:Pelagornis":"'Blueprint'/Cataclysm2/Tsunami/TsunamiPela_Character_BP'",
+  "T10 Tsunami:Phoenix":"'Blueprint'/Cataclysm2/Tsunami/TsunamiPhoenix_Character_BP'",
+  "T10 Tsunami:Plesiosaur":"'Blueprint'/Cataclysm2/Tsunami/TsunamiPlesio_Character_BP'",
+  "T10 Tsunami:Pteranodon":"'Blueprint'/Cataclysm2/Tsunami/TsunamiPtero_Character_BP'",
+  "T10 Tsunami:Rex":"'Blueprint'/Cataclysm2/Tsunami/TsunamiRex_Character_BP'",
+  "T10 Tsunami:Rock Drake":"'Blueprint'/Cataclysm2/Tsunami/TsunamiRockDrake_Character_BP'",
+  "T10 Tsunami:Sabertooth":"'Blueprint'/Cataclysm2/Tsunami/TsunamiSaber_Character_BP'",
+  "T10 Tsunami:Shastasaurus":"'Blueprint'/Cataclysm2/Tsunami/TsunamiShastasaurus_Character_BP'",
+  "T10 Tsunami:Shoulder Dragon":"'Blueprint'/Cataclysm2/Tsunami/TsunamiShoulderDragon_Character_BP_Autumn'",
+  "T10 Tsunami:Snow Dragon":"'Blueprint'/Cataclysm2/Tsunami/TsunamiSnowDragon_Character_BP'",
+  "T10 Tsunami:Snow Monster":"'Blueprint'/Cataclysm2/Tsunami/TsunamiSnowMonster_Character_BP'",
+  "T10 Tsunami:Space Whale":"'Blueprint'/Cataclysm2/Tsunami/TsunamiSpaceWhale_Character_BP'",
+  "T10 Tsunami:Spirit Bear":"'Blueprint'/Cataclysm2/Tsunami/TsunamiSpiritBear_Character_BP'",
+  "T10 Tsunami:Therizinosaur":"'Blueprint'/Cataclysm2/Tsunami/TsunamiTherizino_Character_BP'",
+  "T10 Tsunami:Thylacoleo":"'Blueprint'/Cataclysm2/Tsunami/TsunamiThylacoleo_Character_BP'",
+  "T10 Tsunami:Val Megaraptor":"'Blueprint'/Cataclysm2/Tsunami/TsunamiValMegaraptor_Character_BP'",
+  "T10 Tsunami:Wyvern (Ice)":"'Blueprint'/Cataclysm2/Tsunami/TsunamiWyvern_Character_BP_Ice'",
+  "T10 Tsunami:Yutyrannus":"'Blueprint'/Cataclysm2/Tsunami/TsunamiYutyrannus_Character_BP'"
+};
+
+function showModal(tierName, creatureName){
+  const key=tierName+':'+creatureName;
+  const blueprint=SPAWN_DATA[key];
+  if(!blueprint)return;
+  document.getElementById('modal-title').textContent=creatureName;
+  document.getElementById('modal-tier').textContent=tierName;
+  document.getElementById('spawn-cmd').textContent=blueprint;
+  document.getElementById('copy-btn').classList.remove('copied');
+  document.getElementById('copy-btn').textContent='Copy';
+  document.getElementById('modal-overlay').classList.add('show');
+}
+
+function hideModal(){
+  document.getElementById('modal-overlay').classList.remove('show');
+}
+
+function copyCommand(){
+  const cmd=document.getElementById('spawn-cmd').textContent;
+  navigator.clipboard.writeText(cmd).then(()=>{
+    const btn=document.getElementById('copy-btn');
+    btn.classList.add('copied');
+    btn.textContent='Copied!';
+  });
+}
+
+document.getElementById('modal-overlay').addEventListener('click',(e)=>{
+  if(e.target.id==='modal-overlay')hideModal();
+});
+document.getElementById('close-btn').addEventListener('click',hideModal);
+document.getElementById('copy-btn').addEventListener('click',copyCommand);
+
+function renderTierDiagram(){
+  const wrap=document.createElement('div');
+  wrap.style.cssText='background:#14141e;border:1px solid #2a2a3e;padding:20px;margin:8px 0 24px;overflow-x:auto;border-radius:4px;';
+  wrap.innerHTML=`<svg width="100%" viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" style="min-width:520px;display:block;">
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#3a3a50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <linearGradient id="bossGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#e8580a;stop-opacity:0.3"/>
+    <stop offset="100%" style="stop-color:#1a1a28;stop-opacity:1"/>
+  </linearGradient>
+</defs>
+<!-- Row 1: T1 through T5 -->
+<a href="#getting-started"><g style="cursor:pointer">
+  <rect x="10" y="30" width="85" height="32" rx="3" fill="#1a1a28" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="52" y="42" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#9ca3af">T1</text>
+  <text x="52" y="54" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#7878a0">Runt</text>
+</g></a>
+<line x1="95" y1="46" x2="115" y2="46" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+<a href="#tier-2-tidal"><g style="cursor:pointer">
+  <rect x="115" y="30" width="85" height="32" rx="3" fill="#1a1a28" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="157" y="42" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#22d3ee">T2</text>
+  <text x="157" y="54" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#67e8f9">Tidal</text>
+</g></a>
+<line x1="200" y1="46" x2="220" y2="46" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+<a href="#tier-3-rapid"><g style="cursor:pointer">
+  <rect x="220" y="30" width="85" height="32" rx="3" fill="#1a1a28" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="262" y="42" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#4ade80">T3</text>
+  <text x="262" y="54" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#86efac">Rapid</text>
+</g></a>
+<line x1="305" y1="46" x2="325" y2="46" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+<!-- Avatar branch from T3 -->
+<line x1="262" y1="62" x2="262" y2="82" stroke="#3a3a50" stroke-width="1" stroke-dasharray="3,2"/>
+<a href="#tier-3-5-avatar"><g style="cursor:pointer">
+  <rect x="220" y="82" width="85" height="28" rx="3" fill="#1a1a28" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="262" y="100" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#c084fc">Avatar</text>
+</g></a>
+<a href="#tier-4-cyclonic-boss"><g style="cursor:pointer">
+  <rect x="325" y="30" width="85" height="32" rx="3" fill="url(#bossGrad)" stroke="#e8580a" stroke-width="2"/>
+  <text x="367" y="42" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#e8580a">T4 BOSS</text>
+  <text x="367" y="54" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#f0a020">Cyclonic</text>
+</g></a>
+<line x1="410" y1="46" x2="430" y2="46" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+<a href="#tier-5-glacial"><g style="cursor:pointer">
+  <rect x="430" y="30" width="85" height="32" rx="3" fill="#1a1a28" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="472" y="42" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#7dd3fc">T5</text>
+  <text x="472" y="54" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#bae6fd">Glacial</text>
+</g></a>
+<!-- Arrow down to row 2 -->
+<path d="M515 46 L540 46 L540 140 L30 140 L30 152" stroke="#3a3a50" stroke-width="1" fill="none" marker-end="url(#arr)"/>
+<!-- Row 2: T6 through T10 -->
+<a href="#tier-6-undead"><g style="cursor:pointer">
+  <rect x="10" y="152" width="85" height="32" rx="3" fill="#1a1a28" stroke="#84cc16" stroke-width="1.5"/>
+  <text x="52" y="164" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#a3e635">T6</text>
+  <text x="52" y="176" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#bef264">Undead</text>
+</g></a>
+<line x1="95" y1="168" x2="115" y2="168" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+<a href="#tier-7-soaring"><g style="cursor:pointer">
+  <rect x="115" y="152" width="85" height="32" rx="3" fill="#1a1a28" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="157" y="164" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#fbbf24">T7</text>
+  <text x="157" y="176" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#fcd34d">Soaring</text>
+</g></a>
+<line x1="200" y1="168" x2="220" y2="168" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+<a href="#tier-8-maelstrom-boss"><g style="cursor:pointer">
+  <rect x="220" y="152" width="85" height="32" rx="3" fill="url(#bossGrad)" stroke="#e8580a" stroke-width="2"/>
+  <text x="262" y="164" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#e8580a">T8 BOSS</text>
+  <text x="262" y="176" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#f0a020">Maelstrom</text>
+</g></a>
+<line x1="305" y1="168" x2="325" y2="168" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+<a href="#tier-9-sumerian"><g style="cursor:pointer">
+  <rect x="325" y="152" width="85" height="32" rx="3" fill="#1a1a28" stroke="#ec4899" stroke-width="1.5"/>
+  <text x="367" y="164" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#f472b6">T9</text>
+  <text x="367" y="176" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#f9a8d4">Sumerian</text>
+</g></a>
+<line x1="410" y1="168" x2="430" y2="168" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+<a href="#tier-10-tsunami"><g style="cursor:pointer">
+  <rect x="430" y="152" width="85" height="32" rx="3" fill="#1a1a28" stroke="#dc2626" stroke-width="2"/>
+  <text x="472" y="164" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#ef4444">T10</text>
+  <text x="472" y="176" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#fca5a5">Tsunami</text>
+</g></a>
+<!-- Future expansion indicator -->
+<line x1="515" y1="168" x2="535" y2="168" stroke="#3a3a50" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="545" y="172" font-family="Orbitron,monospace" font-size="8" fill="#3a3a50">T11+</text>
+</svg>`;
+  return wrap;
+}
+
+function renderCreatureList(section){
+  const div=document.createElement('div');div.className='section';div.id='creature-list';
+  const titleDiv=document.createElement('div');titleDiv.className='section-title';titleDiv.textContent='Creature List';div.appendChild(titleDiv);
+  const note=document.createElement('p');note.style.cssText='font-size:12px;color:var(--muted);margin-bottom:16px;font-style:italic;';note.textContent='Click any creature to view its spawn command.';div.appendChild(note);
+  const inner=document.createElement('div');
+
+  let currentTier=null;
+  let currentCreatures=[];
+  const tiers=[];
+
+  section.lines.forEach(line=>{
+    if(line.startsWith('### ')){
+      if(currentTier){tiers.push({title:currentTier,creatures:currentCreatures});}
+      currentTier=line.slice(4).trim();
+      currentCreatures=[];
+    }else if(line.trim() && !line.startsWith('#') && currentTier){
+      if(line.startsWith('**Boss')||line.startsWith('**Tames')){
+        const match=line.match(/^\*\*([^*]+)\*\*\s*(.*)$/);
+        if(match){
+          currentCreatures.push({type:'label',text:match[1]});
+          if(match[2]){
+            const names=match[2].split(',').map(n=>n.trim()).filter(n=>n);
+            names.forEach(n=>currentCreatures.push({type:'creature',name:n}));
+          }
+        }
+      }else{
+        const names=line.split(',').map(n=>n.trim()).filter(n=>n);
+        names.forEach(n=>currentCreatures.push({type:'creature',name:n}));
+      }
+    }
+  });
+  if(currentTier){tiers.push({title:currentTier,creatures:currentCreatures});}
+
+  tiers.forEach(tier=>{
+    const tierDiv=document.createElement('div');tierDiv.className='creature-tier';
+    const tierTitle=document.createElement('div');tierTitle.className='creature-tier-title';tierTitle.textContent=tier.title;
+    tierDiv.appendChild(tierTitle);
+
+    const isBossTier=tier.title.toLowerCase().includes('boss');
+    let grid=document.createElement('div');grid.className='creature-grid';
+    let currentBlock=null;
+
+    tier.creatures.forEach(c=>{
+      if(c.type==='label'){
+        if(grid.children.length){
+          if(currentBlock){currentBlock.appendChild(grid);}else{tierDiv.appendChild(grid);}
+          grid=document.createElement('div');grid.className='creature-grid';
+        }
+        if(isBossTier && (c.text.includes('Boss')||c.text.includes('Tames'))){
+          currentBlock=document.createElement('div');currentBlock.className='boss-block';
+          const blockLabel=document.createElement('div');blockLabel.className='boss-block-label';blockLabel.textContent=c.text;
+          currentBlock.appendChild(blockLabel);
+          tierDiv.appendChild(currentBlock);
+        }else{
+          currentBlock=null;
+          const label=document.createElement('div');label.className='creature-sub-title';label.textContent=c.text;
+          tierDiv.appendChild(label);
+        }
+      }else{
+        const el=document.createElement('div');
+        el.className='creature';
+        if(tier.title.toLowerCase().includes('loot'))el.className+=' loot';
+        if(currentBlock && c.text && c.text.includes('Boss'))el.className+=' boss';
+        el.textContent=c.name;
+
+        const key=tier.title+':'+c.name;
+        if(SPAWN_DATA[key]){
+          el.addEventListener('click',()=>showModal(tier.title,c.name));
+          el.title='Click for spawn command';
+        }else{
+          el.classList.add('no-spawn');
+          el.title='Spawn command not available';
+        }
+        grid.appendChild(el);
+      }
+    });
+    if(grid.children.length){
+      if(currentBlock){currentBlock.appendChild(grid);}else{tierDiv.appendChild(grid);}
+    }
+    inner.appendChild(tierDiv);
+  });
+
+  div.appendChild(inner);
+  return div;
+}
+
+function buildNav(){
+  const nav=document.getElementById('nav');
+  for(const[group,ids]of Object.entries(NAV_SECTIONS)){
+    const div=document.createElement('div');div.className='nav-section';div.textContent=group;nav.appendChild(div);
+    ids.forEach(id=>{const a=document.createElement('a');a.href='#'+id;a.textContent=SECTION_LABELS[id]||id;nav.appendChild(a);});
+  }
+}
+
+function parseMarkdown(md){
+  const sections=[];const lines=md.split('\n');let current=null;
+  for(const line of lines){
+    if(line.startsWith('## ')){if(current)sections.push(current);current={id:line.slice(3).trim(),lines:[]};}
+    else if(current){current.lines.push(line);}
+  }
+  if(current)sections.push(current);
+  return sections;
+}
+
+function renderSection(section){
+  const div=document.createElement('div');div.className='section';div.id=section.id;
+  const titleDiv=document.createElement('div');titleDiv.className='section-title';titleDiv.textContent=SECTION_LABELS[section.id]||section.id;div.appendChild(titleDiv);
+  const inner=document.createElement('div');
+  const blocks=[];let buffer=[];
+  const flush=()=>{if(buffer.length){blocks.push({type:'md',content:buffer.join('\n')});buffer=[];}};
+  for(const line of section.lines){
+    if(line.includes('WARNING:')){flush();blocks.push({type:'warn',content:line.replace(/^> ⚠️ WARNING:?\s*/,'').replace(/^> WARNING:?\s*/,'')});}
+    else if(line.startsWith('> STRUCTURE DAMAGE:')){flush();blocks.push({type:'struct',content:line.replace(/^> STRUCTURE DAMAGE:\s*/,'')});}
+    else if(line.startsWith('> ')){flush();blocks.push({type:'tip',content:line.slice(2)});}
+    else{buffer.push(line);}
+  }
+  flush();
+  blocks.forEach(block=>{
+    if(block.type==='warn'){const el=document.createElement('div');el.className='warn';el.textContent=block.content;inner.appendChild(el);}
+    else if(block.type==='tip'){const el=document.createElement('div');el.className='tip';el.textContent=block.content;inner.appendChild(el);}
+    else if(block.type==='struct'){const el=document.createElement('div');el.className='struct-badge';el.textContent='Structure Damage — '+block.content;inner.appendChild(el);}
+    else{const el=document.createElement('div');el.innerHTML=marked.parse(block.content);
+      el.querySelectorAll('h3').forEach(h=>h.style.cssText='font-size:16px;font-weight:700;color:#f0a020;margin:24px 0 10px;text-transform:uppercase;letter-spacing:1px;');
+      el.querySelectorAll('h4').forEach(h=>h.style.cssText='font-size:14px;font-weight:700;color:#d8d8e8;margin:16px 0 6px;');
+      el.querySelectorAll('p').forEach(p=>p.style.cssText='margin-bottom:12px;color:#d8d8e8;');
+      el.querySelectorAll('ul,ol').forEach(l=>l.style.cssText='padding-left:20px;margin-bottom:12px;');
+      el.querySelectorAll('li').forEach(l=>l.style.cssText='margin-bottom:4px;color:#d8d8e8;');
+      el.querySelectorAll('strong').forEach(s=>s.style.color='#f0a020');
+      el.querySelectorAll('table').forEach(t=>{t.style.cssText='width:100%;border-collapse:collapse;margin:16px 0;';});
+      el.querySelectorAll('th').forEach(t=>{t.style.cssText='border:1px solid #2a2a3e;padding:8px 12px;text-align:left;background:#1a1a28;color:#f0a020;font-weight:700;';});
+      el.querySelectorAll('td').forEach(t=>{t.style.cssText='border:1px solid #2a2a3e;padding:8px 12px;text-align:left;color:#d8d8e8;';});
+      inner.appendChild(el);}
+  });
+  div.appendChild(inner);return div;
+}
+
+async function loadGuide(){
+  try{
+    const resp=await fetch(CONTENT_URL+'?t='+Date.now());
+    const md=await resp.text();
+    const sections=parseMarkdown(md);
+    const contentEl=document.getElementById('content');
+    const hero=document.createElement('div');hero.id='hero';
+    hero.innerHTML='<h1>CATACLYSM 2.0</h1>';
+    const baseline=sections.find(s=>s.id==='baseline');
+    if(baseline){const box=document.createElement('div');box.className='baseline-box';box.innerHTML=marked.parse(baseline.lines.join('\n'));hero.appendChild(box);}
+    contentEl.appendChild(hero);
+    sections.filter(s=>s.id!=='baseline').forEach(section=>{
+      if(section.id==='creature-list'){
+        contentEl.appendChild(renderCreatureList(section));
+      }else if(section.id==='tier-list'){
+        const sec=renderSection(section);
+        sec.appendChild(renderTierDiagram());
+        contentEl.appendChild(sec);
+      }else{
+        contentEl.appendChild(renderSection(section));
+      }
+    });
+    const footer=document.createElement('div');footer.className='guide-footer';
+    footer.innerHTML='Guide maintained by Rokitur — RokiArkNet<br>Questions or corrections? Contact @Rokitur on Discord';
+    contentEl.appendChild(footer);
+    document.getElementById('loading').style.display='none';
+    contentEl.style.display='block';
+    buildNav();
+    const navLinks=document.querySelectorAll('#nav a');
+    window.addEventListener('scroll',()=>{
+      let current='';
+      document.querySelectorAll('.section[id]').forEach(s=>{if(window.scrollY>=s.offsetTop-100)current=s.id;});
+      navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+current);});
+    });
+  }catch(e){document.getElementById('loading').textContent='Failed to load guide. '+e.message;}
+}
+loadGuide();
+</script>
+</body>
+</html>

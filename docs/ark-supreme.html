@@ -80,27 +80,194 @@ function buildNav(){
   }
 }
 
-function renderTierList(tierLine){
+function renderTierDiagram(){
   const wrap=document.createElement('div');
-  const tiers=tierLine.split('|').map(t=>t.trim());
-  tiers.forEach((tier,i)=>{
-    const block=document.createElement('div');
-    block.className='tier-block';
-    const num=document.createElement('span');
-    num.className='tier-num';
-    num.textContent=(i+1)+'.';
-    const name=document.createElement('span');
-    name.className='tier-name';
-    if(tier.includes('/')){
-      const parts=tier.split('/');
-      name.innerHTML=parts.map(p=>'<span>'+p.trim()+'</span>').join('<span class="tier-split"> / </span>');
-    }else{
-      name.textContent=tier;
-    }
-    block.appendChild(num);
-    block.appendChild(name);
-    wrap.appendChild(block);
-  });
+  wrap.style.cssText='background:#14141e;border:1px solid #2a2a3e;padding:20px;margin:8px 0 24px;overflow-x:auto;border-radius:4px;';
+  wrap.innerHTML=`<svg width="100%" viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" style="min-width:680px;display:block;">
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#3a3a50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+  <linearGradient id="bossGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#e8580a;stop-opacity:0.3"/>
+    <stop offset="100%" style="stop-color:#1a1a28;stop-opacity:1"/>
+  </linearGradient>
+</defs>
+
+<!-- ROW 1: Elite → Savage → Toxic → Berserk → Necrotic -->
+<g style="cursor:pointer">
+  <rect x="10" y="20" width="70" height="36" rx="3" fill="#1a1a28" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="45" y="34" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" font-weight="700" fill="#9ca3af">T0</text>
+  <text x="45" y="46" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#9ca3af">Elite</text>
+  <text x="45" y="66" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="#6b7280">(entry tier)</text>
+</g>
+<line x1="80" y1="38" x2="100" y2="38" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+
+<g style="cursor:pointer">
+  <rect x="100" y="20" width="70" height="36" rx="3" fill="#1a1a28" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="135" y="34" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" font-weight="700" fill="#ef4444">T1</text>
+  <text x="135" y="46" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#fca5a5">Savage</text>
+</g>
+<line x1="170" y1="38" x2="190" y2="38" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+
+<g style="cursor:pointer">
+  <rect x="190" y="20" width="70" height="36" rx="3" fill="#1a1a28" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="225" y="34" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" font-weight="700" fill="#4ade80">T2</text>
+  <text x="225" y="46" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#86efac">Toxic</text>
+</g>
+<line x1="260" y1="38" x2="280" y2="38" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+
+<g style="cursor:pointer">
+  <rect x="280" y="20" width="70" height="36" rx="3" fill="#1a1a28" stroke="#f97316" stroke-width="1.5"/>
+  <text x="315" y="34" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" font-weight="700" fill="#fb923c">T3</text>
+  <text x="315" y="46" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#fdba74">Berserk</text>
+</g>
+<line x1="350" y1="38" x2="370" y2="38" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+
+<g style="cursor:pointer">
+  <rect x="370" y="20" width="70" height="36" rx="3" fill="#1a1a28" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="405" y="34" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" font-weight="700" fill="#c084fc">T4</text>
+  <text x="405" y="46" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#d8b4fe">Necrotic</text>
+</g>
+<!-- Necrotic Boss branch -->
+<line x1="440" y1="38" x2="460" y2="38" stroke="#3a3a50" stroke-width="1" stroke-dasharray="3,2"/>
+<g style="cursor:pointer">
+  <rect x="460" y="20" width="70" height="36" rx="3" fill="url(#bossGrad)" stroke="#e8580a" stroke-width="2"/>
+  <text x="495" y="34" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" font-weight="700" fill="#e8580a">BOSS</text>
+  <text x="495" y="46" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="#f0a020">Necrotic</text>
+</g>
+
+<!-- Arrow down to row 2 -->
+<path d="M405 56 L405 75 L30 75 L30 100" stroke="#3a3a50" stroke-width="1" fill="none" marker-end="url(#arr)"/>
+
+<!-- ROW 2: Grenadier[B] → Prime → Nuclear/Vamp → Wardens[B] -->
+<g style="cursor:pointer">
+  <rect x="10" y="100" width="80" height="36" rx="3" fill="url(#bossGrad)" stroke="#e8580a" stroke-width="2"/>
+  <text x="50" y="114" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" font-weight="700" fill="#e8580a">T5 BOSS</text>
+  <text x="50" y="126" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#f0a020">Grenadier</text>
+</g>
+<line x1="90" y1="118" x2="115" y2="118" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+
+<g style="cursor:pointer">
+  <rect x="115" y="100" width="70" height="36" rx="3" fill="#1a1a28" stroke="#eab308" stroke-width="1.5"/>
+  <text x="150" y="114" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" font-weight="700" fill="#facc15">T6</text>
+  <text x="150" y="126" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#fde047">Prime</text>
+</g>
+<!-- Prime evolutions -->
+<line x1="150" y1="136" x2="150" y2="156" stroke="#3a3a50" stroke-width="1" stroke-dasharray="3,2"/>
+<g style="cursor:pointer">
+  <rect x="100" y="156" width="50" height="28" rx="3" fill="#1a1a28" stroke="#a3a310" stroke-width="1"/>
+  <text x="125" y="174" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="#d4d408">Primordial</text>
+</g>
+<g style="cursor:pointer">
+  <rect x="155" y="156" width="60" height="28" rx="3" fill="url(#bossGrad)" stroke="#e8580a" stroke-width="1.5"/>
+  <text x="185" y="168" text-anchor="middle" font-family="Orbitron,monospace" font-size="6" font-weight="700" fill="#e8580a">BOSS</text>
+  <text x="185" y="178" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="#f0a020">Guardians x3</text>
+</g>
+
+<line x1="185" y1="118" x2="225" y2="118" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+
+<g style="cursor:pointer">
+  <rect x="225" y="100" width="90" height="36" rx="3" fill="#1a1a28" stroke="#facc15" stroke-width="1.5"/>
+  <text x="270" y="114" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" font-weight="700" fill="#fde047">T7</text>
+  <text x="270" y="126" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="#fef08a">Nuclear / Vampiric</text>
+</g>
+<line x1="315" y1="118" x2="340" y2="118" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+
+<g style="cursor:pointer">
+  <rect x="340" y="100" width="80" height="36" rx="3" fill="url(#bossGrad)" stroke="#e8580a" stroke-width="2"/>
+  <text x="380" y="114" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" font-weight="700" fill="#e8580a">T8 BOSS</text>
+  <text x="380" y="126" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#f0a020">Wardens</text>
+</g>
+<!-- Wardens evolutions -->
+<line x1="380" y1="136" x2="380" y2="156" stroke="#3a3a50" stroke-width="1" stroke-dasharray="3,2"/>
+<g style="cursor:pointer">
+  <rect x="330" y="156" width="50" height="28" rx="3" fill="#1a1a28" stroke="#06b6d4" stroke-width="1"/>
+  <text x="355" y="174" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="#22d3ee">Spectral</text>
+</g>
+<g style="cursor:pointer">
+  <rect x="385" y="156" width="60" height="28" rx="3" fill="url(#bossGrad)" stroke="#e8580a" stroke-width="1.5"/>
+  <text x="415" y="168" text-anchor="middle" font-family="Orbitron,monospace" font-size="6" font-weight="700" fill="#e8580a">BOSS</text>
+  <text x="415" y="178" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="#f0a020">Warden Chief</text>
+</g>
+
+<!-- Arrow down to row 3 -->
+<path d="M420 118 L450 118 L450 210 L30 210 L30 235" stroke="#3a3a50" stroke-width="1" fill="none" marker-end="url(#arr)"/>
+
+<!-- ROW 3: Hellfire → DarkGod → Corrupted DG[B] → Spectral Wardens[B] → Juggernaut -->
+<g style="cursor:pointer">
+  <rect x="10" y="235" width="70" height="36" rx="3" fill="#1a1a28" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="45" y="249" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" font-weight="700" fill="#f87171">T9</text>
+  <text x="45" y="261" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#fca5a5">Hellfire</text>
+</g>
+<!-- Hellfire Boss -->
+<line x1="45" y1="271" x2="45" y2="291" stroke="#3a3a50" stroke-width="1" stroke-dasharray="3,2"/>
+<g style="cursor:pointer">
+  <rect x="10" y="291" width="70" height="28" rx="3" fill="url(#bossGrad)" stroke="#e8580a" stroke-width="1.5"/>
+  <text x="45" y="303" text-anchor="middle" font-family="Orbitron,monospace" font-size="6" font-weight="700" fill="#e8580a">BOSS</text>
+  <text x="45" y="313" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="#f0a020">Hellfire</text>
+</g>
+
+<line x1="80" y1="253" x2="100" y2="253" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+
+<g style="cursor:pointer">
+  <rect x="100" y="235" width="70" height="36" rx="3" fill="#1a1a28" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="135" y="249" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" font-weight="700" fill="#a78bfa">T10</text>
+  <text x="135" y="261" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#c4b5fd">DarkGod</text>
+</g>
+<!-- DarkGod branches -->
+<line x1="135" y1="271" x2="135" y2="291" stroke="#3a3a50" stroke-width="1" stroke-dasharray="3,2"/>
+<g style="cursor:pointer">
+  <rect x="90" y="291" width="50" height="28" rx="3" fill="#1a1a28" stroke="#581c87" stroke-width="1"/>
+  <text x="115" y="309" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="#9333ea">Corrupted</text>
+</g>
+<g style="cursor:pointer">
+  <rect x="145" y="291" width="60" height="28" rx="3" fill="url(#bossGrad)" stroke="#e8580a" stroke-width="1.5"/>
+  <text x="175" y="303" text-anchor="middle" font-family="Orbitron,monospace" font-size="6" font-weight="700" fill="#e8580a">BOSS</text>
+  <text x="175" y="313" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="#f0a020">DarkGod King</text>
+</g>
+
+<line x1="170" y1="253" x2="210" y2="253" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+
+<g style="cursor:pointer">
+  <rect x="210" y="235" width="90" height="36" rx="3" fill="url(#bossGrad)" stroke="#e8580a" stroke-width="2"/>
+  <text x="255" y="249" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" font-weight="700" fill="#e8580a">T11 BOSS</text>
+  <text x="255" y="261" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="#f0a020">Corrupted DGs</text>
+</g>
+<!-- Corrupted DG boss -->
+<line x1="255" y1="271" x2="255" y2="291" stroke="#3a3a50" stroke-width="1" stroke-dasharray="3,2"/>
+<g style="cursor:pointer">
+  <rect x="220" y="291" width="70" height="28" rx="3" fill="url(#bossGrad)" stroke="#e8580a" stroke-width="1.5"/>
+  <text x="255" y="303" text-anchor="middle" font-family="Orbitron,monospace" font-size="6" font-weight="700" fill="#e8580a">BOSS</text>
+  <text x="255" y="313" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="7" fill="#f0a020">Corrupted King</text>
+</g>
+
+<line x1="300" y1="253" x2="320" y2="253" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+
+<g style="cursor:pointer">
+  <rect x="320" y="235" width="90" height="36" rx="3" fill="url(#bossGrad)" stroke="#06b6d4" stroke-width="2"/>
+  <text x="365" y="249" text-anchor="middle" font-family="Orbitron,monospace" font-size="7" font-weight="700" fill="#22d3ee">T12 BOSS</text>
+  <text x="365" y="261" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="#67e8f9">Spectral Wardens</text>
+</g>
+
+<line x1="410" y1="253" x2="430" y2="253" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+
+<g style="cursor:pointer">
+  <rect x="430" y="230" width="100" height="46" rx="3" fill="#1a1a28" stroke="#fbbf24" stroke-width="2.5"/>
+  <text x="480" y="248" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" font-weight="700" fill="#fcd34d">FINAL</text>
+  <text x="480" y="264" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="11" font-weight="700" fill="#fef08a">JUGGERNAUT</text>
+</g>
+
+<!-- Legend -->
+<rect x="550" y="235" width="160" height="80" rx="4" fill="#14141e" stroke="#2a2a3e" stroke-width="1"/>
+<text x="560" y="252" font-family="Orbitron,monospace" font-size="8" fill="#7878a0">LEGEND</text>
+<rect x="560" y="262" width="12" height="12" fill="url(#bossGrad)" stroke="#e8580a" stroke-width="1"/>
+<text x="578" y="272" font-family="Rajdhani,sans-serif" font-size="9" fill="#d8d8e8">Boss Tier (tameable)</text>
+<line x1="560" y1="286" x2="572" y2="286" stroke="#3a3a50" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="578" y="290" font-family="Rajdhani,sans-serif" font-size="9" fill="#d8d8e8">Evolution / Branch</text>
+<rect x="560" y="298" width="12" height="12" fill="#1a1a28" stroke="#fbbf24" stroke-width="2"/>
+<text x="578" y="308" font-family="Rajdhani,sans-serif" font-size="9" fill="#d8d8e8">Final Boss</text>
+</svg>`;
   return wrap;
 }
 
@@ -159,8 +326,7 @@ async function loadGuide(){
         const td=document.createElement('div');td.className='section';td.id='tier-list';
         const tt=document.createElement('div');tt.className='section-title';tt.textContent='Tier List';
         td.appendChild(tt);
-        const tierLine=section.lines.find(l=>l.includes('|'));
-        if(tierLine)td.appendChild(renderTierList(tierLine));
+        td.appendChild(renderTierDiagram());
         contentEl.appendChild(td);return;
       }
       contentEl.appendChild(renderSection(section));

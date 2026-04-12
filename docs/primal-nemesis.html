@@ -144,7 +144,7 @@ const TIER_MAP = {
   "Celestial": "Celestial",
   "Demonic": "Demonic",
   "Godly": "Godly"
-, "Special Spawns": "", "Lootbosses": "", "Titans": "", "Tier Bosses": "", "Special": ""};
+, "Special Spawns": "", "Lootbosses": "", "Titans": "", "Tier Bosses": "", "Alpha Tameable": "", "Apex Tameable": "", "Bionic Tameable": "", "Celestial Tameable": "", "Demonic Tameable": "", "Godly Tameable": "", "Final Boss": ""};
 
 const NAME_MAP = {"Allosaurus":"Allo","Ankylosaurus":"Ankylo","Argentavis":"Argent","Archaeopteryx":"Archa","Arthropluera":"Arthro","Carbonemys":"Turtle","Carcharodontosaurus":"Carcha","Carnotaurus":"Carno","Castoroides":"Beaver","Chalicotherium":"Chalico","Dilophosaur":"Dilo","Dimetrodon":"Dimetro","Dimorphodon":"Dimorph","Doedicurus":"Doed","Gallimimus":"Galli","Giganotosaurus":"Gigant","Gigantopithecus":"Bigfoot","Hesperornis":"Hesperornis","Kentrosaurus":"Kentro","Lystrosaurus":"Lystro","Megalacerous":"Stag","Meganeura":"Dragonfly","Mesopithecus":"Monkey","Morellatops":"Morellatops","Pachyrhinosaurus":"Pachyrhino","Paraceratherium":"Paracer","Parasaur":"Para","Pelagornis":"Pela","Pteranodon":"Ptero","Pulmonoscorpius":"Scorpion","Quetzal":"Quetz","Spinosaurus":"Spino","Stegosaurus":"Stego","Tapejara":"Tapejara","Terror Bird":"TerrorBird","Therizinosaur":"Therizino","Titanoboa":"BoaFrill","Titanomyrma Drone":"Ant","Triceratops":"Trike","Woolly Rhino":"Rhino","Snow Owl":"Owl","Dung Beetle":"DungBeetle","Rock Elemental":"RockGolem","RockDrake":"RockDrake","Beelzebufo":"Toad","Araneo":"Spider","Bronto":"Sauropod","Brontosaurus":"Sauropod","Giga":"Gigant","Rex":"Rex","Trike":"Trike","OviRaptor":"Oviraptor","Thorny Dragon":"Thorny","Yi Ling":"YiLing","Fire Wyvern":"Wyvern Fire","Lightning Wyvern":"Wyvern Lightning","Poison Wyvern":"Wyvern Poison","Frost Wyvern":"Wyvern","Wyvern":"Wyvern","Sabertooth":"Saber","Dire bear":"Direbear","Griffin":"Griffin","Yutyrannus":"Yutyrannus","Spino":"Spino","Sarco":"Sarco","Vulture":"Vulture","Turkey":"Turkey","Parrot":"Parrot","Pheonix":"Phoenix","Phoenix":"Phoenix","Troodon":"Troodon","Velonosaur":"Velonasaur","Karkinos":"Crab","Defense unit":"DefenseUnit","Enforcer":"Enforcer","Scout":"Scout","Seeker":"PteroTeuthis","Gacha":"Gacha","Gasbags":"Gasbags","Managarmer":"Managarmr","Nameless":"Nameless","Ravager":"Ravager","Roll Rat":"RollRat","Featherlight":"Featherlight","Glowtail":"Glowtail","Shinehorn":"Shinehorn","Glowbug":"Glowbug","Rhyniognatha":"Rhynio","Ceratosaurus":"Ceratosaurus","Cerato":"Cerato","Gigantoraptor":"Gigantoraptor","Megalodon":"Megalodon","Mosasaurus":"Mosa","Mosa":"Mosa","Plesiosaur":"Plesio","Plesio":"Plesio","Squid":"Squid","Tusoteuthis":"Squid","Thyla":"Thyla","Thylacoleo":"Thylacoleo","Ptero":"Ptero","Ptera":"Ptero","Argent":"Argent","Catfish":"Catfish","Cnidaria":"Cnidaria","Hammerhead":"Hammerhead","Swordfish":"Swordfish","Piranha":"Piranha","Manta":"Manta","Electrophorus":"Eel","Liopleurodon":"Liopleurodon","Bigfoot":"Bigfoot","Dodorex":"Dodorex","DodoRex":"DodoRex","Mantis":"Mantis","Megaraptor":"Megaraptor","Toad":"Toad","Dragon":"Dragon","Berserk Dragon":"BeserkDragon","Berserking Dragon":"BeserkDragon","Broodmother":"Broodmother","Spider":"Spider","Swordmaster":"Swordmaster","Terminator Giga":"TerminatorGiga","Queen Bee":"QueenBee","Pegasus":"Pegasus","Sheep":"Ovis","Armored Tiger":"Tiger","Ammonite":"Ammonite","Basilosaurus":"Basilosaurus","Cephalopod":"Cephalopod","Cod":"Cod","Coelacanth":"Coel","Croc":"Croc","Deinosuchus":"Deinosuchus","Diplocaulus":"Diplocaulus","Dunkleo":"Dunkle","Eurypterid":"Euryp","Ichthyosaurus":"Ichthyo","Lamprey":"Lamprey","Leech":"Leech","Sabertooth Salmon":"Salmon","Shastasaurus":"Shastasaurus","Spine Croc":"SpineCroc","Trilobite":"Trilobite","Tuna":"Tuna","Xiphactinus":"Xiphactinus","Arthropleura":"Arthro","Deathworm (Boss)":"Deathworm","Deathworm":"Deathworm","Gorilla (Boss)":"Gorilla","Gorilla":"Gorilla","Broodmother (Boss)":"Broodmother","Dolphin":"Dolphin","Kaprosuchus":"Kaprosuchus","Otter":"Otter","Kairuku":"Kairuku","Lymantria":"Moth","Berserk Dragon (Boss)":"Berserking Dragon","Nemesis":"Godly Titan"};
 
@@ -379,17 +379,46 @@ function renderCreatureReference(){
 <div class="creature-grid">
 <div class="creature">Alpha Lootboss</div><div class="creature">Apex Lootboss</div><div class="creature">Elemental Lootboss</div><div class="creature">Adv Elemental Lootboss</div><div class="creature">Celestial Lootboss</div><div class="creature">Godly Lootboss</div>
 </div>
+<div class="creature-sub-title">Tier Bosses</div>
+<div class="creature-grid">
+<div class="creature">Plasma Boss</div><div class="creature">Ghost Boss</div><div class="creature">Plague Boss</div>
+</div>
+<div class="creature-sub-title">Alpha Tameable</div>
+<div class="creature-grid">
+<div class="creature">Alpha Jerboa Tameable</div><div class="creature">Alpha Skeletal Jerboa Tameable</div>
+</div>
+<div class="creature-sub-title">Apex Tameable</div>
+<div class="creature-grid">
+<div class="creature">Apex Cyclops Tameable</div>
+</div>
+<div class="creature-sub-title">Bionic Tameable</div>
+<div class="creature-grid">
+<div class="creature">Bionic Swordmaster</div><div class="creature">Bionic Sword Master Tameable</div><div class="creature">Bionic Terminator Giga Tameable</div>
+</div>
+<div class="creature-sub-title">Celestial Tameable</div>
+<div class="creature-grid">
+<div class="creature">Celestial Hydra Lord</div><div class="creature">Celestial Hydra Lord Tameable</div>
+</div>
+<div class="creature-sub-title">Demonic Tameable</div>
+<div class="creature-grid">
+<div class="creature">Demon Lord Lucifer</div><div class="creature">Demon Lord Lucifer Tameable</div>
+</div>
+<div class="creature-sub-title">Godly Tameable</div>
+<div class="creature-grid">
+<div class="creature">Godly Broodmother Tameable</div><div class="creature">Godly Crab Tameable</div><div class="creature">Godly Ovis Tameable</div><div class="creature">Godly Rockdrake Tameable</div><div class="creature">Godly Tiger Tameable</div><div class="creature">Godly Trike Tameable</div>
+</div>
 <div class="creature-sub-title">Titans</div>
 <div class="creature-grid">
-<div class="creature">Earth Titan Youngling</div><div class="creature">Frost Titan Youngling</div><div class="creature">Hydro Titan Youngling</div><div class="creature">Nature Titan Youngling</div><div class="creature">Storm Titan Youngling</div><div class="creature">Volcanic Titan Youngling</div>
+<div class="creature">Earth Titan Youngling</div><div class="creature">Earth Titan Youngling EVO</div><div class="creature">Earth Titan Adult EVO</div><div class="creature">Earth Titan Whelpling Tamed</div>
+<div class="creature">Frost Titan Youngling</div><div class="creature">Frost Titan Youngling EVO</div><div class="creature">Frost Titan Adult EVO</div><div class="creature">Frost Titan Whelpling Tamed</div>
+<div class="creature">Hydro Titan Youngling</div><div class="creature">Hydro Titan Youngling EVO</div><div class="creature">Hydro Titan Adult Adult EVO</div><div class="creature">Hydro Titan Whelpling Tamed</div>
+<div class="creature">Nature Titan Youngling</div><div class="creature">Nature Titan Youngling EVO</div><div class="creature">Nature Titan Adult EVO</div><div class="creature">Nature Titan Whelpling Tamed</div>
+<div class="creature">Storm Titan Youngling</div><div class="creature">Storm Titan Youngling EVO</div><div class="creature">Storm Titan Adult EVO</div><div class="creature">Storm Titan Whelpling Tamed</div>
+<div class="creature">Volcanic Titan Youngling</div><div class="creature">Volcanic Titan Youngling EVO</div><div class="creature">Volcanic Titan Adult EVO</div><div class="creature">Volcanic Titan Whelpling Tamed</div>
 </div>
 <div class="creature-sub-title">Final Boss</div>
 <div class="creature-grid">
 <div class="creature">Nemesis</div>
-</div>
-<div class="creature-sub-title">Tier Bosses</div>
-<div class="creature-grid">
-<div class="creature">Plasma Boss</div><div class="creature">Ghost Boss</div><div class="creature">Plague Boss</div>
 </div>
 </div>
 `;

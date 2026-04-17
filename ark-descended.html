@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ark Descended Guide</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Orbitron:wght@700;900&display=swap');
+:root{--bg:#0d0d12;--surface:#14141e;--card:#1a1a28;--border:#2a2a3e;--orange:#e8580a;--amber:#f0a020;--text:#d8d8e8;--muted:#7878a0;--tip:#0f2a1a;--tip-border:#1a6a30;--warn:#2a1a08;--warn-border:#8a4010;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;font-size:16px;line-height:1.7;display:flex;}
+#sidebar{position:fixed;top:0;left:0;width:240px;height:100vh;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;z-index:100;padding-bottom:40px;}
+#sidebar-header{padding:20px 16px 14px;border-bottom:1px solid var(--border);}
+.logo{font-family:'Orbitron',monospace;font-size:11px;color:var(--orange);letter-spacing:3px;}
+#sidebar-header h2{font-size:14px;font-weight:700;color:var(--text);margin-top:4px;}
+.home-link{display:block;font-size:11px;color:var(--muted);text-decoration:none;margin-bottom:8px;transition:color .15s;}
+.home-link:hover{color:var(--orange);}
+#sidebar nav a{display:block;padding:8px 16px;color:var(--muted);text-decoration:none;font-size:13px;font-weight:600;border-left:2px solid transparent;transition:all .15s;}
+#sidebar nav a:hover,#sidebar nav a.active{color:var(--orange);border-left-color:var(--orange);background:rgba(232,88,10,.06);}
+.nav-section{padding:12px 16px 4px;font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;opacity:.6;}
+#main{margin-left:240px;flex:1;max-width:860px;padding:48px 48px 120px;}
+#loading{text-align:center;padding:80px;font-family:'Orbitron',monospace;color:var(--orange);letter-spacing:3px;}
+#hero{text-align:center;padding:40px 0 48px;border-bottom:1px solid var(--border);margin-bottom:56px;}
+.eyebrow{font-family:'Orbitron',monospace;font-size:10px;letter-spacing:4px;color:var(--orange);text-transform:uppercase;margin-bottom:12px;}
+#hero h1{font-family:'Orbitron',monospace;font-size:36px;font-weight:900;color:#fff;text-shadow:0 0 40px rgba(232,88,10,.3);letter-spacing:2px;}
+.baseline-box{margin-top:20px;background:var(--card);border:1px solid var(--border);border-left:3px solid var(--amber);padding:12px 16px;font-size:13px;color:var(--muted);display:inline-block;text-align:left;}
+.section{margin-bottom:56px;}
+.section-title{font-family:'Orbitron',monospace;font-size:13px;letter-spacing:3px;color:var(--orange);text-transform:uppercase;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.section h3{font-size:16px;font-weight:700;color:var(--amber);margin:24px 0 10px;text-transform:uppercase;letter-spacing:1px;}
+.section h4{font-size:14px;font-weight:700;color:var(--text);margin:16px 0 6px;}
+.section p{margin-bottom:12px;color:var(--text);}
+.section ul,.section ol{padding-left:20px;margin-bottom:12px;}
+.section li{margin-bottom:4px;color:var(--text);}
+.section strong{color:var(--amber);}
+.section a{color:var(--orange);text-decoration:none;}.section a:hover{text-decoration:underline;}.section a:visited{color:var(--orange);}
+.tip{background:var(--tip);border-left:3px solid var(--tip-border);padding:10px 14px;font-size:14px;color:#90d8a0;margin:14px 0;}
+.tip::before{content:'TIP  ';font-weight:700;letter-spacing:2px;}
+.warn{background:var(--warn);border-left:3px solid var(--warn-border);padding:10px 14px;font-size:14px;color:#d8a060;margin:14px 0;}
+.warn::before{content:'WARNING  ';font-weight:700;letter-spacing:2px;color:var(--orange);}
+.struct-badge{display:inline-block;background:rgba(232,88,10,.12);border:1px solid rgba(232,88,10,.25);padding:3px 10px;font-size:12px;color:var(--orange);margin-bottom:14px;letter-spacing:1px;}
+.guide-footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--border);}
+@media(max-width:768px){#sidebar{display:none;}#main{margin-left:0;padding:60px 20px 80px;}.mobile-back{display:block;}}
+.mobile-back{display:none;position:fixed;top:0;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:12px 20px;z-index:100;}
+.mobile-back a{color:var(--orange);text-decoration:none;font-size:14px;font-weight:600;}
+.creature-tier{margin-bottom:32px;}
+.creature-tier-title{font-family:'Orbitron',monospace;font-size:11px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:14px;}
+.creature-sub-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--amber);margin:14px 0 8px;}
+.creature-grid{display:flex;flex-wrap:wrap;gap:5px;}
+.creature{background:var(--card);border:1px solid var(--border);padding:4px 10px;font-size:11px;font-weight:600;color:var(--text);border-radius:3px;}
+.loot-card{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--amber);padding:14px 18px;margin-bottom:12px;}
+.loot-card-title{font-size:14px;font-weight:700;color:var(--amber);margin-bottom:6px;}
+.loot-card-drops{font-size:13px;color:var(--text);margin-bottom:8px;}
+.loot-card-note{font-size:12px;color:var(--muted);font-style:italic;}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:16px 0;}
+.prod-card{background:var(--card);border:1px solid var(--border);padding:12px 16px;}
+.prod-card-name{font-weight:700;color:var(--amber);font-size:14px;margin-bottom:4px;}
+.prod-card-output{font-size:13px;color:var(--text);}
+.prod-card-note{font-size:11px;color:var(--muted);margin-top:6px;}
+.build-inline{margin:16px 0;}
+.build-inline div{background:var(--card);border:1px solid var(--border);padding:10px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;}
+.build-inline .name{color:var(--amber);font-weight:600;}
+.build-inline .stats{color:var(--muted);font-size:13px;}
+</style>
+</head>
+<body>
+<div class="mobile-back"><a href="index.html">← All Guides</a></div>
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <a href="index.html" class="home-link">← All Guides</a>
+    <h2>Ark Descended Guide</h2>
+  </div>
+  <nav id="nav"></nav>
+</aside>
+<main id="main">
+  <div id="loading">LOADING GUIDE...</div>
+  <div id="content" style="display:none"></div>
+</main>
+<script>
+const CONTENT_URL='https://raw.githubusercontent.com/rokiarknet/rokiarknet.github.io/main/content/ark-descended.md';
+const NAV_SECTIONS={
+  'Overview':['tier-list','getting-started'],
+  'Progression':['t2-excellent','t3-divine-devilish','t4-celestial-abyssal','t5-warchiefs','t6-bionic','t7-wardens','t8-god-trials','t9-dark-seals','t10-dream'],
+  'Evolution Paths':['reaper-evolution','ice-titan-evolution','managarmr-evolution','legendary-evolution','infected-evolution','ancient-evolution'],
+  'Reference':['supply-drops','loot-bosses','passive-production','faq','creature-reference']
+};
+const SECTION_LABELS={
+  'tier-list':'Tier List',
+  'getting-started':'T1: Getting Started',
+  't2-excellent':'T2: Excellent',
+  't3-divine-devilish':'T3: Divine & Devilish',
+  't4-celestial-abyssal':'T4: Celestial & Abyssal',
+  't5-warchiefs':'T5: Warchiefs',
+  't6-bionic':'T6: Bionic',
+  't7-wardens':'T7: Wardens',
+  't8-god-trials':'T8: God Trials',
+  't9-dark-seals':'T9: Dark Seals',
+  't10-dream':'T10: Dream',
+  'reaper-evolution':'Reaper',
+  'ice-titan-evolution':'Ice Titan',
+  'managarmr-evolution':'Managarmr',
+  'legendary-evolution':'Legendary',
+  'infected-evolution':'Infected',
+  'ancient-evolution':'Ancient',
+  'supply-drops':'Supply Drops',
+  'loot-bosses':'Loot Bosses',
+  'passive-production':'Passive Production',
+  'faq':'FAQ & Tips',
+  'creature-reference':'Creature Reference'
+};
+
+function buildNav(){
+  const nav=document.getElementById('nav');
+  for(const[group,ids]of Object.entries(NAV_SECTIONS)){
+    const div=document.createElement('div');div.className='nav-section';div.textContent=group;nav.appendChild(div);
+    ids.forEach(id=>{const a=document.createElement('a');a.href='#'+id;a.textContent=SECTION_LABELS[id]||id;nav.appendChild(a);});
+  }
+}
+
+function renderTierDiagram(){
+  const wrap=document.createElement('div');
+  wrap.style.cssText='background:#14141e;border:1px solid #2a2a3e;padding:16px 12px;margin:8px 0;overflow-x:auto;';
+
+  const svg=`<svg width="100%" viewBox="0 0 800 140" xmlns="http://www.w3.org/2000/svg" style="min-width:720px;display:block;">
+<defs>
+  <marker id="ta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#3a3a50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<!-- T1 -->
+<a href="#getting-started"><g style="cursor:pointer">
+  <rect x="10" y="55" width="60" height="30" rx="3" fill="#1a1a28" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="40" y="70" text-anchor="middle" dominant-baseline="central" font-family="Orbitron,monospace" font-size="10" font-weight="700" fill="#9ca3af">T1</text>
+</g></a>
+<line x1="70" y1="70" x2="85" y2="70" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+
+<!-- T2 -->
+<a href="#t2-excellent"><g style="cursor:pointer">
+  <rect x="85" y="55" width="70" height="30" rx="3" fill="#1a1a28" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="120" y="70" text-anchor="middle" dominant-baseline="central" font-family="Orbitron,monospace" font-size="10" font-weight="700" fill="#22c55e">T2</text>
+</g></a>
+<line x1="155" y1="70" x2="170" y2="70" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+
+<!-- T3 -->
+<a href="#t3-divine-devilish"><g style="cursor:pointer">
+  <rect x="170" y="55" width="70" height="30" rx="3" fill="#1a1a28" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="205" y="70" text-anchor="middle" dominant-baseline="central" font-family="Orbitron,monospace" font-size="10" font-weight="700" fill="#a78bfa">T3</text>
+</g></a>
+<line x1="240" y1="70" x2="255" y2="70" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+
+<!-- T4 -->
+<a href="#t4-celestial-abyssal"><g style="cursor:pointer">
+  <rect x="255" y="55" width="70" height="30" rx="3" fill="#1a1a28" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="290" y="70" text-anchor="middle" dominant-baseline="central" font-family="Orbitron,monospace" font-size="10" font-weight="700" fill="#67e8f9">T4</text>
+</g></a>
+<line x1="325" y1="70" x2="340" y2="70" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+
+<!-- T5 -->
+<a href="#t5-warchiefs"><g style="cursor:pointer">
+  <rect x="340" y="55" width="70" height="30" rx="3" fill="#1a1a28" stroke="#e8580a" stroke-width="1.5"/>
+  <text x="375" y="70" text-anchor="middle" dominant-baseline="central" font-family="Orbitron,monospace" font-size="10" font-weight="700" fill="#e8580a">T5</text>
+</g></a>
+<line x1="410" y1="70" x2="425" y2="70" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+
+<!-- T6 -->
+<a href="#t6-bionic"><g style="cursor:pointer">
+  <rect x="425" y="55" width="70" height="30" rx="3" fill="#1a1a28" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="460" y="70" text-anchor="middle" dominant-baseline="central" font-family="Orbitron,monospace" font-size="10" font-weight="700" fill="#60a5fa">T6</text>
+</g></a>
+<line x1="495" y1="70" x2="510" y2="70" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+
+<!-- T7 -->
+<a href="#t7-wardens"><g style="cursor:pointer">
+  <rect x="510" y="55" width="70" height="30" rx="3" fill="#1a1a28" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="545" y="70" text-anchor="middle" dominant-baseline="central" font-family="Orbitron,monospace" font-size="10" font-weight="700" fill="#fbbf24">T7</text>
+</g></a>
+<line x1="580" y1="70" x2="595" y2="70" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+
+<!-- T8 -->
+<a href="#t8-god-trials"><g style="cursor:pointer">
+  <rect x="595" y="55" width="70" height="30" rx="3" fill="#1a1a28" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="630" y="70" text-anchor="middle" dominant-baseline="central" font-family="Orbitron,monospace" font-size="10" font-weight="700" fill="#f87171">T8</text>
+</g></a>
+<line x1="665" y1="70" x2="680" y2="70" stroke="#3a3a50" stroke-width="1" marker-end="url(#ta)"/>
+
+<!-- T9 -->
+<a href="#t9-dark-seals"><g style="cursor:pointer">
+  <rect x="680" y="40" width="55" height="26" rx="3" fill="#1a1a28" stroke="#9333ea" stroke-width="1.5"/>
+  <text x="707" y="53" text-anchor="middle" dominant-baseline="central" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#a855f7">T9</text>
+</g></a>
+
+<!-- T10 -->
+<a href="#t10-dream"><g style="cursor:pointer">
+  <rect x="680" y="74" width="55" height="26" rx="3" fill="#1a1a28" stroke="#dc2626" stroke-width="2"/>
+  <text x="707" y="87" text-anchor="middle" dominant-baseline="central" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#fca5a5">T10</text>
+</g></a>
+
+<!-- Branch lines T8 to T9/T10 -->
+<line x1="665" y1="63" x2="680" y2="53" stroke="#3a3a50" stroke-width="1"/>
+<line x1="665" y1="77" x2="680" y2="87" stroke="#3a3a50" stroke-width="1"/>
+
+<!-- Evolution Paths label -->
+<text x="400" y="120" text-anchor="middle" font-family="Orbitron,monospace" font-size="8" fill="#7878a0" letter-spacing="2px">EVOLUTION PATHS: REAPER | ICE TITAN | MANAGARMR | LEGENDARY | INFECTED | ANCIENT</text>
+</svg>`;
+  wrap.innerHTML=svg;
+  return wrap;
+}
+
+function renderCreatureReference(){
+  const wrap=document.createElement('div');
+  wrap.innerHTML=`
+<div class="creature-tier">
+  <div class="creature-tier-title">T1 Descended</div>
+  <div class="creature-grid">
+    <div class="creature">AC Dimetrodon</div><div class="creature">Araneo</div><div class="creature">Basilisk</div><div class="creature">Bison</div><div class="creature">Biotoxin Bug</div><div class="creature">Bob (Dodo)</div><div class="creature">Bob (Phiomia)</div><div class="creature">Bulbdog</div><div class="creature">Cat</div><div class="creature">Cave Wolf</div><div class="creature">Coel</div><div class="creature">Dimorph</div><div class="creature">Diplodocus</div><div class="creature">Dodo</div><div class="creature">DodoWyvern</div><div class="creature">Doedicurus</div><div class="creature">DragonFly</div><div class="creature">Electrophorus</div><div class="creature">Eurypterid</div><div class="creature">Featherlight</div><div class="creature">Gacha</div><div class="creature">Gasbags</div><div class="creature">Glowtail</div><div class="creature">Griffin</div><div class="creature">Hesperornis</div><div class="creature">Hyaenodon</div><div class="creature">Ichthyornis</div><div class="creature">Jerboa</div><div class="creature">Kairuku</div><div class="creature">Leedsichthys</div><div class="creature">Logger Casteroides</div><div class="creature">Lystro</div><div class="creature">Managarmr</div><div class="creature">Manta</div><div class="creature">Megaloceros</div><div class="creature">Meganeura</div><div class="creature">Megaraptor</div><div class="creature">Mesopithecus</div><div class="creature">Microraptor</div><div class="creature">Miner Ankylo</div><div class="creature">Moschops</div><div class="creature">Nameless</div><div class="creature">Oil Jug Bug</div><div class="creature">Otter</div><div class="creature">Oviraptor</div><div class="creature">Ovis</div><div class="creature">Pachy</div><div class="creature">Pearl Diver Angler</div><div class="creature">Pegomastax</div><div class="creature">Pelagornis</div><div class="creature">Phoenix</div><div class="creature">Piranha</div><div class="creature">Procoptodon</div><div class="creature">Producer Achatina</div><div class="creature">Purlovia</div><div class="creature">Ravager</div><div class="creature">Rock Element</div><div class="creature">Roll Rat</div><div class="creature">Salmon</div><div class="creature">Shinehorn</div><div class="creature">Terror Bird</div><div class="creature">Thylacoleo</div><div class="creature">Titanomyrma Drone</div><div class="creature">Titanomyrma Soldier</div><div class="creature">Titanosaur</div><div class="creature">Trilobite</div><div class="creature">Troodon</div><div class="creature">Vulture</div><div class="creature">WaterBug</div><div class="creature">Water Jug Bug</div><div class="creature">Wyvern</div>
+  </div>
+</div>
+
+<div class="creature-tier">
+  <div class="creature-tier-title">T1 Ordinary</div>
+  <div class="creature-sub-title">2x Stats</div>
+  <div class="creature-grid">
+    <div class="creature">Allosaurus</div><div class="creature">Archaeopteryx</div><div class="creature">Archelon</div><div class="creature">Argentavis</div><div class="creature">Arthropluera</div><div class="creature">Baryonyx</div><div class="creature">Basilosaurus</div><div class="creature">Beelzebufo</div><div class="creature">Bigfoot</div><div class="creature">Bronto</div><div class="creature">Carbonemys</div><div class="creature">Cavewolf</div><div class="creature">Ceratosaurus</div><div class="creature">Chalicotherium</div><div class="creature">Compy</div><div class="creature">Daeodon</div><div class="creature">Deinosuchus</div><div class="creature">Dilophosaur</div><div class="creature">Diplocaulus</div><div class="creature">DireBear</div><div class="creature">DireWolf</div><div class="creature">DungBeetle</div><div class="creature">Dunkleosteus</div><div class="creature">Equus</div><div class="creature">Gallimimus</div><div class="creature">Gasbag</div><div class="creature">Gigantopithecus</div><div class="creature">Ichthyosaurus</div><div class="creature">Iguanodon</div><div class="creature">Kaprosuchus</div><div class="creature">Karkinos</div><div class="creature">Lymantria</div><div class="creature">Mammoth</div><div class="creature">Megalania</div><div class="creature">Megalodon</div><div class="creature">Megatherium</div><div class="creature">Morellatops</div><div class="creature">Mosa</div><div class="creature">Pachyrhino</div><div class="creature">Paracer</div><div class="creature">Parasaur</div><div class="creature">Plesiosaur</div><div class="creature">Pteranodon</div><div class="creature">Pulmonoscorpius</div><div class="creature">Quetzal</div><div class="creature">Raptor</div><div class="creature">Ravager</div><div class="creature">Rex</div><div class="creature">Rhyniognatha</div><div class="creature">Sabertooth</div><div class="creature">Sarco</div><div class="creature">Snow Owl</div><div class="creature">Spino</div><div class="creature">Stego</div><div class="creature">Tapejara</div><div class="creature">Therizino</div><div class="creature">Thorny Dragon</div><div class="creature">Trike</div><div class="creature">Tusoteuthis</div><div class="creature">Velonasaur</div><div class="creature">Woolly Rhino</div><div class="creature">Xiphactinus</div><div class="creature">Yutyrannus</div>
+  </div>
+</div>
+
+<div class="creature-tier">
+  <div class="creature-tier-title">T2 Excellent</div>
+  <div class="creature-sub-title">4x Stats</div>
+  <div class="creature-grid">
+    <div class="creature">Allosaurus</div><div class="creature">Archelon</div><div class="creature">Argentavis</div><div class="creature">Baryonyx</div><div class="creature">Basilosaurus</div><div class="creature">Beelzebufo</div><div class="creature">Bronto</div><div class="creature">Carbonemys</div><div class="creature">Carno</div><div class="creature">Cave Wolf</div><div class="creature">Ceratosaurus</div><div class="creature">Chalicotherium</div><div class="creature">Compy</div><div class="creature">Daeodon</div><div class="creature">Deinosuchus</div><div class="creature">Dilophosaur</div><div class="creature">Diplocaulus</div><div class="creature">DireBear</div><div class="creature">DireWolf</div><div class="creature">DungBeetle</div><div class="creature">Dunkleosteus</div><div class="creature">Equus</div><div class="creature">Gallimimus</div><div class="creature">Gasbag</div><div class="creature">Gigantopithecus</div><div class="creature">Ichthyosaurus</div><div class="creature">Iguanodon</div><div class="creature">Kaprosuchus</div><div class="creature">Karkinos</div><div class="creature">Lymantria</div><div class="creature">Mammoth</div><div class="creature">Megalania</div><div class="creature">Megalodon</div><div class="creature">Megalosaurus</div><div class="creature">Megapithecus</div><div class="creature">Megatherium</div><div class="creature">Morellatops</div><div class="creature">Mosa</div><div class="creature">Pachyrhino</div><div class="creature">Paracer</div><div class="creature">Parasaur</div><div class="creature">Plesiosaur</div><div class="creature">Pteranodon</div><div class="creature">Pulmonoscorpius</div><div class="creature">Quetzal</div><div class="creature">Raptor</div><div class="creature">Ravager</div><div class="creature">Rex</div><div class="creature">Rhyniognatha</div><div class="creature">Sabertooth</div><div class="creature">Sarco</div><div class="creature">Snow Owl</div><div class="creature">Spino</div><div class="creature">Stego</div><div class="creature">Tapejara</div><div class="creature">Therizino</div><div class="creature">Thorny Dragon</div><div class="creature">Trike</div><div class="creature">Tusoteuthis</div><div class="creature">Velonasaur</div><div class="creature">Woolly Rhino</div><div class="creature">Xiphactinus</div><div class="creature">Yutyrannus</div>
+  </div>
+</div>
+
+<div class="creature-tier">
+  <div class="creature-tier-title">T2 Unreal</div>
+  <div class="creature-grid">
+    <div class="creature">Arthropluera</div><div class="creature">Baryonyx</div><div class="creature">Carno</div><div class="creature">Deinosuchus</div><div class="creature">Dilophosaur</div><div class="creature">Direwolf</div><div class="creature">Megalodon</div><div class="creature">Pteranodon</div><div class="creature">Raptor</div><div class="creature">Sabertooth</div><div class="creature">Sarco</div><div class="creature">Yutyrannus</div>
+  </div>
+</div>
+
+<div class="creature-tier">
+  <div class="creature-tier-title">T2 Excellent Boss</div>
+  <div class="creature-grid">
+    <div class="creature">Basilisk</div><div class="creature">Broodmother Lysrix</div><div class="creature">Carcharodontosaurus</div><div class="creature">Descended Ice Titan</div><div class="creature">Descended Rock Drake</div><div class="creature">Dodoreaper</div><div class="creature">Dodorexy Flame</div><div class="creature">Dodorexy Lightning</div><div class="creature">Dodorexy Poison</div><div class="creature">Drake Flame</div><div class="creature">Drake Lightning</div><div class="creature">Drake Poison</div><div class="creature">Giganotosaurus</div><div class="creature">Gorilla</div><div class="creature">Indominus Rex</div><div class="creature">Manticore</div><div class="creature">Reaper Queen Wild</div><div class="creature">Rock Element</div><div class="creature">Titanosaur</div><div class="creature">Wyvern Flame</div><div class="creature">Wyvern Lightning</div><div class="creature">Wyvern Poison</div>
+  </div>
+</div>
+
+<div class="creature-tier">
+  <div class="creature-tier-title">T3 Divine / Devilish</div>
+  <div class="creature-sub-title">Divine</div>
+  <div class="creature-grid">
+    <div class="creature">Allosaurus</div><div class="creature">Argentavis</div><div class="creature">Basilosaurus</div><div class="creature">Ceratosaurus</div><div class="creature">Dire Bear</div><div class="creature">Gasbag</div><div class="creature">Griffin</div><div class="creature">Karkinos</div><div class="creature">Snow Owl</div><div class="creature">Spino</div><div class="creature">Thorny Dragon</div>
+  </div>
+  <div class="creature-sub-title">Devilish</div>
+  <div class="creature-grid">
+    <div class="creature">Allosaurus</div><div class="creature">Deinosuchus</div><div class="creature">Mantis</div><div class="creature">Megalosaurus</div><div class="creature">Parasaur</div><div class="creature">Phoenix</div><div class="creature">Rex</div><div class="creature">Therizino</div><div class="creature">Thylacoleo</div><div class="creature">Unicorn</div><div class="creature">Velonasaur</div>
+  </div>
+</div>
+
+<div class="creature-tier">
+  <div class="creature-tier-title">T4 Celestial / Abyssal</div>
+  <div class="creature-sub-title">Celestial</div>
+  <div class="creature-grid">
+    <div class="creature">Giganotosaurus</div><div class="creature">Megapithecus</div><div class="creature">Rhyniognatha</div><div class="creature">Rock Elemental</div><div class="creature">Rock Drake</div><div class="creature">Titanosaur</div><div class="creature">Wyvern</div>
+  </div>
+  <div class="creature-sub-title">Abyssal</div>
+  <div class="creature-grid">
+    <div class="creature">Broodmother Lysrix</div><div class="creature">Carcharodontosaurus</div><div class="creature">DodoReaper</div><div class="creature">Dodorexy</div><div class="creature">Drake</div><div class="creature">Indominus Rex</div><div class="creature">Manticore</div>
+  </div>
+</div>
+
+<div class="creature-tier">
+  <div class="creature-tier-title">T5 Spectral / Havoc</div>
+  <div class="creature-sub-title">Spectral</div>
+  <div class="creature-grid">
+    <div class="creature">Broodmother</div><div class="creature">DodoWyvern</div><div class="creature">Indominus Rex</div><div class="creature">Manticore</div><div class="creature">Rock Drake</div>
+  </div>
+  <div class="creature-sub-title">Havoc</div>
+  <div class="creature-grid">
+    <div class="creature">Carcharodontosaurus</div><div class="creature">Dodoreaper</div><div class="creature">Drake</div><div class="creature">Griffin</div><div class="creature">Indominus Rex</div><div class="creature">Rex</div>
+  </div>
+</div>
+
+<div class="creature-tier">
+  <div class="creature-tier-title">T7 Wardens</div>
+  <div class="creature-sub-title">T7 Warden Dodos</div>
+  <div class="creature-grid">
+    <div class="creature">Ascended Little Dodo</div>
+	<div class="creature">Descended Little Dodo</div>
+  </div>
+</div>
+
+<div class="creature-tier">
+  <div class="creature-tier-title">Special Creature Spawns</div>
+  <div class="creature-sub-title">Unique Tek</div>
+  <div class="creature-grid">
+    <div class="creature">Defense Unit</div><div class="creature">Enforcer</div><div class="creature">Tek Basilisk</div><div class="creature">Tek Giganotosaurus</div><div class="creature">Tek Parasaur</div><div class="creature">Tek Quetzal</div><div class="creature">Tek Trike</div>
+  </div>
+  <div class="creature-sub-title">Ancient</div>
+  <div class="creature-grid">
+    <div class="creature">Bronto</div><div class="creature">Carno</div><div class="creature">Giganotosaurus</div><div class="creature">Quetzal</div><div class="creature">Raptor</div><div class="creature">Rex</div><div class="creature">Stego</div><div class="creature">Trike</div>
+  </div>
+  <div class="creature-sub-title">Degenerates</div>
+  <div class="creature-grid">
+    <div class="creature">Degenerate Ice Titan</div><div class="creature">Degenerate Managarmr</div>
+  </div>
+</div>
+`;
+  return wrap;
+}
+
+async function loadGuide(){
+  buildNav();
+  try{
+    const res=await fetch(CONTENT_URL);
+    const md=await res.text();
+    const sections={};let cur='';
+    md.split('\n').forEach(line=>{
+      const m=line.match(/^## (.+)/);
+      if(m){cur=m[1].toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'');sections[cur]='';}
+      else if(cur)sections[cur]+=line+'\n';
+    });
+    const content=document.getElementById('content');
+    const loading=document.getElementById('loading');
+
+    // Hero
+    const hero=document.createElement('div');hero.id='hero';
+    hero.innerHTML=`<h1>ARK DESCENDED</h1>`;
+    if(sections['baseline']){
+      const box=document.createElement('div');box.className='baseline-box';
+      box.innerHTML=marked.parse(sections['baseline'].trim());
+      hero.appendChild(box);
+    }
+    content.appendChild(hero);
+
+    // Tier list diagram
+    if(sections['tier-list']){
+      const sec=document.createElement('div');sec.className='section';sec.id='tier-list';
+      sec.innerHTML=`<h2 class="section-title">Tier List</h2>`;
+      sec.appendChild(renderTierDiagram());
+      content.appendChild(sec);
+    }
+
+    // Markdown sections
+    const order=['getting-started','t2-excellent','t3-divine-devilish','t4-celestial-abyssal','t5-warchiefs','t6-bionic','t7-wardens','t8-god-trials','t9-dark-seals','t10-dream','reaper-evolution','ice-titan-evolution','managarmr-evolution','legendary-evolution','infected-evolution','ancient-evolution','supply-drops','loot-bosses','passive-production','faq'];
+    order.forEach(id=>{
+      if(!sections[id])return;
+      const sec=document.createElement('div');sec.className='section';sec.id=id;
+      const title=SECTION_LABELS[id]||id;
+      let html=marked.parse(sections[id]);
+      html=html.replace(/<blockquote>\s*<p>\s*STRUCTURE DAMAGE:/g,'<div class="struct-badge">STRUCTURE DAMAGE:').replace(/N\/A<\/p>\s*<\/blockquote>/g,'N/A</div>');
+      html=html.replace(/<blockquote>\s*<p>\s*WARNING:/g,'<div class="warn">').replace(/<\/p>\s*<\/blockquote>/g,'</div>');
+      html=html.replace(/<blockquote>\s*<p>/g,'<div class="tip">').replace(/<\/p>\s*<\/blockquote>/g,'</div>');
+      // Add IDs to h3 and h4 for deep linking
+      html=html.replace(/<h3>([^<]+)<\/h3>/g,(m,t)=>`<h3 id="${t.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'')}">${t}</h3>`);
+      html=html.replace(/<h4>([^<]+)<\/h4>/g,(m,t)=>`<h4 id="${t.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+$/,'')}">${t}</h4>`);
+      sec.innerHTML=`<h2 class="section-title">${title}</h2>`+html;
+      content.appendChild(sec);
+    });
+
+    // Creature reference
+    const crSec=document.createElement('div');crSec.className='section';crSec.id='creature-reference';
+    crSec.innerHTML=`<h2 class="section-title">Creature Reference</h2>`;
+    crSec.appendChild(renderCreatureReference());
+    content.appendChild(crSec);
+
+    // Footer
+    const footer=document.createElement('div');footer.className='guide-footer';
+    footer.innerHTML='Guide maintained by Rokitur — RokiArkNet<br>Questions or corrections? Contact @Rokitur on Discord';
+    content.appendChild(footer);
+
+    loading.style.display='none';content.style.display='block';
+
+    // Scroll spy
+    const anchors=[...document.querySelectorAll('.section')];
+    const navLinks=document.querySelectorAll('#nav a');
+    window.addEventListener('scroll',()=>{
+      let cur='';
+      anchors.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id;});
+      navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
+    });
+  }catch(e){document.getElementById('loading').textContent='Error loading guide';}
+}
+loadGuide();
+</script>
+</body>
+</html>

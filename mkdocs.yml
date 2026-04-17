@@ -1,5 +1,5 @@
-site_name: ARK Mod Guides
-site_description: ARK Survival Ascended server guides and mod documentation
+site_name: RokiArkNet
+site_description: ARK Survival Ascended server plugins and mod guides
 site_url: https://rokiarknet.github.io
 
 theme:
@@ -16,6 +16,14 @@ theme:
 
 nav:
   - Home: index.html
+  - Plugins:
+    - Overview: plugins/index.html
+    - EngramControl: plugins/engramcontrol.html
+    - DinoLoot: plugins/dinoloot.html
+    - TekUnlock: plugins/tekunlock.html
+    - DinoLevelOverride: plugins/dinoleveloverride.html
+    - RiderProtection: plugins/riderprotection.html
+    - ItemExchange: plugins/itemexchange.html
   - Guides:
     - Primal Nemesis: primal-nemesis.html
     - Primal Chaos: primal-chaos.html
@@ -27,5 +35,8 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - tables
   - toc:
       permalink: true
+
+docs_dir: content

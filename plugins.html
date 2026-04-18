@@ -55,12 +55,14 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;fo
         <div class="plugin-name">EngramControl</div>
         <span class="plugin-license license-annual">Annual License</span>
       </div>
-      <p class="plugin-desc">Block engrams from being learned, and unlock them by killing specific creatures.</p>
+      <p class="plugin-desc">Block engrams and control how they're unlocked via creature kills.</p>
       <ul class="plugin-features">
         <li>Block any engram by name pattern</li>
-        <li>Kill-based unlocks (kill bosses to unlock Tek)</li>
-        <li>Persistent unlocks survive mindwipes</li>
-        <li>Free mode: 5 blocked engrams, no kill unlocks</li>
+        <li>KillUnlocks: unblock engrams after killing creatures</li>
+        <li>GrantUnlocks: auto-teach engrams on creature kills</li>
+        <li>Variable unlock count (grant random N from pool)</li>
+        <li>Radius-based rewards for nearby players</li>
+        <li>Free mode: 5 blocked engrams only</li>
       </ul>
       <div class="plugin-commands">EngramControl.Reload | EngramControl.Find &lt;pattern&gt;</div>
       <div class="plugin-actions">
@@ -89,23 +91,27 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;fo
       </div>
     </div>
 
-    <div class="plugin-card">
-      <div class="plugin-header">
-        <div class="plugin-name">TekUnlock</div>
-        <span class="plugin-license license-annual">Annual License</span>
-      </div>
-      <p class="plugin-desc">Unlock Tek engrams by killing specific creatures.</p>
-      <ul class="plugin-features">
-        <li>Kill-based Tek unlocks</li>
-        <li>Radius detection for nearby players</li>
-        <li>Chat notifications on unlock</li>
-      </ul>
-      <div class="plugin-commands">TekUnlock.Reload</div>
-    </div>
   </div>
 
   <div class="section">
     <div class="section-title">Free Plugins</div>
+
+    <div class="plugin-card">
+      <div class="plugin-header">
+        <div class="plugin-name">TekUnlock</div>
+        <span class="plugin-license license-free">Free</span>
+      </div>
+      <p class="plugin-desc">Directly teach engrams when specific creatures are killed.</p>
+      <ul class="plugin-features">
+        <li>Kill-based engram grants (auto-learned)</li>
+        <li>Radius detection for nearby players</li>
+        <li>Chat notifications on unlock</li>
+      </ul>
+      <div class="plugin-commands">TekUnlock.Reload</div>
+      <div class="plugin-actions">
+        <a href="downloads/TekUnlock.zip" class="btn-download">Download</a>
+      </div>
+    </div>
 
     <div class="plugin-card">
       <div class="plugin-header">

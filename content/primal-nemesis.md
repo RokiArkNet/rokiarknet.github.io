@@ -49,11 +49,15 @@ Proximity buff increases damage and resistance for nearby dinos.
 
 ### First Tames
 
-Once Alpha Kibble is available from egg farms, prioritize: Pteranodons for travel and scouting. Parasaurs, Trikes, or Stegos for berry farming.
+Once Alpha Kibble is available from egg farms, prioritize: Pteranodons for travel and scouting. Parasaurs, Trikes, or Stegos for berry farming used in kibble and potion production.
+
+### Recommended DPS Tames
+
+Bring dedicated combat dinos for the Alpha Boss rather than utility tames. High-health, high-damage creatures such as Rexes, Spinos, or other strong Alpha-tier fighters perform far more reliably than flyers or gatherers. Focus on good saddles, high health and melee stats, and Alpha Health Potions for sustain. Utility tames like berry farmers or travel flyers should not be used as primary boss damage.
 
 ### Boss: The Alpha Boss
 
-Primary progression gate of the Alpha tier. Defeating it unlocks Apex Kibble and the Primal Incubator.
+Primary progression gate of the Alpha tier. Defeating it unlocks Apex Kibble and the Primal Incubator, allowing tiered bosses to be tamed.
 
 **Preparation** — Craft summon at Primal Bench. Use a secure enclosed arena. Bring saddled dinos and Alpha Health Potions.
 
@@ -63,9 +67,21 @@ Primary progression gate of the Alpha tier. Defeating it unlocks Apex Kibble and
 
 **Rewards** — Alpha Boss Skull | Unlocks Apex Kibble | Unlocks Primal Incubator
 
-### Skeletal and Boss Variants
+> Boss Skulls are used to craft next-tier boss summons — save them for progression.
 
-Skeletal variants require Alpha/Apex Boss Kibble to tame and drop Keratin and Blood. Boss variants are stronger, drop Element, and can be bred.
+### Primal Incubator
+
+Crafts tameable tier bosses and Titan Eggs (moved from Primal Bench): Alpha Tameable Boss | Apex Troll (Tameable) | Bionic God (Tameable) | Celestial Hydra (Tameable) | Demonic Lucifer (Tameable) | Titan Eggs
+
+### Skeletal Variants
+
+Skeletal variants require Alpha/Apex Boss Kibble to tame and drop Keratin and Blood when harvested.
+
+### Boss Variants
+
+Boss variants are stronger, drop Element, and can be bred. Alpha Bosses require Alpha Boss Kibble; Apex Bosses require Apex Boss Kibble.
+
+**Boss Essence** — Alpha Boss Essence drops from killing Alpha Bosses. Apex Boss Essence drops from killing Apex Bosses.
 
 ## apex
 
@@ -107,9 +123,9 @@ Elemental creatures drop their respective cores (e.g. Volcanic Core, Hydro Core)
 
 <img src="images/elemental_wheel_nemesis.png" alt="Elemental Wheel" width="200">
 
-Storm — Strong vs Hydro | Weak to Earth | Mobile power generation, scales range with melee
+Storm — Strong vs Hydro | Weak to Earth | Mobile power generation that can replace standard generators, scales range with melee
 
-Volcanic — Strong vs Frost | Weak to Hydro | Cook meat in inventory, mobile forge, temperature resist
+Volcanic — Strong vs Frost | Weak to Hydro | Cook meat in inventory, Ankys act as mobile forges, temperature resist
 
 Hydro — Strong vs Volcanic | Weak to Storm | Water enhancement, store water, reduce O2 drain nearby
 
@@ -120,6 +136,18 @@ Nature — Strong vs Earth | Weak to Frost | Crop growth boost, healing AoE, 150
 Earth — Strong vs Storm | Weak to Nature | Crafting speed boost, rock shield for nearby allies
 
 > ⚠️ WARNING: Nature dinos provide a 150% greenhouse effect that REPLACES existing greenhouse bonuses. Do not use near a full greenhouse (300%) — it will reduce efficiency.
+
+### Plant Species Nemesis
+
+A defensive structure designed to protect your base by forcing nearby creatures away. Seeds drop from Nature-tier creatures.
+
+**Functionality** — Repels all nearby creatures when triggered. Highly effective for area denial and base protection. Requires fertilizer and can be resource-intensive without support.
+
+**Placement** — Must be planted in a Behemoth Crop Plot. Cannot be placed in smaller crop plots due to its size.
+
+> Keeping a Nature dino nearby will significantly reduce fertilizer consumption.
+
+> ⚠️ WARNING: Cannot be used against bosses.
 
 ### Base Pairing Strategy
 
@@ -133,7 +161,9 @@ Frost + Volcanic — Full temperature control across all environments
 
 Can be crafted at the Primal Bench and challenged in any order.
 
-**Preparation** — Fully saddled and healed tames. Stock Alpha and Nature Potions. Build a team of evolved Titans with high Health and Melee.
+**Preparation** — Fully saddled and healed tames. Stock Alpha and Nature Potions. Build a team of evolved Titans with high Health and Melee. Use Alpha proximity buffs mid-fight to enhance Elemental performance.
+
+> Tame and build out multiple elemental Titan variants for an edge — see the [Titans](#titans) section.
 
 **Rewards** — Boss Skull | Elemental Fruit Seeds | Elemental Boss Essence
 
@@ -181,7 +211,9 @@ Creatures influenced by virulent corruption. Plague beats Plasma. Spreads a viru
 
 ### Boss Chain
 
-Defeat bosses to acquire both Bionic Skulls. Then craft the Bionic God Scroll at the Primal Bench to unlock the Scion of Darkness.
+Hunt wild **Swordmaster** and wild **Terminator** — only wild kills drop the Swordmaster Skull and Terminator Skull. Both creatures also have tameable variants: Tameable Swordmaster and Tameable Terminator scrolls can drop, and the tameables are KO tames.
+
+With both skulls, craft the **Bionic God Scroll** at the Primal Bench to summon the **Bionic God** — the final boss of the tier.
 
 **Victory Conditions** — High DPS for boss phase | Fast tower-breakers for shield phase | Strong mobility to dodge plasma fire
 
@@ -217,7 +249,7 @@ KO and tame Demonic and Celestial Bees. Convert them into a Beehive via radial m
 
 **Prep** — Bring strongest Bionic/Demonic/Celestial creatures with high-quality saddles and imprints. Stockpile Alpha Health Potions and Nature Buffs. Use Alpha Buffs mid-fight.
 
-**Rewards** — Demonic / Celestial Boss Skull | Boss Essence | Celestial and Demonic Seeds (for Godly Kibble)
+**Rewards** — Boss Essence | Celestial and Demonic Seeds (required for Godly Kibble)
 
 ## godly
 
@@ -229,7 +261,9 @@ Six Godly Bosses roam the map — only one of each at a time. You will be notifi
 
 Collect tokens from all six Godly Bosses to summon Nemesis — the ultimate early-game fight. Conquer it to complete the early-game arc.
 
-**Rewards** — Godly Potions | Max XP Potions | Godly Boss Essence | Godly Boss Skull
+**Rewards from the six Godly Bosses** — Tokens (used to summon Nemesis)
+
+**Rewards from Nemesis** — Godly Potions | Max XP Potions | Godly Boss Essence | Godly Boss Skull
 
 ## loot-bosses
 
@@ -245,15 +279,33 @@ Rare enemies that spawn naturally in the wild across all tiers. Project a red be
 
 ## loot-system
 
-All dropped loot rolls randomized stat bonuses — similar to MMO loot systems.
+All dropped loot rolls randomized stat bonuses — similar to MMO loot systems. Effects vary by item type and can include increased speed, damage, reduced elemental damage, or luck bonuses.
 
-Stat slots by tier: Alpha 2 slots Low | Apex 3 slots Medium | Elemental+ More slots Higher values | Godly Most slots Highest values
+### Stat Slots by Tier
 
-Loot Quality: Common → Uncommon → Rare → Epic → Legendary → Divine → Ancient
+Higher tiers unlock more stat slots and stronger numbers.
 
-Ancient only obtainable through quests. Divine is the new high-end tier above Legendary.
+Alpha — 2 slots, Low | Apex — 3 slots, Medium | Elemental — More slots, Higher | Plasma/Ghost/Plague — More slots, Higher | Bionic — More slots, Higher | Demonic/Celestial — More slots, Higher | Godly — Most slots, Highest
 
-**Unique Weapons** — Zeus Spear (throws lightning bolts where it lands) | Ragnarok Spear (unleashes nukes or meteors on impact)
+### Loot Quality
+
+Common → Uncommon → Rare → Epic → Legendary → Divine → Ancient. Divine is the new high-end tier above Legendary. Ancient only obtainable through high-level quests.
+
+### Wild Dino Drops
+
+Killing wild dinos drops loot matching their tier. Wild drops are Common quality with 2 stat slots and low numbers. Boosting Loot/Luck chance increases the rarity of wild drops.
+
+### What Can Roll Stats
+
+Saddles | Weapons | Tools | Armor | Rings | Dino Totems | Any other Nemesis drops
+
+### Unique Weapons
+
+**Zeus Spear** — Throws lightning bolts where it lands
+
+**Ragnarok Spear** — Unleashes nukes or meteors on impact
+
+Other unique weapons exist to discover. Unique armors are planned for a future update.
 
 ## resource-ores
 
@@ -263,7 +315,7 @@ Source: Resource Rock Golem
 
 Hover above a Resource Rock Golem with a flying mount to bait it into spawning Minions. Defeat and harvest Minions using a Modded Dino (Apex Rex recommended). Kill and harvest the Golem — Modded Tools are bugged, use Modded Dinos.
 
-> Look for Resource Rock Golems that show "Can be tamed with Modded Ore" — tame one and use its ability to spawn your own Minions for unlimited Nickel.
+> Look for Resource Rock Golems that show "Can be tamed with Modded Ore" — tame one, equip a saddle, and use its ability to spawn your own Minions for unlimited Nickel.
 
 **Taming the Golem** — Griffin hover and shoot straight down with Rocket Launcher aimed at the head. Or trap and use a Cannon for Torpor. Captain Reptile's Cannon mod can help.
 
@@ -275,11 +327,15 @@ When fighting a Resource Rock Golem there is a 25% chance it respawns as a DemiG
 
 > The meteor ability fires every 3 minutes. Keep the DemiGod alive to farm multiple waves — the most efficient method for gathering these ores.
 
-**Refining** — Mithril and Gold Ore can only be smelted in the Primal Bionic Forge. Requires Storm Essence, Volcanic Essence, or a nearby Storm creature.
+**Refining** — Mithril and Gold Ore can only be smelted in the Primal Bionic Forge. The forge does NOT run on standard fuel — it requires Storm Essence, Volcanic Essence, or a nearby Storm creature.
+
+### Aquatic Crop Plot
+
+Allows placement and growth of aquatic crops or any future water-bound plant systems. Can only be placed in water.
 
 ### Rice / Kelp / Sushi
 
-Use a Berry Gatherer (Trike, Bronto, Parasaur) to collect Rice and Seaweed seeds from Berry Bushes. Plant in greenhouse. For Prime Fish Meat target Basilosaurus, Deinosuchus, Mosasaurus, or Spine Croc with Pickaxe or Chainsaw.
+Use a Berry Gatherer (Trike, Bronto, Parasaur) to collect Rice and Seaweed seeds from Berry Bushes. Plant in greenhouse. For Prime Fish Meat target larger sea creatures only — not sharks or smaller fish. Best targets: Basilosaurus, Deinosuchus, Shastasaurus, Mosasaurus, or Spine Croc, harvested with Pickaxe or Chainsaw.
 
 > ⚠️ WARNING: Prime Fish Meat does NOT stack — plan inventory space accordingly.
 
@@ -289,9 +345,15 @@ Combine Prime Fish Meat, Rice, and Kelp in the Primal Cauldron. Cauldron holds 5
 
 All enhancers roll a value within a range when obtained — two items of the same type can have different strength levels.
 
+### How to Equip
+
+Player Rings — Offhand slot
+
+Dino Totems — Costume slot
+
 ### Player Ring System
 
-Rings are modular equipment with insertable charms. Ring tiers: Common → Uncommon → Rare → Epic → Legendary → Godly. Common rings start with 1 charm slot; each tier adds capacity.
+Rings are modular equipment with insertable charms. Ring tiers: Common → Uncommon → Rare → Epic → Legendary → Godly. Common rings start with 1 charm slot; each tier adds capacity. Higher-tier rings require materials found from lootbosses or bosses designed to support this system.
 
 ### Enhancer Types
 
@@ -299,7 +361,11 @@ XP — Player and Dino — Increases experience gain
 
 Weight — Player and Dino — Increases carrying capacity
 
+Water — Player and Dino — Reduces water drain
+
 Speed — Player and Dino — Increases movement speed
+
+Jump — Player and Dino — Increases jump height
 
 Healing — Player and Dino — Gradual health regeneration
 
@@ -317,11 +383,45 @@ Heat — Player only — Reduces heat effects
 
 Baby — Dino only — Affects baby growth and maturation
 
+### Where to Find
+
+Wild drops | Loot drops | Nemesis encounters
+
+Higher-tier content has better chances of dropping stronger rolls.
+
+## pixies
+
+Not rideable. Pixies provide powerful breeding-related benefits while equipped with a Pixie Orb.
+
+### Pixie Species
+
+Pixie Bulbdog | Pixie Jerboa | Pixie Otter
+
+### Boosts
+
+While equipped with a Pixie Orb, Pixies enhance reproductive processes:
+
+- Increased egg hatching rate
+- Reduced mating cooldown
+- Increased baby growth speed
+- Higher chances for twins
+- Additional hidden reproductive bonuses
+
+Higher-quality orbs grant higher chances for improved outcomes.
+
+### Pixie Orbs
+
+Found in the wild or obtained from lootbosses. Higher-quality orbs strengthen the Pixie's support capabilities.
+
+### Use
+
+Pixies function as passive companions. Equip the orb directly to the Pixie to activate its effects, then place the Pixie near your breeding setup to benefit from its boosts.
+
 ## titans
 
 ### How to Tame a Titan
 
-1. Defeat the Elemental Boss — Unlocks the Elemental Incubator Engram and drops the Boss Skull (required for Whelpling recipe)
+1. Defeat the Elemental Boss — Unlocks the Elemental Incubator Engram (Elemental Incubators are crafted in the Primal Incubator) and drops the Boss Skull (required for Whelpling recipe)
 
 2. Hunt a Wild Elemental Youngling — Cannot be crafted or summoned. On kill automatically drops an Elemental Heart into your inventory.
 
@@ -351,14 +451,27 @@ Adult Titan — Gains ALL special attacks from boss variant. Ideal for Elemental
 
 **What are Colossal and Pygmy traits?** Both have faster movement and increased melee damage. Colossal — Higher base health and melee, suited for tanking. Pygmy — 10% chance to dodge incoming attacks, effective in long fights. Can be applied via trait items or appear randomly through breeding.
 
+**Why can't I track or locate dinos with the Primal Gene Tracker?** The Primal Gene Tracker is only used for transferring traits. It does not track creatures like Bob's Tall Tales version.
+
 **What are the new dino traits?** Nuclear — Builds an internal timer when aggressive or taking damage. Detonates in a nuclear explosion at zero. When tamed triggers below 10% health. Volatile — Explodes on death, both wild and tamed. Nightmare — Doubled stats during nighttime. Nighthunter — Extremely aggressive at night with increased aggro range. Chunky — Increased harvest health, yields more materials when harvested.
 
 **How does the quality ranking system work?** Common → Uncommon → Rare → Epic → Legendary → Divine → Ancient. Divine is the new high-end tier above Legendary. Ancient only obtainable through quests.
 
+**How do you get armor?** Armor sets are available for each progression tier. Armor types: Cloth | Desert Cloth | Hide | Flak | Fur | Ghillie | Riot | Scuba. Available tiers: Alpha, Apex, Earth, Frost, Nature, Volcanic, Storm, Hydro, Plasma, Ghost, Plague, Bionic, Demonic, Celestial.
+
+| Source | Tiers Available | Stats |
+|--------|-----------------|-------|
+| Primal Bench (crafted) | Alpha, Apex | No bonus stats |
+| Loot Bosses | Elemental and above | Randomized bonus stats |
+| Wild dino drops | Matches dino tier | Randomized bonus stats |
+| Quests | All tiers | Randomized bonus stats |
+
+Crafted armor from the workbench has no special stats. Armor from Loot Bosses, quests, or wild drops will have randomized bonuses.
+
 **Tranq Ammo Values:**
 
-| Ammo Type | Alpha | Apex | Elemental | Demonic/Celestial |
-|-----------|-------|------|-----------|-------------------|
-| Tranq Darts (Longneck) | 1.1k–1.9k | 1.9k–5.7k | 4.6k–15.4k | 23k–85k |
-| Tranq Bullets (Sniper) | 1.2k–4.4k | 2.4k–8.2k | 5k–17.9k | 25k–87.5k |
-| Compound Tranq Arrows | 1.5k–6.9k | 3k–10.7k | 5.9k–22.9k | 30k–97.5k |
+| Ammo Type | Alpha | Apex | Elemental | Bionic | Demonic/Celestial |
+|-----------|-------|------|-----------|--------|-------------------|
+| Tranq Darts (Longneck) | 1.1k–1.9k | 1.9k–5.7k | 4.6k–15.4k | 6.6k–60k | 23k–85k |
+| Tranq Bullets (Sniper) | 1.2k–4.4k | 2.4k–8.2k | 5k–17.9k | 7.5k–62.5k | 25k–87.5k |
+| Compound Tranq Arrows | 1.5k–6.9k | 3k–10.7k | 5.9k–22.9k | 8.9k–70k | 30k–97.5k |

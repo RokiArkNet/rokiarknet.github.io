@@ -361,7 +361,9 @@ XP — Player and Dino — Increases experience gain
 
 Weight — Player and Dino — Increases carrying capacity
 
-Water — Player and Dino — Reduces water drain
+Food — Player and Dino — Reduces food drain
+
+Oxygen — Player and Dino — Reduces oxygen drain
 
 Speed — Player and Dino — Increases movement speed
 
@@ -369,7 +371,7 @@ Jump — Player and Dino — Increases jump height
 
 Healing — Player and Dino — Gradual health regeneration
 
-Dodge — Player and Dino — Chance to evade incoming damage
+Crit — Player and Dino — Chance for critical hits
 
 Timestop — Player and Dino — Stops time briefly when triggered
 

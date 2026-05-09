@@ -1,0 +1,319 @@
+﻿{
+  "General": {
+    "Debug": true,
+    "LogBlocks": true,
+    "LogUnlocks": true
+  },
+  "Settings": {
+    "UnlockRadius": 50000.0,
+    "MessageOnGrant": true
+  },
+  
+  "LicenseKey": "71A5-F5E3-586B-15BD",
+  
+  "BlockedEngrams": [
+    "Alpha",
+    "Apex",
+	"Potent",
+	"Element",
+    "Elemental",
+	"Legendary",
+	"Mythic",
+	"Fabled",
+	"ChaosBed",
+	"Wyvern_Chaos",
+	"RockDrakeSaddle_Chaos",
+	"Kibble_Chaos",
+	"Spirit",
+	"Angelic",
+	"Fairy",
+	"Shadow",
+	"Electric",
+    "Plague",
+    "Plasma",
+    "Celestial",
+    "Demonic",
+	"Kibble_Vampiric",
+	"Kibble_Nuclear",
+    "Kibble_Toxic",
+    "Kibble_Necrotic",
+    "Kibble_Prime",
+    "Kibble_Grenadier",
+    "Kibble_Warden",
+    "Origin_",
+    "NightmareArgent",
+    "NightmareCarno",
+    "NightmareDirebear",
+    "NightmareDodoReaper",
+    "NightmareKairuku",
+    "NightmareRaptor",
+    "NightmareRex",
+    "NightmareSpino",
+    "NightmareTrike",
+    "NightmareWyvern",
+    "NightmareYuty",
+    "MetalSickle_Volcanic",
+    "Turret_Volcanic",
+    "Turret_Hydro",
+    "HydroGuardianSummon",
+	"VolcanicGuardianSummon",
+    "Saddles/3Elemental/Hydro/",
+    "Saddles/3Elemental/Volcanic/",
+    "NatureHealthPotion"
+  ],
+  "KillUnlocks": {
+    "Toxic Kibble": {
+      "engrams": [
+        "ArkSupreme/SupremeItems/Kibbles/2Toxic/PrimalItemConsumable_Kibble_Toxic"
+      ],
+      "required_kills": [
+        "Bone_Jerboa_Character_BP_AlphaBoss",
+        "SavageAchatina_Character_BP_BOSS"
+      ],
+      "deny_message": "Toxic blood is the toll. Spill it first.",
+      "display_names": {
+        "Bone_Jerboa_Character_BP_AlphaBoss": "Alpha Boss",
+        "SavageAchatina_Character_BP_BOSS": "Savage Achatina"
+      }
+    },
+    "Necrotic Kibble": {
+      "engrams": [
+        "Kibble_Necrotic"
+      ],
+      "required_kills": [
+        "Cyclops_Character_BP"
+      ],
+      "deny_message": "Necrotic ways are sealed while the Cyclops still stands.",
+      "display_names": {
+        "Cyclops_Character_BP": "Cyclops"
+      }
+    },
+    "Prime Kibble": {
+      "engrams": [
+        "Kibble_Prime"
+      ],
+      "required_kills": [
+        "ea_Boss_Titan_Character_BP",
+        "I_Boss_Titan_Character_BP",
+        "h_Boss_Titan_Character_BP",
+        "N_Boss_Titan_Character_BP",
+        "E_Boss_Titan_Character_BP",
+        "v_Boss_Titan_Character_BP",
+        "GrenadierBigfoot_Character_BP_BOSS",
+        "GrenadierDodo_Character_BP_BOSS",
+        "GrenadierDoed_Character_BP_BOSS",
+        "GrenadierMonkey_Character_BP_BOSS",
+        "GrenadierSpino_Character_BP_BOSS"
+      ],
+      "deny_message": "Prime knowledge is earned slowly, by many hands fallen still.",
+      "display_names": {
+        "ea_Boss_Titan_Character_BP": "Earth Titan",
+        "I_Boss_Titan_Character_BP": "Frost Titan",
+        "h_Boss_Titan_Character_BP": "Hydro Titan",
+        "N_Boss_Titan_Character_BP": "Nature Titan",
+        "E_Boss_Titan_Character_BP": "Storm Titan",
+        "v_Boss_Titan_Character_BP": "Volcanic Titan",
+        "GrenadierBigfoot_Character_BP_BOSS": "Grenadier Bigfoot",
+        "GrenadierDodo_Character_BP_BOSS": "Grenadier Dodo",
+        "GrenadierDoed_Character_BP_BOSS": "Grenadier Doedicurus",
+        "GrenadierMonkey_Character_BP_BOSS": "Grenadier Monkey",
+        "GrenadierSpino_Character_BP_BOSS": "Grenadier Spino"
+      }
+    },
+    "Grenadier Kibble": {
+      "engrams": [
+        "Kibble_Grenadier"
+      ],
+      "required_kills": [
+        "NecroticGolem_Character_BP_BOSS"
+      ],
+      "deny_message": "The Necrotic Golem keeps the grenadier secret. End it.",
+      "display_names": {
+        "NecroticGolem_Character_BP_BOSS": "Necrotic Golem"
+      }
+    },
+    "Alpha Kibble": {
+      "engrams": [
+        "Kibbles/1Alpha/Boss/PrimalItemConsumable_Kibble_Alpha_Boss"
+      ],
+      "required_kills": [
+        "Bone_Jerboa_Character_BP_AlphaBoss"
+      ],
+      "deny_message": "The Alpha Boss must fall before this kibble is yours.",
+      "display_names": {
+        "Bone_Jerboa_Character_BP_AlphaBoss": "Alpha Boss"
+      }
+    },
+    "Apex Kibble": {
+      "engrams": [
+        "Kibbles/2Apex/Bosses/PrimalItemConsumable_Kibble_Apex_Bosses"
+      ],
+      "required_kills": [
+        "Cyclops_Character_BP"
+      ],
+      "deny_message": "Apex kibble waits beyond the Cyclops.",
+      "display_names": {
+        "Cyclops_Character_BP": "Cyclops"
+      }
+    },
+    "Vampiric&Nuclear Kibble": {
+      "engrams": ["Kibble_Vampiric", "Kibble_Nuclear"],
+      "required_kills": ["BossBionic_Golem_Character_BP"],
+      "deny_message": "The Bionic Golem keeps both recipes locked in steel.",
+      "display_names": {
+        "BossBionic_Golem_Character_BP": "Bionic Golem"
+      }
+    },
+    "Warden Kibble": {
+      "engrams": [
+        "Kibble_Warden"
+      ],
+      "required_kills": [
+        "Demonic_Scorpion_Character_BP",
+        "Angelic_Shapeshifter_Large_Character_BP"
+      ],
+      "deny_message": "The Warden's recipe waits between Demonic and Angelic. Skorvax and Zaphyros must both fall.",
+      "display_names": {
+        "Demonic_Scorpion_Character_BP": "Skorvax",
+        "Angelic_Shapeshifter_Large_Character_BP": "Zaphyros"
+      }
+    },
+    "DarkGodKing Summon": {
+      "engrams": [],
+      "required_kills": ["Draconis_Character_BP"],
+      "bench_items": ["PrimalItemConsumable_Summon_Godkingboss_C"],
+      "deny_message": "The DarkGodKing sleeps until Draconis falls. Topple him to forge the summon.",
+      "display_names": {
+        "Draconis_Character_BP": "Draconis"
+      }
+    },
+    "Corrupted Darkgod Emperor Summon": {
+      "engrams": [],
+      "required_kills": [
+        "DeathKnight_Character_BP"
+      ],
+      "bench_items": [
+        "PrimalItemConsumable_Summon_CorruptedEmporer_C"
+      ],
+      "deny_message": "The Corrupted Darkgod Emperor sleeps until the Death Knight falls. Topple him to forge the summon.",
+      "display_names": {
+        "DeathKnight_Character_BP": "Death Knight"
+      }
+    },
+    "Necrotic Boss Summon": {
+      "engrams": [],
+      "required_kills": [
+        "HydroGuardian_Character_BP",
+        "VolcanicGuardian_Character_BP",
+        "ElectricBoss_Enforcer_Character_BP"
+      ],
+      "bench_items": [
+        "PrimalItemConsumable_Summon_NecroticBoss_C"
+      ],
+      "deny_message": "The seals still hold. Three guardians must fall first.",
+      "display_names": {
+        "HydroGuardian_Character_BP": "Hydro Guardian",
+        "VolcanicGuardian_Character_BP": "Volcanic Guardian",
+        "ElectricBoss_Enforcer_Character_BP": "Electric Guardian"
+      }
+    },
+    "Hellfire Boss Summon": {
+      "engrams": [],
+      "required_kills": [
+        "Chaos_Titan_Character_BP_BOSS",
+        "Spirit_Titan_Character_BP_BOSS"
+      ],
+      "bench_items": [
+        "PrimalItemConsumable_Summon_Hellfire_C"
+      ],
+      "deny_message": "The Hellfire Boss sleeps until Chaos and Spirit both fall. Topple them to forge the summon.",
+      "display_names": {
+        "Chaos_Titan_Character_BP_BOSS": "Chaos Titan",
+        "Spirit_Titan_Character_BP_BOSS": "Spirit Titan"
+      }
+    },
+    "Draconis Summon": {
+      "engrams": [],
+      "required_kills": [
+        "Celestial_Hydra_Character_BP",
+        "DemonicBoss_Character_BP"
+      ],
+      "bench_items": [
+        "PrimalItemConsumable_Summon_Draconis_C"
+      ],
+      "deny_message": "The Draconis scroll waits between heaven and hell. Hydra Lord and Lucifer must both fall.",
+      "display_names": {
+        "Celestial_Hydra_Character_BP": "Hydra Lord",
+        "DemonicBoss_Character_BP": "Lucifer"
+      }
+    },
+	
+    "Juggernaut Summon": {
+      "engrams": [],
+      "required_kills": [
+        "Nemesis_Character_BP"
+      ],
+      "bench_items": [
+        "PrimalItemConsumable_Summon_Juggernaut_C"
+      ],
+      "deny_message": "The Juggernaut sleeps until Nemesis falls. Topple Nemesis to forge the summon.",
+      "display_names": {
+        "Nemesis_Character_BP": "Nemesis"
+      }
+    }
+  },
+  "TekEngramPools": [
+    {
+      "name": "Godly Boss Tek Pool",
+      "creatures": [
+        "Godly_Broodmother_BP_BOSS",
+        "Godly_Crab_Character_BP_BOSS",
+        "GodlyRockDrake_Character_BP_BOSS",
+        "Godly_Sheep_Character_BP_BOSS",
+        "Godly_SaberKing_Character_BP_BOSS",
+        "Godly_Trike_Character_BP_BOSS"
+      ],
+      "engrams": [
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/TEK/PrimalItemArmor_TekHelmet.PrimalItemArmor_TekHelmet'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Tek/PrimalItemArmor_TekShirt.PrimalItemArmor_TekShirt'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Tek/PrimalItemArmor_TekGloves.PrimalItemArmor_TekGloves'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Tek/PrimalItemArmor_TekPants.PrimalItemArmor_TekPants'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Tek/PrimalItemArmor_TekBoots.PrimalItemArmor_TekBoots'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Weapons/PrimalItem_TekRifle.PrimalItem_TekRifle'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Weapons/PrimalItem_WeaponTekSword.PrimalItem_WeaponTekSword'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Shields/PrimalItemArmor_ShieldTek.PrimalItemArmor_ShieldTek'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Weapons/PrimalItem_TekGrenade.PrimalItem_TekGrenade'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Misc/PrimalItemStructure_TekReplicator.PrimalItemStructure_TekReplicator'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Misc/PrimalItemStructure_TekGenerator.PrimalItemStructure_TekGenerator'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Misc/PrimalItemStructure_TekTeleporter.PrimalItemStructure_TekTeleporter'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Misc/PrimalItemStructure_TekTransmitter.PrimalItemStructure_TekTransmitter'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Misc/PrimalItemStructure_TekTrough.PrimalItemStructure_TekTrough'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Misc/PrimalItemStructure_TekForcefield.PrimalItemStructure_TekForcefield'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Misc/PrimalItemStructure_TekLight.PrimalItemStructure_TekLight'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Misc/PrimalItemStructure_TekTurret.PrimalItemStructure_TekTurret'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Misc/PrimalItemStructure_CloningChamber.PrimalItemStructure_CloningChamber'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Misc/PrimalItemStructure_TekSleepingPod.PrimalItemStructure_TekSleepingPod'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Misc/PrimalItemStructure_TekDedicatedStorage.PrimalItemStructure_TekDedicatedStorage'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Tek/PrimalItemStructure_TekCeiling.PrimalItemStructure_TekCeiling'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Tek/PrimalItemStructure_TekWall.PrimalItemStructure_TekWall'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Tek/PrimalItemStructure_TekFloor.PrimalItemStructure_TekFloor'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Tek/PrimalItemStructure_TekDoor.PrimalItemStructure_TekDoor'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Tek/PrimalItemStructure_TekGate.PrimalItemStructure_TekGate'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Tek/PrimalItemStructure_TekGateway.PrimalItemStructure_TekGateway'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Tek/PrimalItemStructure_TekRamp.PrimalItemStructure_TekRamp'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Tek/PrimalItemStructure_TekStairs.PrimalItemStructure_TekStairs'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Tek/PrimalItemStructure_TekLadder.PrimalItemStructure_TekLadder'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Tek/PrimalItemStructure_TekPillar.PrimalItemStructure_TekPillar'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Tek/PrimalItemStructure_TekFenceFoundation.PrimalItemStructure_TekFenceFoundation'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Tek/PrimalItemStructure_TekWindow.PrimalItemStructure_TekWindow'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Structures/Tek/PrimalItemStructure_TekWindowWall.PrimalItemStructure_TekWindowWall'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_RexSaddle_Tek.PrimalItemArmor_RexSaddle_Tek'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_MosaSaddle_Tek.PrimalItemArmor_MosaSaddle_Tek'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_MegalodonSaddle_Tek.PrimalItemArmor_MegalodonSaddle_Tek'",
+        "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TapejaraSaddle_Tek.PrimalItemArmor_TapejaraSaddle_Tek'"
+      ],
+      "minUnlock": 1,
+      "maxUnlock": 3
+    }
+  ]
+}

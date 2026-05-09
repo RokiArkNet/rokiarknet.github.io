@@ -1,0 +1,251 @@
+{
+  "MultiplierThreshold": 1.5,
+  "ReportStats": ["Health", "Stamina", "Weight", "Melee"],
+  "ClassNameStripPrefixes": [
+    "Eternal_",
+    "Primal_Fear_",
+    "Alpha_",
+    "Boss_",
+    "Tek_",
+    "Savage",
+    "Toxic",
+    "Berserk"
+  ],
+  "Debug": true,
+
+  "VanillaBaselines": {
+    "direwolf":       { "Health": 330,  "Stamina": 260,  "Weight": 170, "Melee": 33 },
+    "mammoth":        { "Health": 1020, "Stamina": 330,  "Weight": 500, "Melee": 48 },
+    "rhino":          { "Health": 500,  "Stamina": 120,  "Weight": 750, "Melee": 40 },
+    "chalico":        { "Health": 600,  "Stamina": 300,  "Weight": 400, "Melee": 36 },
+    "saber":          { "Health": 250,  "Stamina": 200,  "Weight": 200, "Melee": 29 },
+    "bison":          { "Health": 800,  "Stamina": 500,  "Weight": 650, "Melee": 30 },
+    "stag":           { "Health": 300,  "Stamina": 280,  "Weight": 220, "Melee": 30 },
+    "spider":         { "Health": 150,  "Stamina": 100,  "Weight": 100, "Melee": 10 },
+    "ankylo":         { "Health": 700,  "Stamina": 175,  "Weight": 250, "Melee": 50 },
+    "arthro":         { "Health": 500,  "Stamina": 200,  "Weight": 100, "Melee": 18 },
+    "hyaenodon":      { "Health": 175,  "Stamina": 260,  "Weight": 170, "Melee": 15 },
+    "turkey":         { "Health": 2000, "Stamina": 1000, "Weight": 170, "Melee": 61 },
+    "monkey":         { "Health": 115,  "Stamina": 100,  "Weight": 70,  "Melee": 12 },
+    "wyvern":         { "Health": 1295, "Stamina": 315,  "Weight": 400, "Melee": 80 },
+    "mantis":         { "Health": 275,  "Stamina": 150,  "Weight": 220, "Melee": 34 },
+    "vulture":        { "Health": 125,  "Stamina": 150,  "Weight": 50,  "Melee": 23 },
+    "scorpion":       { "Health": 280,  "Stamina": 200,  "Weight": 200, "Melee": 15 },
+    "bee_queen":      { "Health": 80,   "Stamina": 200,  "Weight": 150, "Melee": 8 }
+  },
+
+  "Modifiers": {
+    "Nemesis": 33.0,
+	"celestial_phoenix_character_bp_minion": 33.0,
+    "Godly": 33.0,
+	"DeathKnight": 350.0,
+	"Nightmare": 350.0,
+	"Draconis": 200.0,
+    "Origin":     200.0,
+	"DemonicBoss_Character_BP": 600.0,
+	"Celestial_Hydra_Character_BP": 600.0,
+	"DemonicArgent":          600.0,
+    "DemonicBroodmother":     600.0,
+    "DemonicCrab":            600.0,
+    "Demonic_Fasola":         600.0,
+    "Demonic_Griffin":        600.0,
+    "Demonic_Para":           600.0,
+    "Demonic_RockDrake":      600.0,
+    "Demonic_RockGolem":      600.0,
+    "Demonic_Thylacoleo":     600.0,
+    "Demonic_Wyvern":         600.0,
+
+    "Demonic_Dodo":             2.0,
+    "Demonic_Ferox":            2.0,
+    "Demonic_Reaper":           2.0,
+    "Demonic_Rhynio":           2.0,
+    "Demonic_Scorpion":         2.0,
+    "DemonicDilo":              2.0,
+    "DemonicGorilla":           2.0,
+    "DemonicThorny":            2.0,
+
+    "AngelicArgent":            2.0,
+    "AngelicBOSSGolem":         2.0,
+    "AngelicGriffin":           2.0,
+    "Angelic_Shapeshifter":     2.0,
+    "_Character_BP_Angelic":    2.0
+  },
+
+  "DamageMatrix": {
+    "earth_titan_character_bp_adult_evo": {
+      "n_boss_titan":  1.5,
+      "e_boss_titan":  0.75
+    },
+    "storm_titan_character_bp_adult_evo": {
+      "ea_boss_titan": 1.5,
+      "h_boss_titan":  0.75
+    },
+    "hydro_titan_character_bp_adult_adult_evo": {
+      "e_boss_titan":  1.5,
+      "v_boss_titan":  0.75
+    },
+    "volcanic_titan_character_bp_adult_evo": {
+      "h_boss_titan":  1.5,
+      "i_boss_titan":  0.75
+    },
+    "frost_titan_character_bp_adult_evo": {
+      "v_boss_titan":  1.5,
+      "n_boss_titan":  0.75
+    },
+    "nature_titan_character_bp_adult_evo": {
+      "i_boss_titan":  1.5,
+      "ea_boss_titan": 0.75
+    },
+
+    "ea_boss_titan": {
+      "nature_titan_character_bp_adult_evo":   1.5,
+      "storm_titan_character_bp_adult_evo":    0.75
+    },
+    "e_boss_titan": {
+      "earth_titan_character_bp_adult_evo":         1.5,
+      "hydro_titan_character_bp_adult_adult_evo":   0.75
+    },
+    "h_boss_titan": {
+      "storm_titan_character_bp_adult_evo":     1.5,
+      "volcanic_titan_character_bp_adult_evo":  0.75
+    },
+    "v_boss_titan": {
+      "hydro_titan_character_bp_adult_adult_evo": 1.5,
+      "frost_titan_character_bp_adult_evo":       0.75
+    },
+    "i_boss_titan": {
+      "volcanic_titan_character_bp_adult_evo": 1.5,
+      "nature_titan_character_bp_adult_evo":   0.75
+    },
+    "n_boss_titan": {
+      "frost_titan_character_bp_adult_evo": 1.5,
+      "earth_titan_character_bp_adult_evo": 0.75
+    },
+
+    "earth_titan_character_bp_youngling": {
+      "necrotic": 0.001,
+      "nature_titan_character_bp_adult_evo": 1.5,
+      "storm_titan_character_bp_adult_evo":  0.75
+    },
+    "storm_titan_character_bp_youngling": {
+      "necrotic": 0.001,
+      "earth_titan_character_bp_adult_evo":       1.5,
+      "hydro_titan_character_bp_adult_adult_evo": 0.75
+    },
+    "hydro_titan_character_bp_youngling": {
+      "necrotic": 0.001,
+      "storm_titan_character_bp_adult_evo":    1.5,
+      "volcanic_titan_character_bp_adult_evo": 0.75
+    },
+    "volcanic_titan_character_bp_youngling": {
+      "necrotic": 0.001,
+      "hydro_titan_character_bp_adult_adult_evo": 1.5,
+      "frost_titan_character_bp_adult_evo":       0.75
+    },
+    "frost_titan_character_bp_youngling": {
+      "necrotic": 0.001,
+      "volcanic_titan_character_bp_adult_evo": 1.5,
+      "nature_titan_character_bp_adult_evo":   0.75
+    },
+    "nature_titan_character_bp_youngling": {
+      "necrotic": 0.001,
+      "frost_titan_character_bp_adult_evo": 1.5,
+      "earth_titan_character_bp_adult_evo": 0.75
+    },
+
+    "hydroguardian": {
+      "necrotic": 0.0001,
+      "berserk":  0.01,
+      "storm":    1.0,
+      "electric": 1.0
+    },
+    "volcanicguardian": {
+      "necrotic": 0.0001,
+      "berserk":  0.01,
+      "hydro":    1.0
+    },
+    "electricboss_enforcer": {
+      "necrotic": 0.001,
+      "berserk":  0.01,
+      "earth":    1.0
+    },
+
+    "necroticgolem": {
+      "storm":                 0.5,
+      "electric":              0.5,
+      "hydro":                 0.5,
+      "volcanic":              0.5,
+      "frost":                 0.5,
+      "nature":                0.5,
+      "earth":                 0.5,
+      "necrotic":              0.8,
+      "hydroguardian":         3.0,
+      "volcanicguardian":      3.0,
+      "electricboss_enforcer": 3.0
+    },
+
+    "scionofdarkness": {
+      "necrotic":  0.25,
+      "storm":     0.25,
+      "electric":  0.25,
+      "hydro":     0.25,
+      "volcanic":  0.25,
+      "frost":     0.25,
+      "nature":    0.25,
+      "earth":     0.25,
+      "grenadier": 0.1
+    },
+
+    "terminatorgiga": {
+      "grenadier": 0.1,
+      "prime_":    0.8
+    },
+    "swordmaster": {
+      "grenadier": 0.1,
+      "prime_":    0.8
+    },
+    "bossbionic_golem": {
+      "prime_": 0.8
+    },
+
+    "necrotic": {
+      "necroticgolem":          1.1,
+      "hydroguardian":          3.0,
+      "volcanicguardian":       3.0,
+      "electricboss_enforcer":  3.0
+    },
+
+    "savageachatina":                     { "savage": 0.5 },
+    "jerboa_character_bp_alphaboss":      { "savage": 0.5 },
+    "bone_jerboa_character_bp_alphaboss": { "savage": 0.5 },
+    "berserkkingof":                      { "berserk": 0.5 },
+    "cyclops":                            { "berserk": 0.8 },
+
+    "savage": {
+      "savageachatina":                     1.2,
+      "jerboa_character_bp_alphaboss":      1.2,
+      "bone_jerboa_character_bp_alphaboss": 1.3
+    },
+    "berserk": {
+      "berserkkingof": 1.2,
+      "cyclops":       1.2
+    },
+
+    "godly_crab_character_bp_boss":      { "corrupteddarkgod": 1.0, "darkgod": 0.01, "spectral": 0.05 },
+    "godlyrockdrake_character_bp_boss":  { "corrupteddarkgod": 1.0, "darkgod": 0.01, "spectral": 0.05 },
+    "godly_sheep_character_bp_boss":     { "corrupteddarkgod": 1.0, "darkgod": 0.01, "spectral": 0.05 },
+    "godly_broodmother_bp_boss":         { "corrupteddarkgod": 1.0, "darkgod": 0.01, "spectral": 0.05 },
+    "godly_saberking_character_bp_boss": { "corrupteddarkgod": 1.0, "darkgod": 0.01, "spectral": 0.05 },
+    "godly_trike_character_bp_boss":     { "corrupteddarkgod": 1.0, "darkgod": 0.01, "spectral": 0.05 },
+
+    "corrupteddarkgod": { "_default": 1.0 },
+
+    "nemesis":                             { "spectral": 0.01 },
+    "juggernaut_kingtitan_character_bp_c": { "spectral": 0.01 },
+
+    "spectral": {
+      "nemesis":                             3.0,
+      "juggernaut_kingtitan_character_bp_c": 3.0
+    }
+  }
+}

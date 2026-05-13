@@ -32,31 +32,6 @@ The first three tiers — Savage, Toxic, and Berserk — follow the same progres
 4. **Establish egg farms** — Breed your tames to produce eggs for the next tier's kibble
 5. **Repeat** — Move to the next tier and start again
 
-## paragon-system
-
-From Necrotic tier upward, your tamed creatures can be **cultivated through 10 Paragon Levels** — a separate progression layered on top of normal taming. Higher levels boost stats and unlock new abilities.
-
-### Level Progression
-
-You level up your dino by killing wild creatures with it. A dedicated UI shows your current Paragon level and progress to the next.
-
-| Level | Reward |
-|-------|--------|
-| 1–4 | Stat boosts each level |
-| 5 | Stat boost + unlocks the **Powerup Ability** (requires defeating a Paragon Boss with that dino) |
-| 6–9 | Stat boosts each level |
-| 10 | Unlocks the dino's **Supreme version** — major stat upgrade |
-
-### Powerup Ability
-
-Dinos from Necrotic tier and up are **powered down** at tame time. After completing Paragon level 5 *and* defeating a Paragon Boss with that creature, a button combination unlocks that toggles it between powered-up and powered-down states. Powered-up applies both a visual change and a stat boost.
-
-### Paragon Bosses
-
-80 Paragon Bosses can be summoned across the higher tiers. Each summon spawns a random higher-tiered creature with its powerup active — these are the gates required to unlock your dino's powerup at level 5.
-
-Powerups are available on every tier from Necrotic upward: Necrotic, Grenadier, Prime, Nuclear, Vampiric, Wardens, Hellfire, DarkGod, Corrupted DarkGod, and Spectral Wardens.
-
 ## cores-essence
 
 Every wild creature drops a tier-appropriate **Dino Core** when killed. **1 Dino Core = 10 Essence.**
@@ -118,7 +93,7 @@ MaxKingOfTheSwamp=3
 
 ## necrotic
 
-Necrotic is where things change. Two new systems unlock here: **Paragon Levels** for cultivating tamed dinos (see [Paragon System](#paragon-system)) and **Queen Bee** honey production for higher-tier crafting.
+Necrotic is where things change. Two new systems unlock here: **Paragon Levels** for cultivating tamed dinos (see [FAQ](#faq)) and **Queen Bee** honey production for higher-tier crafting.
 
 ### Honey Production (Bee Rework)
 
@@ -322,6 +297,25 @@ Hostile NPCs that spawn in the wild and drop valuable loot when killed. Each Tri
 ### Tribesman Aggression
 
 All Tribesman are now instantly aggressive on sight — no provocation required. When you attack one tribe, nearby Tribesman from neighboring tribes will join in to defend each other. Plan engagements with flanking in mind.
+
+### Paragon Levels
+
+From Necrotic tier upward, your tamed creatures can be **cultivated through 10 Paragon Levels** — a separate progression layered on top of normal taming. Higher levels boost stats and unlock new abilities.
+
+**Level Progression** — Level up by killing wild creatures with your dino. A dedicated UI shows your current Paragon level and progress to the next.
+
+| Level | Reward |
+|-------|--------|
+| 1–4 | Stat boosts each level |
+| 5 | Stat boost + unlocks the **Powerup Ability** (requires defeating a Paragon Boss with that dino) |
+| 6–9 | Stat boosts each level |
+| 10 | Unlocks the dino's **Supreme version** — major stat upgrade |
+
+**Powerup Ability** — Dinos from Necrotic tier and up are **powered down** at tame time. After completing Paragon level 5 *and* defeating a Paragon Boss with that creature, a button combination unlocks that toggles it between powered-up and powered-down states. Powered-up applies both a visual change and a stat boost.
+
+**Paragon Bosses** — 80 Paragon Bosses can be summoned across the higher tiers. Each summon spawns a random higher-tiered creature with its powerup active — these are the gates required to unlock your dino's powerup at level 5.
+
+Powerups are available on every tier from Necrotic upward: Necrotic, Grenadier, Prime, Nuclear, Vampiric, Wardens, Hellfire, DarkGod, Corrupted DarkGod, and Spectral Wardens.
 
 ### Hostile System
 

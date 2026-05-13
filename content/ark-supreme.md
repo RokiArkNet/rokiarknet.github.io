@@ -150,9 +150,15 @@ Defeating all three Prime Guardians unlocks Nuclear and Vampiric kibble engrams.
 
 ## wardens
 
-Only the boss version of Warden creatures spawns in the wild. Killing a wild Warden boss spawns a tameable version on the spot — knock it out and tame it with the appropriate kibble.
+Wardens tier introduces wild-only boss spawning.
+
+### Wild Boss Spawning
+
+Killing a wild Warden boss spawns a tameable version on the spot — knock it out and tame it with the appropriate kibble.
 
 This applies to: Warden Rex, Warden Wyvern, Warden Trike, Warden Gorilla, and Warden Manticore.
+
+### Spectral Evolution
 
 Wardens are evolved into Spectral Wardens — see the Spectral Wardens section for evolution requirements.
 

@@ -122,16 +122,6 @@ Grenadier tier introduces explosive combat mechanics.
 
 Wild **Grenadier Bosses** drop a **Grenadier Token** and a **Grenadier Factory**. To produce **Grenadier Herb** (the key ingredient for Prime Kibble), the factory needs both the Grenadier Token *and* a **Chief Grenadier Token** dropped by the Grenadier Boss Tribesman.
 
-### Grenadier Boss Drops
-
-Defeating Grenadier bosses rewards:
-- High XP potions
-- Grenadier Health potions
-- High quality weapons
-- Ammo materials
-- Random assortment of ammo
-- Random Grenadier-tier and below tranqs
-
 ### Grenadier Boss Tribesman
 
 A hostile tribe that can **only be fought with Grenadier-tier or higher tamed dinos**. The chief drops the Chief Grenadier Token required for Grenadier Herb production.

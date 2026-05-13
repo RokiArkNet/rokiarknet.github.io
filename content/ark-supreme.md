@@ -156,8 +156,6 @@ Wardens tier introduces wild-only boss spawning.
 
 Killing a wild Warden boss spawns a tameable version on the spot — knock it out and tame it with the appropriate kibble.
 
-This applies to: Warden Rex, Warden Wyvern, Warden Trike, Warden Gorilla, and Warden Manticore.
-
 ### Spectral Evolution
 
 Wardens are evolved into Spectral Wardens — see the Spectral Wardens section for evolution requirements.

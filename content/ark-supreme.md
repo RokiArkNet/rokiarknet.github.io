@@ -95,9 +95,9 @@ MaxKingOfTheSwamp=3
 
 Necrotic is where things change. Two new systems unlock here: **Paragon Levels** for cultivating tamed dinos (see [FAQ](#faq)) and **Queen Bee** honey production for higher-tier crafting.
 
-### Honey Production (Bee Rework)
+### Honey Production
 
-Wild bees are now hostile and attack on sight — they no longer drop a tame token on death. The new flow:
+Wild bees are hostile and attack on sight. To set up honey production:
 
 1. **Kill wild bees** to collect a small amount of honey
 2. **Craft Bee Kibble** from that honey at the Supreme Bench
@@ -106,8 +106,6 @@ Wild bees are now hostile and attack on sight — they no longer drop a tame tok
 Once tamed, place the tier's rare flowers (crafted at the Supreme Bench) in the bee's inventory — the bee produces honey automatically.
 
 Queen Bees are available across Necrotic, Prime, Nuclear, Vampiric, Hellfire, and DarkGod tiers — each tier's bee uses that tier's rare flowers.
-
-> Bees tamed before the rework have no attacks and no stat boosts. Re-tame after a wild dinowipe to get the upgraded versions.
 
 ## necrotic-boss
 

@@ -420,6 +420,7 @@ function renderItemReference() {
   // Group items by category, then subcategory
   const grouped = {};
   Object.entries(ITEM_DATA).forEach(([name, data]) => {
+    if (data.category === 'Armor') return; // handled by renderArmorBrowser (~2,650 entries)
     const cat = data.category || 'Uncategorized';
     const sub = data.subcategory || '';
     if (!grouped[cat]) grouped[cat] = {};
@@ -460,6 +461,121 @@ function renderItemReference() {
     });
     wrap.appendChild(catDiv);
   });
+  return wrap;
+}
+
+function renderArmorBrowser() {
+  const wrap = document.createElement('div');
+  wrap.className = 'creature-tier';
+  const title = document.createElement('div');
+  title.className = 'creature-tier-title';
+  title.textContent = 'Armor';
+  wrap.appendChild(title);
+  const note = document.createElement('div');
+  note.style.cssText = 'font-size:12px;color:var(--muted);margin-bottom:12px;';
+  note.textContent = '~2,650 armor items (Vanilla craftable + Special drops, 6 rarities). Pick a tier, type, slot, and variant to look up the spawn data.';
+  wrap.appendChild(note);
+
+  const row = document.createElement('div');
+  row.style.cssText = 'display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end;';
+  const selStyle = 'background:var(--card);color:var(--text);border:1px solid var(--border);padding:6px 8px;font-size:12px;border-radius:3px;font-family:Rajdhani,sans-serif;min-width:120px;';
+  const btnStyle = 'background:var(--orange,#e8580a);color:#000;border:none;padding:7px 14px;font-size:12px;font-weight:700;border-radius:3px;cursor:pointer;text-transform:uppercase;letter-spacing:1px;';
+
+  function makeSel(label) {
+    const w = document.createElement('div');
+    w.style.cssText = 'display:flex;flex-direction:column;gap:4px;';
+    const lbl = document.createElement('div');
+    lbl.style.cssText = 'font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;';
+    lbl.textContent = label;
+    const sel = document.createElement('select');
+    sel.style.cssText = selStyle;
+    w.appendChild(lbl); w.appendChild(sel);
+    return [w, sel];
+  }
+
+  const [tierWrap, tierSel] = makeSel('Tier');
+  const [typeWrap, typeSel] = makeSel('Type');
+  const [slotWrap, slotSel] = makeSel('Slot');
+  const [varWrap,  varSel ] = makeSel('Variant');
+  const btn = document.createElement('button');
+  btn.style.cssText = btnStyle;
+  btn.textContent = 'Show';
+
+  ARMOR_TIERS.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t.name; opt.textContent = t.name;
+    tierSel.appendChild(opt);
+  });
+  function getTier() { return ARMOR_TIERS.find(t => t.name === tierSel.value); }
+
+  function refreshTypes() {
+    const tier = getTier();
+    const excl = new Set(tier.excludesTypes || []);
+    typeSel.innerHTML = '';
+    Object.keys(ARMOR_TYPES).forEach(tk => {
+      if (excl.has(tk)) return;
+      const opt = document.createElement('option');
+      opt.value = tk; opt.textContent = ARMOR_TYPES[tk].display;
+      typeSel.appendChild(opt);
+    });
+    refreshSlots();
+  }
+  function refreshSlots() {
+    const tier = getTier();
+    const tk = typeSel.value;
+    const tdef = ARMOR_TYPES[tk];
+    let slots;
+    if (tk === 'Scuba' && tier.scubaPantsOnly) slots = ['Pants'];
+    else { const skip = new Set(tdef.excludesSlots || []); slots = ARMOR_SLOTS.filter(s => !skip.has(s)); }
+    // Only keep slots where some variant exists
+    slots = slots.filter(slot => {
+      const base = tdef.display + ' ' + slot + ' ' + tier.name;
+      if (tier.vanilla && ITEM_DATA[base]) return true;
+      return ARMOR_RARITIES.some(r => ITEM_DATA[base + ' [' + r + ']']);
+    });
+    slotSel.innerHTML = '';
+    slots.forEach(s => {
+      const opt = document.createElement('option');
+      opt.value = s; opt.textContent = s;
+      slotSel.appendChild(opt);
+    });
+    refreshVariants();
+  }
+  function refreshVariants() {
+    const tier = getTier();
+    const tk = typeSel.value, slot = slotSel.value;
+    const base = ARMOR_TYPES[tk].display + ' ' + slot + ' ' + tier.name;
+    varSel.innerHTML = '';
+    if (tier.vanilla && ITEM_DATA[base]) {
+      const opt = document.createElement('option');
+      opt.value = 'Crafted'; opt.textContent = 'Crafted';
+      varSel.appendChild(opt);
+    }
+    ARMOR_RARITIES.forEach(r => {
+      if (ITEM_DATA[base + ' [' + r + ']']) {
+        const opt = document.createElement('option');
+        opt.value = r; opt.textContent = r;
+        varSel.appendChild(opt);
+      }
+    });
+  }
+  function getSelectedName() {
+    const tier = getTier();
+    const base = ARMOR_TYPES[typeSel.value].display + ' ' + slotSel.value + ' ' + tier.name;
+    return varSel.value === 'Crafted' ? base : base + ' [' + varSel.value + ']';
+  }
+
+  tierSel.addEventListener('change', refreshTypes);
+  typeSel.addEventListener('change', refreshSlots);
+  slotSel.addEventListener('change', refreshVariants);
+  btn.addEventListener('click', () => {
+    const name = getSelectedName();
+    if (ITEM_DATA[name]) showItemModal(name);
+  });
+
+  refreshTypes();
+  row.appendChild(tierWrap); row.appendChild(typeWrap); row.appendChild(slotWrap); row.appendChild(varWrap); row.appendChild(btn);
+  wrap.appendChild(row);
   return wrap;
 }
 
@@ -776,7 +892,7 @@ async function loadGuide(){
     const irSec = document.createElement('div'); irSec.className='section'; irSec.id='item-reference';
     const irTitle = document.createElement('div'); irTitle.className='section-title'; irTitle.textContent='Item Reference';
     const irNote = document.createElement('p'); irNote.style.cssText='font-size:12px;color:var(--muted);margin-bottom:16px;font-style:italic;'; irNote.textContent='Click any item to view spawn, unlock, and disable commands.';
-    irSec.appendChild(irTitle); irSec.appendChild(irNote); irSec.appendChild(renderItemReference()); contentEl.appendChild(irSec);
+    irSec.appendChild(irTitle); irSec.appendChild(irNote); irSec.appendChild(renderArmorBrowser()); irSec.appendChild(renderItemReference()); contentEl.appendChild(irSec);
     const footer=document.createElement('div');footer.className='guide-footer';
     footer.innerHTML='Guide maintained by Rokitur — RokiArkNet<br>Questions or corrections? Contact @Rokitur on Discord';
     contentEl.appendChild(footer);

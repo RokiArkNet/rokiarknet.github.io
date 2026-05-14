@@ -282,7 +282,7 @@ Hostile NPCs that spawn in the wild and drop valuable loot when killed. Each Tri
 **Notable extras**:
 - Necrotic Tribesman also drop tameable Necrotic boss saddles
 - Prime Tribesman are extremely dangerous — come prepared
-- Past Prime, boss-tier creatures (Wardens, Spectral Wardens) drop saddles for higher tiers you haven't unlocked yet
+- Past Prime, boss-tier creatures (Wardens, Spectral Wardens) drop saddles for higher tiers you haven't unlocked yet — Nuclear, Vampiric, and Hellfire saddles aren't in the drop pool
 
 ### Tribesman Aggression
 

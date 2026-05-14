@@ -268,10 +268,7 @@ Hostile NPCs that spawn in the wild and drop valuable loot when killed. Each Tri
 **Boss Tribesman**:
 - **Grenadier Boss Tribesman** — drops the **Chief Grenadier Token** required by the Grenadier Factory to produce Grenadier Herb. Can only be fought with Grenadier-tier or higher tamed dinos.
 
-**Thralls** (higher tiers):
-- Prime Thrall with Shotgun
-- Nuclear Thrall with Rocket Launcher
-- Hellfire Thrall with Flamethrower
+**Mounted Variants** — at higher tiers, some Tribesman ride mounted dinos into combat.
 
 **General Drops** — each Tribesman drops a tier-appropriate mix of:
 - XP potions (size scales with tier — Tiny → Medium → High → Extra Large)

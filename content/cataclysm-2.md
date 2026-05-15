@@ -306,6 +306,23 @@ Craft different tame tokens until you can farm Ancient and Futuristic Fragments 
 
 > Tsunami creatures have 30x damage and 30x health.
 
+## tier-11-bigdaddy
+
+Tier 11 began rolling out in Patch 159 (2026-05-15). 5–10 more BigDaddy creatures will be released each week until the tier is complete.
+
+### Powerup Ability
+
+BigDaddy creatures have been positively affected by the increased radiation found in all the ARKs. Each BigDaddy creature can be powered up for **60 seconds** by pressing **C** (keyboard) or **Left Bumper** (controller). The buff applies:
+
+- Increased Melee Damage
+- Increased Damage Resistance
+
+Other Melee Buffs stack with the powerup.
+
+### Initial Release (Patch 159)
+
+Allo, Ankylo, Argentavis, Beaver, Carno, Cat, Deinosuchus, Dilo, DodoRexy, Dragon, Featherlight, Griffin, Jerboa, Mammoth, Megatherium, Shinehorn
+
 ## loot-dinos
 
 Special creatures that drop valuable loot when killed or harvested. Some are tameable resource-poopers.

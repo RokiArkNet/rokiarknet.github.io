@@ -99,7 +99,7 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;fo
 const CONTENT_URL='https://raw.githubusercontent.com/rokiarknet/rokiarknet.github.io/main/content/cataclysm-2.md';
 const NAV_SECTIONS={
   'Overview':['overview','tier-list','core-mechanics','getting-started'],
-  'Progression':['tier-2-tidal','tier-3-rapid','tier-3-5-avatar','tier-4-cyclonic-boss','tier-5-glacial','tier-6-undead','tier-7-soaring','tier-8-maelstrom-boss','tier-9-sumerian','tier-10-tsunami'],
+  'Progression':['tier-2-tidal','tier-3-rapid','tier-3-5-avatar','tier-4-cyclonic-boss','tier-5-glacial','tier-6-undead','tier-7-soaring','tier-8-maelstrom-boss','tier-9-sumerian','tier-10-tsunami','tier-11-bigdaddy'],
   'Reference':['loot-dinos','tranqs','weapons-potions','kibble-chart','bosses','faq','creature-list']
 };
 const SECTION_LABELS={
@@ -117,6 +117,7 @@ const SECTION_LABELS={
   'tier-8-maelstrom-boss':'T8 Maelstrom Boss',
   'tier-9-sumerian':'T9 Sumerian',
   'tier-10-tsunami':'T10 Tsunami',
+  'tier-11-bigdaddy':'T11 BigDaddy',
   'loot-dinos':'Loot Dinos',
   'tranqs':'Tranqs',
   'weapons-potions':'Equipment',
@@ -494,7 +495,24 @@ const SPAWN_DATA={
   "T10 Tsunami:Thylacoleo":"'Blueprint'/Cataclysm2/Tsunami/TsunamiThylacoleo_Character_BP'",
   "T10 Tsunami:Val Megaraptor":"'Blueprint'/Cataclysm2/Tsunami/TsunamiValMegaraptor_Character_BP'",
   "T10 Tsunami:Wyvern (Ice)":"'Blueprint'/Cataclysm2/Tsunami/TsunamiWyvern_Character_BP_Ice'",
-  "T10 Tsunami:Yutyrannus":"'Blueprint'/Cataclysm2/Tsunami/TsunamiYutyrannus_Character_BP'"
+  "T10 Tsunami:Yutyrannus":"'Blueprint'/Cataclysm2/Tsunami/TsunamiYutyrannus_Character_BP'",
+  // T11 BigDaddy (Patch 159 initial release)
+  "T11 BigDaddy:Allo":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyAllo_Character_BP'",
+  "T11 BigDaddy:Ankylo":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyAnkylo_Character_BP'",
+  "T11 BigDaddy:Argentavis":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyArgent_Character_BP'",
+  "T11 BigDaddy:Beaver":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyBeaver_Character_BP'",
+  "T11 BigDaddy:Carno":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyCarno_Character_BP'",
+  "T11 BigDaddy:Cat":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyCat_Character_BP'",
+  "T11 BigDaddy:Deinosuchus":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyDeinosuchusASA_Character_BP'",
+  "T11 BigDaddy:Dilo":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyDilo_Character_BP'",
+  "T11 BigDaddy:DodoRexy":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyDodorexy_Character_BP_New'",
+  "T11 BigDaddy:Dragon":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyDragon_Character_BP'",
+  "T11 BigDaddy:Featherlight":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyFeatherlite_Character_BP'",
+  "T11 BigDaddy:Griffin":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyGriffin_Character_BP'",
+  "T11 BigDaddy:Jerboa":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyJerboa_Character_BP'",
+  "T11 BigDaddy:Mammoth":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyMammoth_Character_BP'",
+  "T11 BigDaddy:Megatherium":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyMegatherium_Character_BP'",
+  "T11 BigDaddy:Shinehorn":"'Blueprint'/Cataclysm2/BigDaddy/BigDaddyLanternLizard_Character_BP'"
 };
 
 function showModal(tierName, creatureName){
@@ -531,7 +549,7 @@ document.getElementById('copy-btn').addEventListener('click',copyCommand);
 function renderTierDiagram(){
   const wrap=document.createElement('div');
   wrap.style.cssText='background:#14141e;border:1px solid #2a2a3e;padding:20px;margin:8px 0 24px;overflow-x:auto;border-radius:4px;';
-  wrap.innerHTML=`<svg width="100%" viewBox="0 0 560 200" xmlns="http://www.w3.org/2000/svg" style="min-width:520px;display:block;">
+  wrap.innerHTML=`<svg width="100%" viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" style="min-width:520px;display:block;">
 <defs>
   <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
     <path d="M2 1L8 5L2 9" fill="none" stroke="#3a3a50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -609,9 +627,16 @@ function renderTierDiagram(){
   <text x="472" y="164" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#ef4444">T10</text>
   <text x="472" y="176" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#fca5a5">Tsunami</text>
 </g></a>
+<!-- Arrow from T10 down to T11 -->
+<line x1="472" y1="184" x2="472" y2="208" stroke="#3a3a50" stroke-width="1" marker-end="url(#arr)"/>
+<a href="#tier-11-bigdaddy"><g style="cursor:pointer">
+  <rect x="430" y="208" width="85" height="32" rx="3" fill="#1a1a28" stroke="#facc15" stroke-width="1.5"/>
+  <text x="472" y="220" text-anchor="middle" font-family="Orbitron,monospace" font-size="9" font-weight="700" fill="#fde047">T11</text>
+  <text x="472" y="232" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" fill="#fef08a">BigDaddy</text>
+</g></a>
 <!-- Future expansion indicator -->
-<line x1="515" y1="168" x2="535" y2="168" stroke="#3a3a50" stroke-width="1" stroke-dasharray="4,3"/>
-<text x="545" y="172" font-family="Orbitron,monospace" font-size="8" fill="#3a3a50">T11+</text>
+<line x1="515" y1="224" x2="535" y2="224" stroke="#3a3a50" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="545" y="228" font-family="Orbitron,monospace" font-size="8" fill="#3a3a50">T12+</text>
 </svg>`;
   return wrap;
 }

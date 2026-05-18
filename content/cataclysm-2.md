@@ -390,6 +390,8 @@ T2 Tidal-tier creature. Tameable, rideable, and breedable. Killed and harvested 
 | Arrow 1M | 105 | 1,000,000 |
 | Arrow 5M | 109 | 5,000,000 |
 
+Arrow 5M is dropped by certain BigDaddy creatures.
+
 ## weapons-potions
 
 ### Throwing Pikes
@@ -416,6 +418,8 @@ Mix-and-match piece buffs, no durability, increased base armor.
 
 **Captain Hat**, **Wolf Hat**, and **Faytherlight Helmet** — drop sources and effects TBD.
 
+**Cataclysm Gas Mask (Rider Protection Mask)** — Only source of full rider protection while mounted. Drops from Captain Cake Sniffer (T2). A higher-tier v2 version drops from Maelstrom Boss Dwayne (T8).
+
 ### Shields
 
 No durability. Each shield grants a buff while equipped.
@@ -423,7 +427,6 @@ No durability. Each shield grants a buff while equipped.
 | Shield | Buff |
 |--------|------|
 | Cataclysm Watcher Wood | EXP bonus (stacks with most XP buffs) |
-| Cataclysm Watcher Metal | Rider Protection — survive projectile attacks while mounted |
 | Cataclysm Watcher Riot | Anti-Radiation — substitute for radiation suit |
 | Cataclysm Watcher Tek | Melee damage buff + damage cloud |
 
@@ -437,7 +440,7 @@ No durability. Each shield grants a buff while equipped.
 
 ### Saddles
 
-**Tsunami Saddles** — Species-specific, backwards-compatible (work on lower-tier creatures too). Start at 150 Armor (vs vanilla 25), upgradeable through normal means. When a rider is mounted, the dino is buffed in Melee and Stamina Regen — buff drops when the rider dismounts. Currently only Tsunami-tier creatures have saddles; higher tiers planned.
+**Tsunami Saddles** — Species-specific, backwards-compatible (work on lower-tier creatures too). Start at 150 Armor (vs vanilla 25), upgradeable through normal means. When a rider is mounted, the dino is buffed in Melee and Stamina Regen — buff drops when the rider dismounts. Drop from BigDaddy creatures. Currently only Tsunami-tier creatures have saddles; higher tiers planned.
 
 **Tsunami Costume Slot Armor** — Crafted in player inventory. For Tsunami creatures that don't have saddle slots.
 
@@ -472,7 +475,7 @@ Bosses unlock Tek Engrams at Tier 4 Cyclonic and provide materials for continued
 
 ### Tidal Wild Bosses (T2)
 
-**Captain Cake Sniffer** — Tier 2 wild boss. Defeating drops the first armor set (Tidal Watcher Hide) plus rider-protection items, and gives a tame summon token. Framed as a prep boss before the Cyclonic battle with Harambe.
+**Captain Cake Sniffer** — Tier 2 wild boss. Defeating drops the first armor set (Tidal Watcher Hide) plus the Cataclysm Gas Mask (Rider Protection Mask), and gives a tame summon token. Framed as a prep boss before the Cyclonic battle with Harambe.
 
 ### Cyclonic Bosses (T4)
 
@@ -491,6 +494,8 @@ A side-progression series for upgrading existing boss tames outside the main tie
 **Summon:** Craft Maelstrom Boss token in player inventory
 
 **Drops:** Ancient Fragments, Futuristic Fragments, Tameable Boss Tokens
+
+**Boss Dwayne** — drops the v2 Cataclysm Gas Mask (Rider Protection Mask).
 
 **HP:** Semi-random roll on summon — consistently above 30M.
 
@@ -642,7 +647,7 @@ Acrocanthosaurus, Ceratosaurus, Crystal Wyvern, Dragonfly, Featherlite, Giganoto
 
 ### T7 Soaring
 
-Ankylosaurus, Archelon, Basilosaurus, Bison, Deinosuchus, Direwolf, Mosasaurus, Shastasaurus
+Ankylosaurus, Archelon, Basilosaurus, Bison, Deinosuchus, Mosasaurus, Shastasaurus
 
 ### T8 Maelstrom — Boss Gate
 

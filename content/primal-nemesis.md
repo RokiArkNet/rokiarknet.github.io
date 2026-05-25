@@ -319,11 +319,11 @@ Hover above a Resource Rock Golem with a flying mount to bait it into spawning M
 
 **Taming the Golem** — Griffin hover and shoot straight down with Rocket Launcher aimed at the head. Or trap and use a Cannon for Torpor. Captain Reptile's Cannon mod can help.
 
-### Starfire Metal / Mithril / Gold
+### Starfire Metal — Gold & Mithril
 
 Source: DemiGod StarFire Golem
 
-When fighting a Resource Rock Golem there is a 25% chance it respawns as a DemiGod StarFire Golem. During the fight it periodically summons meteors — harvest these for Starfire Metal, Mithril Ore, and Gold Ore. Each meteor lasts 7 minutes.
+Starfire Metal comes in two types: **Gold Ore** and **Mithril Ore**. When fighting a Resource Rock Golem there is a 25% chance it respawns as a DemiGod StarFire Golem. During the fight it periodically summons meteors — harvest these for Gold Ore and Mithril Ore. Each meteor lasts 7 minutes.
 
 > The meteor ability fires every 3 minutes. Keep the DemiGod alive to farm multiple waves — the most efficient method for gathering these ores.
 

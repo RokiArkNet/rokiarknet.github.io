@@ -140,13 +140,30 @@ To tame Prime tier creatures, you need Prime Kibble made from Grenadier Herb:
 
 ### Prime Guardians
 
-Three Guardian bosses exist: Broodmother, Ferox, and Spino. Defeating all three Prime Guardians unlocks Nuclear and Vampiric kibble engrams.
+Three Guardian bosses exist: Broodmother, Ferox, and Spino.
 
 > Prime-tier bosses take reduced damage from anything that isn't a tek-type dino — bring Primes (or higher tek tiers) to fight Primes.
 
+Defeating all three Prime Guardians unlocks Nuclear and Vampiric kibble engrams.
+
 ## nuclear-vampiric
 
-Defeating all three Prime Guardians unlocks Nuclear and Vampiric kibble engrams.
+Nuclear and Vampiric creatures **cannot be tranqed with darts or arrows** — they require tier-matched Rocket Launchers firing tranq rockets.
+
+### Taming Flow
+
+1. **Get the blueprints** — Nuclear and Vampiric Tribesmen drop the blueprints for their tier's Rocket Launcher and Tranq Rocket ammo
+2. **Knock out** — Tranq the target with the tier-matched Rocket Launcher loaded with Tranq Rockets
+3. **Feed kibble** — Nuclear Kibble on Nuclear creatures, Vampiric Kibble on Vampiric
+
+### Tier-Locked Tranqing
+
+Rockets are **1:1 tier-locked** — Nuclear Rockets only tranq Nuclear creatures, Vampiric Rockets only tranq Vampiric creatures. There is no cross-tranqing.
+
+| Tier | Tranq Weapon | Ammo | Kibble |
+|------|--------------|------|--------|
+| Nuclear | Nuclear Rocket Launcher | Nuclear Rocket | Nuclear Kibble |
+| Vampiric | Vampiric Rocket Launcher | Vampiric Rocket | Vampiric Kibble |
 
 ## wardens
 

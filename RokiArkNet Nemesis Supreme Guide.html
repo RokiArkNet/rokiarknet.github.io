@@ -183,9 +183,41 @@ function buildNav(){
   }
 }
 
+function downloadTierDiagramAsPng(wrap){
+  const svg=wrap.querySelector('svg');
+  if(!svg)return;
+  const svgStr=new XMLSerializer().serializeToString(svg);
+  const vb=svg.viewBox.baseVal;
+  const scale=2;
+  const w=vb.width*scale,h=vb.height*scale;
+  const blob=new Blob([svgStr],{type:'image/svg+xml;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const img=new Image();
+  img.onload=()=>{
+    const canvas=document.createElement('canvas');
+    canvas.width=w;canvas.height=h;
+    const ctx=canvas.getContext('2d');
+    ctx.fillStyle='#14141e';
+    ctx.fillRect(0,0,w,h);
+    ctx.drawImage(img,0,0,w,h);
+    URL.revokeObjectURL(url);
+    canvas.toBlob(b=>{
+      const a=document.createElement('a');
+      a.href=URL.createObjectURL(b);
+      a.download='nemesis-supreme-tier-list.png';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+    },'image/png');
+  };
+  img.onerror=()=>{URL.revokeObjectURL(url);alert('Failed to render diagram. Check console.');};
+  img.src=url;
+}
+
 function renderTierDiagram(){
   const wrap=document.createElement('div');
-  wrap.style.cssText='background:#14141e;border:1px solid #2a2a3e;padding:20px;margin:8px 0 24px;overflow-x:auto;border-radius:4px;';
+  wrap.style.cssText='background:#14141e;border:1px solid #2a2a3e;padding:20px;margin:8px 0 24px;overflow-x:auto;border-radius:4px;position:relative;';
   wrap.innerHTML=`<svg width="100%" viewBox="0 0 760 855" xmlns="http://www.w3.org/2000/svg" style="min-width:720px;display:block;">
 <defs>
   <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
@@ -358,6 +390,11 @@ function renderTierDiagram(){
 <circle cx="340" cy="830" r="4" fill="#eab308"/><text x="350" y="834" font-family="Rajdhani,sans-serif" font-size="9" fill="#d8d8e8">PrimalChaos</text>
 <circle cx="445" cy="830" r="4" fill="#22c55e"/><text x="455" y="834" font-family="Rajdhani,sans-serif" font-size="9" fill="#d8d8e8">Astraeos</text>
 </svg>`;
+  const btn=document.createElement('button');
+  btn.textContent='↓ Download PNG';
+  btn.style.cssText='position:absolute;top:12px;right:12px;padding:6px 12px;background:#e8580a;border:none;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:11px;letter-spacing:1px;cursor:pointer;border-radius:3px;z-index:2;';
+  btn.onclick=()=>downloadTierDiagramAsPng(wrap);
+  wrap.appendChild(btn);
   return wrap;
 }
 

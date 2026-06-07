@@ -930,12 +930,6 @@ The final boss encounter.
 
 **Wipeout Ability:** Dream uses a devastating full-area purge twice per fight — once at 60% HP and again at 20% HP. Survivors and tames caught unprepared will be annihilated.
 
-**Seal Phases:**
-
-**Untamable Phase:** Standard mechanics with environmental hazards and wipe attacks
-
-**Tamable Phase:** Triggered post-victory in special arenas, allowing capture of Dream's essence for unique evolutions
-
 ### Recommended Strategy
 
 - Beast of Darkness is most effective — its bite attack inflicts higher damage than fireballs once HP drops below key thresholds

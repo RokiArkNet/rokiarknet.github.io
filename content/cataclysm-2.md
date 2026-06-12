@@ -319,7 +319,7 @@ Other Melee Buffs stack with the powerup.
 
 ### Available Creatures
 
-Allo, Ankylo, Argentavis, Beaver, Carno, Cat, Deinosuchus, Dilo, DodoRexy, Dragon, Featherlight, Griffin, Jerboa, Mammoth, Megatherium, Shinehorn
+Acro, Allo, Andrewsarchus, Ankylo, Argentavis, Beaver, Carno, Cat, Deinosuchus, Deinotherium, Dilo, Doedicurus, DodoRexy, Dragon, Featherlight, Foot Model, Griffin, Jerboa, Mammoth, Megatherium, Ptera, Ravager, Reaper, Sabertooth, Shinehorn, Spinosaurus, Terror Bird, Thorny Dragon, Thylacoleo, Titanboa (Frilled), Toad, Tom Brady, Unicorn
 
 ## loot-dinos
 
@@ -662,3 +662,7 @@ Allosaurus, Argentavis, Bison, Boss Ankylo, Carcharodontosaurus, Ceratosaurus, C
 ### T10 Tsunami
 
 Allosaurus, Andrewsarchus, Angel Fox, Ankylosaurus, Argentavis, Boss Bat, Carcharodontosaurus, Cherufe, Cryolophosaurus, Crystal Wyvern, Defender, Desmodus, Devil Fox, Direbear, Direwolf, Dragon, Enforcer, Fire Lion, Giganotosaurus, Gigantoraptor, Gorilla, Griffin, Helicoprion, Ice Golem, Indominus Rex, Mammoth, Mantis, Megalodon, Megatherium, Mek, Milk Glider, Mosasaurus, Neophyte, Owl, Pelagornis, Phoenix, Plesiosaur, Pteranodon, Rex, Rock Drake, Sabertooth, Shastasaurus, Shoulder Dragon, Snow Dragon, Snow Monster, Space Whale, Spirit Bear, Therizinosaur, Thylacoleo, Val Megaraptor, Wyvern (Ice), Yutyrannus
+
+### T11 BigDaddy
+
+Acro, Allo, Andrewsarchus, Ankylo, Argentavis, Beaver, Carno, Cat, Deinosuchus, Deinotherium, Dilo, Doedicurus, DodoRexy, Dragon, Featherlight, Foot Model, Griffin, Jerboa, Mammoth, Megatherium, Ptera, Ravager, Reaper, Sabertooth, Shinehorn, Spinosaurus, Terror Bird, Thorny Dragon, Thylacoleo, Titanboa (Frilled), Toad, Tom Brady, Unicorn

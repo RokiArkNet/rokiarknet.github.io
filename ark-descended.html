@@ -155,10 +155,54 @@ const TIER_PREFIX = {
   "Unique Tek":"Unique","Ancient":"Ancient","Degenerates":"Degenerate"
 };
 
+// Direct "<tier> <grid name>" -> exact SPAWN_DATA key, for cases the heuristic can't reach.
+const ALIAS_MAP = {
+  "Descended AC Dimetrodon":"AC Dimetro",
+  "Descended Logger Casteroides":"Logger Beaver",
+  "Descended Water Jug Bug":"Descended Jugbug Water",
+  "Ordinary Archelon":"ASA Ordinary Archelon",
+  "Excellent Archelon":"ASA Excellent Archelon",
+  "Ordinary Deinosuchus":"Ordinary Deinosuchus ASA",
+  "Excellent Deinosuchus":"Excellent Deinosuchus ASA",
+  "Unreal Deinosuchus":"Unreal Deinosuchus ASA",
+  "Devilish Deinosuchus":"Devilish Deinosuchus ASA",
+  "Excellent Drake Flame":"Flame Descended Drake",
+  "Excellent Drake Lightning":"Lightning Descended Drake",
+  "Excellent Drake Poison":"Poison Descended Drake",
+  "Excellent Dodorexy Flame":"Descended Fire Dodo Rex",
+  "Excellent Dodorexy Lightning":"Descended Lightning Dodo Rex",
+  "Excellent Dodorexy Poison":"Descended Poison Dodo Rex",
+  "Excellent Wyvern Flame":"Fire Excellent Wyvern",
+  "Excellent Wyvern Lightning":"Lightning Excellent Wyvern",
+  "Excellent Wyvern Poison":"Poison Excellent Wyvern",
+  "Excellent Megapithecus":"Base Descended Excellent Gorilla",
+  "Excellent Gorilla":"Base Descended Excellent Gorilla",
+  "Celestial Megapithecus":"Base Descended Celestial Gorilla",
+  "Excellent Indominus Rex":"Base Excellent Indom",
+  "Abyssal Indominus Rex":"Base Abyssal Indom",
+  "Spectral Indominus Rex":"Base Spectral Indom",
+  "Havoc Indominus Rex":"Base Havoc Indom",
+  "Excellent Manticore":"Descended Excellent Manticore",
+  "Abyssal Manticore":"Descended Abyssal Manticore",
+  "Spectral Manticore":"Descended Spectral Manticore",
+  "Spectral DodoWyvern":"AD Spectral Dodo Wyvern",
+  "Excellent Reaper Queen Wild":"Female Descended Xenomorph",
+  "Devilish Unicorn":"Pegasus Devil Equus",
+  "Warden Ascended Little Dodo":"Ascended Little Dodo Dodo",
+  "Warden Descended Little Dodo":"Descended Little Dodo Dodo",
+  "Devilish Rex":"Devilsh Rex",
+  "Excellent Broodmother Lysrix":"Base Descended Excellent Spider L",
+  "Abyssal Broodmother Lysrix":"Base Descended Abyssal Spider L",
+  "Spectral Broodmother":"Base Descended Spectral Spider L",
+  "Abyssal Dodorexy":"Descended Abyssal Dodo Rex"
+};
+
 function _normTok(s){return s.toLowerCase().replace(/[^a-z0-9]/g,'');}
 
 function lookupCreature(tierPrefix, creatureName) {
   const clean = creatureName.replace(/\s*\([^)]*\)/g,'').trim();
+  const aliasKey = tierPrefix + " " + clean;
+  if (ALIAS_MAP[aliasKey] && SPAWN_DATA[ALIAS_MAP[aliasKey]]) return SPAWN_DATA[ALIAS_MAP[aliasKey]];
   const shortName = NAME_MAP[clean] || NAME_MAP[creatureName] || clean;
   const candidates = [
     tierPrefix + " " + shortName,

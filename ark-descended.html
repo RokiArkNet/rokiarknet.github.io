@@ -76,7 +76,6 @@ body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;fo
 .modal-field-value:empty{display:none;}
 #modal-close{padding:10px 20px;font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:600;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;transition:all .15s;border-radius:3px;margin-top:10px;}
 #modal-close:hover{border-color:var(--orange);color:var(--orange);}
-.catalog-note{font-size:12px;color:var(--muted);margin-bottom:16px;font-style:italic;}
 </style>
 </head>
 <body>
@@ -201,11 +200,6 @@ function showModal(tierPrefix, creatureName) {
   return true;
 }
 
-function showModalByKey(key) {
-  const data = SPAWN_DATA[key];
-  if (data) _fillModal(key, data);
-}
-
 function hideModal() {
   document.getElementById('modal-overlay').classList.remove('show');
 }
@@ -235,53 +229,12 @@ function attachCreatureClickHandlers(scope) {
   });
 }
 
-const TIER_ORDER = [
-  'T1 Ordinary & Descended','T2 Excellent','T3 Divine & Devilish',
-  'T4 Celestial & Abyssal','T5 Warchiefs','T6 Bionic','T7 Wardens',
-  'T8 God Trials','T9 Dark Seals','T10 Dream Stalkers',
-  'Ancient','Unreal','Degenerate','Infected','Legendary',
-  'Havoc & Spectral','Loot & Resource Bosses','Bosses','Minions','Other'
-];
-
-function renderFullCatalog() {
-  const wrap = document.createElement('div');
-  const note = document.createElement('div');
-  note.className = 'catalog-note';
-  note.textContent = 'Every spawnable creature from the ArkDescended mod manifest (' + Object.keys(SPAWN_DATA).length + ' entries). Click any name for spawn commands.';
-  wrap.appendChild(note);
-  const grouped = {};
-  Object.entries(SPAWN_DATA).forEach(([name, d]) => {
-    const t = d.tier || 'Other';
-    if (!grouped[t]) grouped[t] = [];
-    grouped[t].push(name);
-  });
-  const renderTier = (t, names) => {
-    const tierDiv = document.createElement('div'); tierDiv.className = 'creature-tier';
-    const ttl = document.createElement('div'); ttl.className = 'creature-tier-title';
-    ttl.textContent = t + ' (' + names.length + ')';
-    tierDiv.appendChild(ttl);
-    const grid = document.createElement('div'); grid.className = 'creature-grid';
-    names.sort().forEach(name => {
-      const c = document.createElement('div'); c.className = 'creature clickable';
-      c.textContent = name; c.title = 'Click for spawn data';
-      c.addEventListener('click', () => showModalByKey(name));
-      grid.appendChild(c);
-    });
-    tierDiv.appendChild(grid);
-    wrap.appendChild(tierDiv);
-  };
-  const seen = new Set();
-  TIER_ORDER.forEach(t => { if (grouped[t]) { seen.add(t); renderTier(t, grouped[t]); }});
-  Object.entries(grouped).forEach(([t, names]) => { if (!seen.has(t)) renderTier(t, names); });
-  return wrap;
-}
-
 const CONTENT_URL='https://raw.githubusercontent.com/rokiarknet/rokiarknet.github.io/main/content/ark-descended.md';
 const NAV_SECTIONS={
   'Overview':['tier-list','getting-started'],
   'Progression':['t2-excellent','t3-divine-devilish','t4-celestial-abyssal','t5-warchiefs','t6-bionic','t7-wardens','t8-god-trials','t9-dark-seals','t10-dream'],
   'Evolution Paths':['reaper-evolution','ice-titan-evolution','managarmr-evolution','legendary-evolution','infected-evolution','ancient-evolution'],
-  'Reference':['supply-drops','loot-bosses','passive-production','faq','creature-reference','full-spawn-catalog']
+  'Reference':['supply-drops','loot-bosses','passive-production','faq','creature-reference']
 };
 const SECTION_LABELS={
   'tier-list':'Tier List',
@@ -305,8 +258,7 @@ const SECTION_LABELS={
   'loot-bosses':'Loot Bosses',
   'passive-production':'Passive Production',
   'faq':'FAQ & Tips',
-  'creature-reference':'Creature Reference',
-  'full-spawn-catalog':'Full Spawn Catalog'
+  'creature-reference':'Creature Reference'
 };
 
 function buildNav(){
@@ -566,13 +518,6 @@ async function loadGuide(){
     crSec.appendChild(renderCreatureReference());
     content.appendChild(crSec);
     attachCreatureClickHandlers(crSec);
-
-    // Full Spawn Catalog (everything in the manifest)
-    const fcSec = document.createElement('div'); fcSec.className = 'section'; fcSec.id = 'full-spawn-catalog';
-    fcSec.innerHTML = `<h2 class="section-title">Full Spawn Catalog</h2>`;
-    fcSec.appendChild(renderFullCatalog());
-    content.appendChild(fcSec);
-
 
     // Footer
     const footer=document.createElement('div');footer.className='guide-footer';

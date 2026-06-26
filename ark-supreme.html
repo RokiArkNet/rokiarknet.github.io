@@ -212,7 +212,8 @@ function renderItemReference() {
   Object.entries(ITEM_DATA).forEach(([name, data]) => {
     if (data.category === 'Saddles') return; // handled by renderSaddleBrowser
     const cat = data.category || 'Uncategorized';
-    const sub = data.subcategory || '';
+    let sub = data.subcategory || '';
+    if (cat === 'Armor') sub = name.split(' ')[0]; // group armor by tier (first word of item name)
     if (!grouped[cat]) grouped[cat] = {};
     if (!grouped[cat][sub]) grouped[cat][sub] = [];
     grouped[cat][sub].push(name);
@@ -224,9 +225,10 @@ function renderItemReference() {
     catTitle.className = 'creature-tier-title';
     catTitle.textContent = cat;
     catDiv.appendChild(catTitle);
+    const order = cat === 'Armor' ? SADDLE_TIER_ORDER : ITEM_SUBCATEGORY_ORDER;
     const orderedSubs = Object.keys(subs).sort((a, b) => {
-      const ai = ITEM_SUBCATEGORY_ORDER.indexOf(a);
-      const bi = ITEM_SUBCATEGORY_ORDER.indexOf(b);
+      const ai = order.indexOf(a);
+      const bi = order.indexOf(b);
       return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
     });
     orderedSubs.forEach(sub => {
@@ -238,7 +240,20 @@ function renderItemReference() {
       }
       const grid = document.createElement('div');
       grid.className = 'creature-grid';
-      subs[sub].sort().forEach(name => {
+      const items = subs[sub].slice();
+      if (cat === 'Armor') {
+        items.sort((a, b) => {
+          const aP = a.split(' '), bP = b.split(' ');
+          const aT = ARMOR_TYPE_ORDER.indexOf(aP[1]); const bT = ARMOR_TYPE_ORDER.indexOf(bP[1]);
+          const tDiff = (aT === -1 ? 999 : aT) - (bT === -1 ? 999 : bT);
+          if (tDiff) return tDiff;
+          const aS = ARMOR_SLOT_ORDER.indexOf(aP[2]); const bS = ARMOR_SLOT_ORDER.indexOf(bP[2]);
+          return (aS === -1 ? 999 : aS) - (bS === -1 ? 999 : bS);
+        });
+      } else {
+        items.sort();
+      }
+      items.forEach(name => {
         const tile = document.createElement('div');
         tile.className = 'creature clickable';
         tile.textContent = name;
@@ -254,6 +269,8 @@ function renderItemReference() {
 }
 
 const SADDLE_TIER_ORDER = ['Savage','Toxic','Berserk','Necrotic','Grenadier','Prime','Nuclear','Vampiric','Wardens','Hellfire','DarkGod','Spectral Wardens','Special'];
+const ARMOR_TYPE_ORDER = ['Cloth','Hide','Fur','Chitin','Ghillie','Desert','Scuba','Flak','Riot','Tek'];
+const ARMOR_SLOT_ORDER = ['Helmet','Shirt','Gloves','Pants','Boots'];
 
 function renderSaddleBrowser() {
   const wrap = document.createElement('div');

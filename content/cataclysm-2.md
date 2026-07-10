@@ -621,48 +621,48 @@ Pegomastax
 
 ### T1 Runt
 
-Allosaurus, Ankylosaurus, Argentavis, Baryonyx, Basilosaurus, Bigfoot, Camelsaurus, Carnotaurus, Cat, Cave Wolf, Crystal Wyvern, Daeodon, Deinotherium, Direbear, Direwolf, Dodo, Doedicurus, Dolphin, Dunkleosteus, Equus, Featherlight, Fire Wyvern, Gacha, Gigantoraptor (Aberrant), Griffin, Hatchling, Maelizard, Mammoth, Mantis, Megalodon, Megalosaurus, Megatherium, Mosasaurus, Moschops, Owl, Parasaur, Pelagornis, Phoenix, Procoptodon, Pteranodon, Rex, Rhino, Sabertooth, Scorpion, Spiney Lizard, Stegosaurus, Tapejara, Therizinosaur, Thrall, Thylacoleo, Trike, Turtle, Xenomorph
+Allosaurus, Ankylosaurus, Argentavis, Baryonyx, Basilosaurus, Bigfoot, Camelsaurus, Carnotaurus, Cat, Cave Wolf, Crystal Wyvern, Daeodon, Deinotherium, Direbear, Direwolf, Dodo, Doedicurus, Dolphin, Dunkleosteus, Equus, Featherlight, Fire Wyvern, Gacha, Gigantoraptor (Aberrant), Griffin, Hatchling, Maelizard, Mammoth, Mantis, Megalodon, Megalosaurus, Megatherium, Mosasaurus, Moschops, Owl, Parasaur, Pelagornis, Phoenix, Procoptodon, Pteranodon, Raptor (Aberrant), Rex, Rhino, Sabertooth, Scorpion, Spiney Lizard, Stegosaurus, Tapejara, Therizinosaur, Thrall, Thylacoleo, Trike, Turtle, Unicorn, Wyvern (Ash), Wyvern (Fire), Wyvern (Ice), Wyvern (Lightning), Wyvern (Poison), Wyvern (Zombie Fire), Wyvern (Zombie Lightning), Wyvern (Zombie Poison), Xenomorph, Zombie, Zombie (Bloated), Zombie (Hulking), Zombie (Skinny)
 
 ### T2 Tidal
 
-Acrocanthosaurus, Allosaurus, Ankylosaurus, Argentavis, Baryonyx, Basilosaurus, Bigfoot, Camelsaurus, Captain Cake Sniffer, Carcharodontosaurus, Carnotaurus, Cave Wolf, Crystal Wyvern, Daeodon, Direbear, Direwolf, Doedicurus, Dolphin, Dunkleosteus, Equus, Featherlite, Griffin, Hatchling, Mammoth, Mantis, Megalodon, Megalosaurus, Megatherium, Mosasaurus, Moschops, Owl, Parasaur, Pelagornis, Procoptodon, Pteranodon, Rex, Rhino, Sabertooth, Scorpion, Shoulder Dragon, Spiney Lizard, Spinosaurus, Stegosaurus, Tapejara, Therizinosaur, Thylacoleo, Trike, Turtle
+Acrocanthosaurus, Allosaurus, Ankylosaurus, Argentavis, Baryonyx, Basilosaurus, Bigfoot, Camelsaurus, Captain Cake Sniffer, Carcharodontosaurus, Carnotaurus, Cave Wolf, Crystal Wyvern, Daeodon, Direbear, Direwolf, Doedicurus, Dolphin, Dunkleosteus, Equus, Faytherlight, Featherlite, Griffin, Hatchling, Mammoth, Mantis, Megalodon, Megalosaurus, Megatherium, Mosasaurus, Moschops, Owl, Parasaur, Pelagornis, Phoenix, Procoptodon, Pteranodon, Raptor (Aberrant), Rex, Rhino, Sabertooth, Scorpion, Shoulder Dragon, Shoulder Dragon (Autumn), Spiney Lizard, Spinosaurus, Stegosaurus, Tapejara, Therizinosaur, Thylacoleo, Trike, Turtle, Unicorn
 
 ### T3 Rapid
 
-Acrocanthosaurus, Ankylosaurus, Argentavis, Bronto, Bulbdog, Crystal Wyvern, Daeodon, Direwolf, Dolphin, Dragonfly, Dunkleosteus, Equus, Giganotosaurus, Griffin, Mammoth, Megalodon, Moschops, Owl, Parasaur, Pelagornis, Procoptodon, Pteranodon, Rhino, Rock Drake, Sabertooth, Stegosaurus, Tapejara, Trike, Turtle, Xenomorph
+Acrocanthosaurus, Ankylosaurus, Argentavis, Bronto, Bulbdog, Crystal Wyvern, Daeodon, Direwolf, Dolphin, Dragonfly, Dunkleosteus, Equus, Giganotosaurus, Griffin, Mammoth, Megalodon, Moschops, Owl, Parasaur, Pelagornis, Procoptodon, Pteranodon, Raptor (Aberrant), Rhino, Rock Drake, Sabertooth, Shoulder Dragon (Spring), Shoulder Dragon (Summer), Stegosaurus, Tapejara, Trike, Turtle, Unicorn, Xenomorph
 
 ### T4 Cyclonic — Boss Gate
 
 **Boss:** Cyclonic Gorilla
 
-**Tames:** Basilisk, Basilosaurus, DodoRexy, Dragon, Giganotosaurus, Griffin, Ice Jumper, Phoenix, Quetzal, Raptor, Rex, Rhynio, Rock Drake, Rock Golem, Spider, Spindles, Toad, Wyvern (Lightning)
+**Tames:** Basilisk, Basilosaurus, DodoRexy, Dragon, Giganotosaurus, Griffin, Ice Jumper, Mek, Phoenix, Quetzal, Raptor, Rex, Rhynio, Rock Drake, Rock Golem, Shoulder Dragon (Winter), Spider, Spindles, Toad, Wyvern (Lightning)
 
 ### T5 Glacial
 
-Andrewsarchus, Argentavis, Basilosaurus, Ceratosaurus, Crystal Wyvern, Desmodus, Direbear, DodoRexy, Fae Drake, Featherlite, Giganotosaurus, Gigantoraptor, Griffin, Hatchling, Milk Glider, Nunatak, Owl, Phoenix, Pteranodon, Rex, Rock Drake, Spiney Lizard, Spirit Bear, Tropeognathus, Unicorn, Val Megaraptor, Young Ice Fox
+Andrewsarchus, Argentavis, Basilosaurus, Carnotaurus (Thrall), Ceratosaurus, Ceratosaurus (Thrall), Cryolophosaurus (Thrall), Crystal Wyvern, Desmodus, Desmodus (Thrall), Devil Fox (Thrall), Direbear, Direbear (Thrall), DodoRexy, Fae Drake, Featherlite, Giganotosaurus, Giganotosaurus (Thrall), Gigantoraptor, Griffin, Hatchling, Megatherium (Thrall), Mek, Milk Glider, Nunatak, Owl, Phoenix, Pteranodon, Raptor (Thrall), Rex, Rex (Thrall), Rock Drake, Sabertooth (Thrall), Scorpion (Thrall), Shoulder Dragon (Winter), Snow Monster (Thrall), Spiney Lizard, Spinosaurus (Thrall), Spirit Bear, Therizinosaur (Thrall), Thrall, Thrall (MiniBoss Training), Thylacoleo (Thrall), Tropeognathus, Unicorn, Val Megaraptor, Woolly Rhino (Thrall), Young Ice Fox, Yutyrannus (Thrall)
 
 ### T6 Undead
 
-Acrocanthosaurus, Ceratosaurus, Crystal Wyvern, Dragonfly, Featherlite, Giganotosaurus, Griffin, Hatchling, Manticore, Mantis, Megatherium, Moschops, Rex, Rock Drake, Spiney Lizard, Spinosaurus, Therizinosaur, Xenomorph
+Acrocanthosaurus, Bone Mega Carno, Bone Mega Raptor, Bone Mega Rex, Bone Quetz, Bone Stego, Bone Trike, Ceratosaurus, Crystal Wyvern, Direwolf (Spirit Beasts), Dragonfly, Featherlite, Giganotosaurus, Griffin, Hatchling, Indominus Rex, Manticore, Mantis, Megatherium, Mek, Moschops, Rex, Rock Drake, Shoulder Dragon (Spring), Shoulder Dragon (Summer), Spiney Lizard, Spinosaurus, Therizinosaur, Unicorn, Xenomorph
 
 ### T7 Soaring
 
-Ankylosaurus, Archelon, Basilosaurus, Bison, Deinosuchus, Mosasaurus, Shastasaurus
+Angel Fox, Ankylosaurus, Archelon, Basilosaurus, Bison, Deinosuchus, Giganotosaurus, Leedsichthys, Mantis, Megalodon, Mek, Mosasaurus, Plesiosaur, Shastasaurus, Shoulder Dragon (Autumn)
 
 ### T8 Maelstrom — Boss Gate
 
 **Bosses:** Gacha, Gorilla, Manticore, Titanosaur
 
-**Tames:** Argentavis, Boss Ankylo, Boss DodoRex, Boss Golem, Carcharodontosaurus, Direbear, Direwolf, Dragon, Forest Kaiju, Giganotosaurus, Griffin, Kaiju, Mammoth, Mantis, Megalosaurus, Megatherium, Moschops, Raptor, Rex, Spiney Lizard, Spinosaurus, Stegosaurus, Tame Golem, Therizinosaur, Thylacoleo, Trike, Yutyrannus
+**Tames:** Argentavis, Boss Ankylo, Boss DodoRex, Boss Golem, Carcharodontosaurus, Direbear, Direwolf, Dragon, Forest Kaiju, Giganotosaurus, Griffin, Kaiju, Mammoth, Mantis, Megalosaurus, Megatherium, Mini Kaiju, Moschops, Raptor, Rex, Shoulder Dragon (Winter), Spiney Lizard, Spinosaurus, Stegosaurus, Tame Golem, Therizinosaur, Thylacoleo, Trike, Yutyrannus
 
 ### T9 Sumerian
 
-Allosaurus, Argentavis, Bison, Boss Ankylo, Carcharodontosaurus, Ceratosaurus, Cherufe, Crystal Wyvern, Dark Pegasus, Direbear, Direwolf, DodoWyvern, Dragon, Dragonfly, Dreadnoughtus, Fire Lion, Giant Turtle, Giganotosaurus, Gigantoraptor, Gorilla, Griffin, Hyaenodon, Jerboa, Liopleurodon, Mammoth, Manticore, Megalodon, Megatherium, Mole Rat, Mosasaurus, Nunatak, Owl, Parasaur, Pelagornis, Pteranodon, Quetzal, Raptor, Rex, Rock Drake, Sabertooth, Spindles, Spiney Lizard, Stegosaurus, Tapejara, Tek Wyvern, Therizinosaur, Thylacoleo, Titanosaur, Trike, Turtle, Xenomorph, Yutyrannus
+Allosaurus, Argentavis, Bison, Boss Ankylo, Carcharodontosaurus, Ceratosaurus, Cherufe, Crystal Wyvern, Dark Pegasus, Direbear, Direwolf, DodoWyvern, Dragon, Dragonfly, Dreadnoughtus, Fire Lion, Giant Turtle, Giganotosaurus, Gigantoraptor, Gorilla, Griffin, Hyaenodon, Jerboa, Liopleurodon, Mammoth, Manticore, Megalodon, Megatherium, Mole Rat, Mosasaurus, Nunatak, Owl, Parasaur, Pelagornis, Pteranodon, Quetzal, Raptor, Rex, Rock Drake, Sabertooth, Spindles, Spiney Lizard, Stegosaurus, Tapejara, Tek Wyvern, Therizinosaur, Thylacoleo, Titanosaur, Trike, Turtle, Unicorn, Xenomorph, Yutyrannus
 
 ### T10 Tsunami
 
-Allosaurus, Andrewsarchus, Angel Fox, Ankylosaurus, Argentavis, Boss Bat, Carcharodontosaurus, Cherufe, Cryolophosaurus, Crystal Wyvern, Defender, Desmodus, Devil Fox, Direbear, Direwolf, Dragon, Enforcer, Fire Lion, Giganotosaurus, Gigantoraptor, Gorilla, Griffin, Helicoprion, Ice Golem, Indominus Rex, Mammoth, Mantis, Megalodon, Megatherium, Mek, Milk Glider, Mosasaurus, Neophyte, Owl, Pelagornis, Phoenix, Plesiosaur, Pteranodon, Rex, Rock Drake, Sabertooth, Shastasaurus, Shoulder Dragon, Snow Dragon, Snow Monster, Space Whale, Spirit Bear, Therizinosaur, Thylacoleo, Val Megaraptor, Wyvern (Ice), Yutyrannus
+Allosaurus, Andrewsarchus, Angel Fox, Ankylosaurus, Argentavis, Boss Bat, Carcharodontosaurus, Cherufe, Cryolophosaurus, Crystal Wyvern, Defender, Desmodus, Devil Fox, Direbear, Direwolf, Dragon, Enforcer, Fire Lion, Giganotosaurus, Gigantoraptor, Gorilla, Griffin, Helicoprion, Ice Golem, Indominus Rex, Mammoth, Mantis, Megalodon, Megatherium, Mek, Milk Glider, Mosasaurus, Neophyte, Owl, Pelagornis, Phoenix, Plesiosaur, Pteranodon, Rex, Rock Drake, Sabertooth, Shastasaurus, Shoulder Dragon, Shoulder Dragon (Autumn), Snow Dragon, Snow Monster, Space Whale, Spirit Bear, Therizinosaur, Thylacoleo, Unicorn, Val Megaraptor, Wyvern (Ice), Yutyrannus
 
 ### T11 BigDaddy
 
-Acro, Allo, Andrewsarchus, Ankylo, Argentavis, Beaver, Carno, Cat, Deinosuchus, Deinotherium, Dilo, Doedicurus, DodoRexy, Dragon, Featherlight, Foot Model, Griffin, Jerboa, Mammoth, Megatherium, Ptera, Ravager, Reaper, Sabertooth, Shinehorn, Spinosaurus, Terror Bird, Thorny Dragon, Thylacoleo, Titanboa (Frilled), Toad, Tom Brady, Unicorn
+Acro, Allo, Andrewsarchus, Angel Fox, Ankylo, Argentavis, Baryonyx, Beaver, Bigfoot, Camelsaurus, Carcharodontosaurus, Carno, Cat, Ceratosaurus, Chalicotherium, Daeodon, Dark Pegasus, Deinosuchus, Deinotherium, Derek, Dilo, Dimetrodon, Dimorphodon, Diplocaulus, Diplodocus, Direwolf, DodoRexy, DodoWyvern, Doedicurus, Dragon, Dragonfly, Fasolasuchus (Aberrant), Featherlight, Fire Lion, Flying Ant, Foot Model, Giganotosaurus, Gigantoraptor, Goat, Gorilla, Griffin, Hyaenodon, Ice Jumper, Iguanodon, Indominus Rex, Jerboa, Kaiju, Kaprosuchus, Karkinos, Kentro, Lystrosaurus, Maelizard, Mammoth, Manticore, Mantis, Megalania, Megatherium, Milk Glider, Otter, Owl, Pachy, Pachyrhino, Parasaur, Pelagornis, Phiomia, Phoenix, Procoptodon, Ptera, Quetzal, Ravager, Reaper, Rex, Rock Drake, Sabertooth, Sarco, Scorpion, Shinehorn, Snow Monster, Spider, Spindles, Spiney Lizard, Spinosaurus, Spirit Bear, Stegosaurus, Tek Wyvern, Terror Bird, Therizinosaur, Thorny Dragon, Thylacoleo, Titanboa (Frilled), Toad, Tom Brady, Trike, Turtle, Unicorn, Val Megaraptor, Woolly Rhino, Wyvern (Ash), Wyvern (Ice), Wyvern (Lightning), Wyvern (Poison), Wyvern (Zombie Fire), Wyvern (Zombie Lightning), Wyvern (Zombie Poison), Yutyrannus

@@ -485,9 +485,11 @@ Bosses unlock Tek Engrams at Tier 4 Cyclonic and provide materials for continued
 
 ### Cyclonic 2.0 Bosses (Side Progression)
 
-A side-progression series for upgrading existing boss tames outside the main tier-up flow.
+A side-progression series for upgrading existing boss tames outside the main tier-up flow. Craft each 2.0 boss token in your inventory, defeat the upgraded boss, and receive a 2.0 summon token (auto-tame). The 2.0 fights drop the **Cyclonic Fragment**, which will be needed for 3.0 boss fights when they release.
 
-**Cyclonic Dragon 2.0** — first 2.0 fight. Craft the Cyclonic Dragon Boss token, defeat the upgraded boss, and receive a 2.0 summon token (auto-tame).
+**Cyclonic Dragon 2.0** — first of the 2.0 series (patch 149–150).
+
+**Cyclonic Griffin 2.0 / Dodorexy 2.0 / Rex 2.0 / Giga 2.0** — patch 168 additions. Enhanced stats and damage compared to their 1.0 counterparts.
 
 ### Maelstrom Bosses (T8)
 
@@ -634,6 +636,8 @@ Acrocanthosaurus, Ankylosaurus, Argentavis, Bronto, Bulbdog, Crystal Wyvern, Dae
 ### T4 Cyclonic — Boss Gate
 
 **Boss:** Cyclonic Gorilla
+
+**Bosses 2.0 (Side Progression):** Cyclonic Dodorexy 2.0, Cyclonic Dragon 2.0, Cyclonic Giga 2.0, Cyclonic Griffin 2.0, Cyclonic Rex 2.0
 
 **Tames:** Basilisk, Basilosaurus, DodoRexy, Dragon, Giganotosaurus, Griffin, Ice Jumper, Mek, Phoenix, Quetzal, Raptor, Rex, Rhynio, Rock Drake, Rock Golem, Shoulder Dragon (Winter), Spider, Spindles, Toad, Wyvern (Lightning)
 

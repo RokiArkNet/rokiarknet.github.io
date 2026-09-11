@@ -510,6 +510,14 @@ Patch 170 upgrade path for the 2.0 series. Craft each 3.0 boss token — require
 
 **HP:** Semi-random roll on summon — consistently above 30M.
 
+### Maelstrom 2.0 Bosses (Side Progression)
+
+Six upgraded boss fights that mirror the Cyclonic 2.0 pattern. Crafted in the player inventory **after completing the main Maelstrom Boss fight**. Each craft requires a **breeder pair of the normal Maelstrom variant plus a fertilized egg**. Defeat the 2.0 boss to receive an **insta-tame token** of that boss (e.g. kill Maelstrom Charizard 2.0, receive a Maelstrom Charizard 2.0 insta-tame token).
+
+**Maelstrom Bones Jones 2.0 / Captain Jack Spino 2.0 / Charizard 2.0 / Fruit Ninja 2.0 / Kentucky Flying Chicken 2.0 / Peter Griffin 2.0** — released patch 178–179.
+
+**Progression gate:** Completing at least one Maelstrom 2.0 boss fight is required to advance to Tier 12 (Watcher).
+
 ### Watcher Bosses (T12)
 
 Coming Soon — will unlock Atlantean Kibble materials.
@@ -667,6 +675,8 @@ Angel Fox, Ankylosaurus, Archelon, Basilosaurus, Bison, Deinosuchus, Giganotosau
 ### T8 Maelstrom — Boss Gate
 
 **Bosses:** Gacha, Gorilla, Manticore, Titanosaur
+
+**Bosses 2.0 (Side Progression):** Maelstrom Bones Jones 2.0, Maelstrom Captain Jack Spino 2.0, Maelstrom Charizard 2.0, Maelstrom Fruit Ninja 2.0, Maelstrom Kentucky Flying Chicken 2.0, Maelstrom Peter Griffin 2.0
 
 **Tames:** Argentavis, Boss Ankylo, Boss DodoRex, Boss Golem, Carcharodontosaurus, Direbear, Direwolf, Dragon, Forest Kaiju, Giganotosaurus, Griffin, Kaiju, Mammoth, Mantis, Megalosaurus, Megatherium, Mini Kaiju, Moschops, Raptor, Rex, Shoulder Dragon (Winter), Spiney Lizard, Spinosaurus, Stegosaurus, Tame Golem, Therizinosaur, Thylacoleo, Trike, Yutyrannus
 

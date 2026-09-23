@@ -16,7 +16,7 @@ The mod starts off moderately difficult — dodos won't hunt you down, making it
 - Tiered progression from T1 (Runt) to T14 (Ascended)
 - Boss gates every 4 tiers unlock the next phase
 - Fluid-based crafting system replaces traditional poop mechanics
-- Supports all latest DLC creatures
+- Supports all DLC creatures
 
 ## tier-list
 
@@ -44,7 +44,7 @@ Every 4 tiers introduces a boss fight that unlocks the next phase of progression
 
 - **T4 Cyclonic** — Unlocks Glacial Kibble materials
 - **T8 Maelstrom** — Unlocks Sumerian Kibble materials
-- **T12 Watcher** — Unlocks Atlantean Kibble materials (Coming Soon)
+- **T12 Watcher** — Watcher Guardian boss gate
 
 ### Level Requirements
 
@@ -305,7 +305,7 @@ Craft different tame tokens until you can farm Ancient and Futuristic Fragments 
 
 > Mate-boost with a male of the same tier/species to raise the drop rate (works like passive eggs in other mods).
 
-**Saddles:** Tsunami Saddles released — see Equipment section.
+**Saddles:** Tsunami Saddles — see Equipment section.
 
 > Tsunami creatures have 30x damage and 30x health.
 
@@ -467,10 +467,7 @@ No durability. Each shield grants a buff while equipped.
 | Maelstrom Boss Tokens | T8 | Requires Glacial, Undead, and Soaring tames |
 | Sumerian Kibble | T9 | Maelstrom Boss materials + Artificial Cores |
 | Tsunami Kibble | T10 | Sumerian Fluids + Genetic Codex |
-| BigDaddy Kibble | T11 | Radioactive Matrix (Coming Soon) |
 | Watcher Boss Tokens | T12 | Requires Sumerian, Tsunami, and BigDaddy tames |
-| Atlantean Kibble | T13 | Watcher Boss materials (Coming Soon) |
-| Ascended Kibble | T14 | Final tier kibble (Coming Soon) |
 
 ## bosses
 
@@ -490,15 +487,13 @@ Bosses unlock Tek Engrams at Tier 4 Cyclonic and provide materials for continued
 
 A side-progression series for upgrading existing boss tames outside the main tier-up flow. Craft each 2.0 boss token in your inventory, defeat the upgraded boss, and receive a 2.0 summon token (auto-tame). The 2.0 fights drop the **Cyclonic Fragment**, feeding the 3.0 boss crafting recipes.
 
-**Cyclonic Dragon 2.0** — first of the 2.0 series (patch 149–150).
-
-**Cyclonic Griffin 2.0 / Dodorexy 2.0 / Rex 2.0 / Giga 2.0** — patch 168 additions. Enhanced stats and damage compared to their 1.0 counterparts.
+**Cyclonic Dragon 2.0 / Griffin 2.0 / Dodorexy 2.0 / Rex 2.0 / Giga 2.0** — enhanced stats and damage compared to their 1.0 counterparts.
 
 ### Cyclonic 3.0 Bosses (Side Progression)
 
-Patch 170 upgrade path for the 2.0 series. Craft each 3.0 boss token — requires the previous 2.0 battle completed **twice**, a fertilized breeding-pair egg of that 2.0 creature, and Cyclonic Fragments. Defeat the 3.0 boss (stay in range) to receive an **insta-tame** token.
+Upgrade path for the 2.0 series. Craft each 3.0 boss token — requires the previous 2.0 battle completed **twice**, a fertilized breeding-pair egg of that 2.0 creature, and Cyclonic Fragments. Defeat the 3.0 boss (stay in range) to receive an **insta-tame** token.
 
-**Cyclonic Griffin 3.0 / Dodorexy 3.0 / Rex 3.0 / Giga 3.0 / Dragon 3.0** — released patch 170. The Cyclonic Giga 3.0 and Cyclonic Rex 3.0 bite cuts through stone. These make the Maelstrom (T8) boss more manageable for players who put in the work.
+**Cyclonic Griffin 3.0 / Dodorexy 3.0 / Rex 3.0 / Giga 3.0 / Dragon 3.0** — the Cyclonic Giga 3.0 and Cyclonic Rex 3.0 bite cuts through stone. These make the Maelstrom (T8) boss more manageable for players who put in the work.
 
 ### Maelstrom Bosses (T8)
 
@@ -514,23 +509,19 @@ Patch 170 upgrade path for the 2.0 series. Craft each 3.0 boss token — require
 
 Six upgraded boss fights that mirror the Cyclonic 2.0 pattern. Crafted in the player inventory **after completing the main Maelstrom Boss fight**. Each craft requires a **breeder pair of the normal Maelstrom variant plus a fertilized egg**. Defeat the 2.0 boss to receive an **insta-tame token** of that boss (e.g. kill Maelstrom Charizard 2.0, receive a Maelstrom Charizard 2.0 insta-tame token).
 
-**Maelstrom Bones Jones 2.0 / Captain Jack Spino 2.0 / Charizard 2.0 / Fruit Ninja 2.0 / Kentucky Flying Chicken 2.0 / Peter Griffin 2.0** — released patch 178–179. Their kills drop **Maelstrom Fragments**, feeding the 3.0 boss crafting recipes.
+**Maelstrom Bones Jones 2.0 / Captain Jack Spino 2.0 / Charizard 2.0 / Fruit Ninja 2.0 / Kentucky Flying Chicken 2.0 / Peter Griffin 2.0** — their kills drop **Maelstrom Fragments**, feeding the 3.0 boss crafting recipes.
 
 **Progression gate:** Completing at least one Maelstrom 2.0 boss fight is required to advance to Tier 12 (Watcher).
 
 ### Maelstrom 3.0 Bosses (Side Progression)
 
-Patch 180 upgrade path for the 2.0 series — first entry released. Crafted in the player inventory once a Maelstrom 2.0 battle has been completed. Search "Maelstrom 3.0" in the inventory craft menu; the recipe requires **Maelstrom Fragments** (dropped by the Maelstrom 2.0 fights). Defeating the 3.0 boss awards an **auto-tame token**; the resulting tamed variant generates **Maelstrom Shiny Fragments** — required to summon the Watcher Guardians.
+Upgrade path for the 2.0 series. Crafted in the player inventory once a Maelstrom 2.0 battle has been completed. Search "Maelstrom 3.0" in the inventory craft menu; the recipe requires **Maelstrom Fragments** (dropped by the Maelstrom 2.0 fights). Defeating the 3.0 boss awards an **auto-tame token**; the resulting tamed variant generates **Maelstrom Shiny Fragments** — required to summon the Watcher Guardians.
 
-**Maelstrom Dine O Suckus 3.0** — released patch 180 (2026-09-22).
+**Maelstrom Dine O Suckus 3.0**
 
 ### Watcher Bosses (T12)
 
-**Phase 1 rollout in progress** — five Watcher Guardians total (Osiris, Asura, Ganesh, Kamataichi, Slaughter) targeted for Sept 2026. Later phases (Guardians 7–17) rolling out through Dec 2026.
-
-**Watcher Guardian Osiris** — first Watcher live. Crafted in the player inventory via a summon token; the recipe requires **Shiny Maelstrom Fragment** (drops from the Maelstrom 3.0 tamed variant). Craft the summon token, find a safe area, defeat the fight. Reward: **2× Osiris Spirits** — used for future Watcher Guardian battles.
-
-**Future rewards:** completing all five Phase 1 Watcher Guardians yields the boss tames.
+**Watcher Guardian Osiris** — crafted in the player inventory via a summon token; the recipe requires **Shiny Maelstrom Fragment** (drops from the Maelstrom 3.0 tamed variant). Craft the summon token, find a safe area, defeat the fight. Reward: **2× Osiris Spirits** — used for subsequent Watcher Guardian battles.
 
 ## tek-unlocks
 
@@ -611,7 +602,7 @@ Set spoil multiplier to **1** or higher — do not make spoil time faster than 1
 
 **What are Avatars?** Dinos that let you play as the creature instead of riding it. Currently only Runt Featherlight Avatar is available.
 
-**Can I craft dinos?** Some elusive dinos like Phoenix must be crafted, not tamed wild. Runt Phoenix and Runt Xenomorph are craftable. Phoenix tier-up is now available — craft Tidal Phoenix in your inventory after taming the Runt Phoenix.
+**Can I craft dinos?** Some elusive dinos like Phoenix must be crafted, not tamed wild. Runt Phoenix and Runt Xenomorph are craftable. Craft Tidal Phoenix in your inventory after taming the Runt Phoenix.
 
 **What are Loot Creatures?** Treasure Goat, Treasure Stag, Resource Goat, Resource Otter, and Artifact Queen Bee drop valuable items.
 
@@ -631,10 +622,8 @@ Set spoil multiplier to **1** or higher — do not make spoil time faster than 1
 | T8 Maelstrom | 20x | 15x | **BOSS GATE** |
 | T9 Sumerian | 25x | 25x | |
 | T10 Tsunami | 30x | 30x | |
-| T11 BigDaddy | 40x | 35x | Coming Soon |
-| T12 Watcher | 50x | 40x | **BOSS GATE** — Coming Soon |
-| T13 Atlantean | 60x | 50x | Coming Soon |
-| T14 Ascended | 70x | 60x | Coming Soon |
+| T11 BigDaddy | 40x | 35x | |
+| T12 Watcher | 50x | 40x | **BOSS GATE** |
 
 ## creature-list
 

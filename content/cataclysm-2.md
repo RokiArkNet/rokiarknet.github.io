@@ -514,13 +514,23 @@ Patch 170 upgrade path for the 2.0 series. Craft each 3.0 boss token — require
 
 Six upgraded boss fights that mirror the Cyclonic 2.0 pattern. Crafted in the player inventory **after completing the main Maelstrom Boss fight**. Each craft requires a **breeder pair of the normal Maelstrom variant plus a fertilized egg**. Defeat the 2.0 boss to receive an **insta-tame token** of that boss (e.g. kill Maelstrom Charizard 2.0, receive a Maelstrom Charizard 2.0 insta-tame token).
 
-**Maelstrom Bones Jones 2.0 / Captain Jack Spino 2.0 / Charizard 2.0 / Fruit Ninja 2.0 / Kentucky Flying Chicken 2.0 / Peter Griffin 2.0** — released patch 178–179.
+**Maelstrom Bones Jones 2.0 / Captain Jack Spino 2.0 / Charizard 2.0 / Fruit Ninja 2.0 / Kentucky Flying Chicken 2.0 / Peter Griffin 2.0** — released patch 178–179. Their kills drop **Maelstrom Fragments**, feeding the 3.0 boss crafting recipes.
 
 **Progression gate:** Completing at least one Maelstrom 2.0 boss fight is required to advance to Tier 12 (Watcher).
 
+### Maelstrom 3.0 Bosses (Side Progression)
+
+Patch 180 upgrade path for the 2.0 series — first entry released. Crafted in the player inventory once a Maelstrom 2.0 battle has been completed. Search "Maelstrom 3.0" in the inventory craft menu; the recipe requires **Maelstrom Fragments** (dropped by the Maelstrom 2.0 fights). Defeating the 3.0 boss awards an **auto-tame token**; the resulting tamed variant generates **Maelstrom Shiny Fragments** — required to summon the Watcher Guardians.
+
+**Maelstrom Dine O Suckus 3.0** — released patch 180 (2026-09-22).
+
 ### Watcher Bosses (T12)
 
-Coming Soon — will unlock Atlantean Kibble materials.
+**Phase 1 rollout in progress** — five Watcher Guardians total (Osiris, Asura, Ganesh, Kamataichi, Slaughter) targeted for Sept 2026. Later phases (Guardians 7–17) rolling out through Dec 2026.
+
+**Watcher Guardian Osiris** — first Watcher live. Crafted in the player inventory via a summon token; the recipe requires **Shiny Maelstrom Fragment** (drops from the Maelstrom 3.0 tamed variant). Craft the summon token, find a safe area, defeat the fight. Reward: **2× Osiris Spirits** — used for future Watcher Guardian battles.
+
+**Future rewards:** completing all five Phase 1 Watcher Guardians yields the boss tames.
 
 ## tek-unlocks
 
@@ -678,6 +688,8 @@ Angel Fox, Ankylosaurus, Archelon, Basilosaurus, Bison, Deinosuchus, Giganotosau
 
 **Bosses 2.0 (Side Progression):** Maelstrom Bones Jones 2.0, Maelstrom Captain Jack Spino 2.0, Maelstrom Charizard 2.0, Maelstrom Fruit Ninja 2.0, Maelstrom Kentucky Flying Chicken 2.0, Maelstrom Peter Griffin 2.0
 
+**Bosses 3.0 (Side Progression):** Maelstrom Dine O Suckus 3.0
+
 **Tames:** Argentavis, Boss Ankylo, Boss DodoRex, Boss Golem, Carcharodontosaurus, Direbear, Direwolf, Dragon, Forest Kaiju, Giganotosaurus, Griffin, Kaiju, Mammoth, Mantis, Megalosaurus, Megatherium, Mini Kaiju, Moschops, Raptor, Rex, Shoulder Dragon (Winter), Spiney Lizard, Spinosaurus, Stegosaurus, Tame Golem, Therizinosaur, Thylacoleo, Trike, Yutyrannus
 
 ### T9 Sumerian
@@ -691,3 +703,7 @@ Allosaurus, Andrewsarchus, Angel Fox, Ankylosaurus, Argentavis, Boss Bat, Carcha
 ### T11 BigDaddy
 
 Acro, Allo, Andrewsarchus, Angel Fox, Ankylo, Argentavis, Baryonyx, Beaver, Bigfoot, Camelsaurus, Carcharodontosaurus, Carno, Cat, Ceratosaurus, Chalicotherium, Daeodon, Dark Pegasus, Deinosuchus, Deinotherium, Derek, Dilo, Dimetrodon, Dimorphodon, Diplocaulus, Diplodocus, Direwolf, DodoRexy, DodoWyvern, Doedicurus, Dragon, Dragonfly, Fasolasuchus (Aberrant), Featherlight, Fire Lion, Flying Ant, Foot Model, Giganotosaurus, Gigantoraptor, Goat, Gorilla, Griffin, Hyaenodon, Ice Jumper, Iguanodon, Indominus Rex, Jerboa, Kaiju, Kaprosuchus, Karkinos, Kentro, Lystrosaurus, Maelizard, Mammoth, Manticore, Mantis, Megalania, Megatherium, Milk Glider, Otter, Owl, Pachy, Pachyrhino, Parasaur, Pelagornis, Phiomia, Phoenix, Procoptodon, Ptera, Quetzal, Ravager, Reaper, Rex, Rock Drake, Sabertooth, Sarco, Scorpion, Shinehorn, Snow Monster, Spider, Spindles, Spiney Lizard, Spinosaurus, Spirit Bear, Stegosaurus, Tek Wyvern, Terror Bird, Therizinosaur, Thorny Dragon, Thylacoleo, Titanboa (Frilled), Toad, Tom Brady, Trike, Turtle, Unicorn, Val Megaraptor, Woolly Rhino, Wyvern (Ash), Wyvern (Ice), Wyvern (Lightning), Wyvern (Poison), Wyvern (Zombie Fire), Wyvern (Zombie Lightning), Wyvern (Zombie Poison), Yutyrannus
+
+### T12 Watcher — Boss Gate
+
+**Boss:** Watcher Guardian Osiris

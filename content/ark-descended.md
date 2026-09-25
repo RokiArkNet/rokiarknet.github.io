@@ -156,6 +156,17 @@ Excellent Bosses (start with Indoms or Gigas) use the Torpid Activate system:
 
 These creatures become your backbone for tackling the Three Sins and beyond.
 
+### Descended Acro
+
+An Excellent-Boss tier tame that uses a different taming pattern from the Torpid Activate bosses above.
+
+**Tame method:**
+
+1. Enrage the Descended Acro.
+2. While enraged, feed 10 Boss Kibbles at once — same input method as feeding narcotics in vanilla ARK.
+
+**Progression role:** Required for the Legendary Alpha Acro evolution (see [Legendary Evolution](#legendary-evolution)).
+
 ### Unlocking Ghost Forms
 
 Evolve select Excellent Bosses into Ghost variants. See [Ghost Evolutions](#ghost-evolutions) for details.
@@ -225,7 +236,7 @@ The Oracle is the capstone of the Excellent Path.
 
 **Oracle Essence** — Marks the end of Excellent Boss progression
 
-**Unlocks T3 kibble** — Divine and Devilish Kibble now available
+**Unlocks T3 kibble** — Divine and Devilish Kibble
 
 ## t3-divine-devilish
 
@@ -1081,7 +1092,7 @@ Crafted at Descend Smithy using Degenerate Icejumper Enhance Core.
 
 ## legendary-evolution
 
-Progresses from Alpha Dodorexy to Alpha Trex Ascend (T8).
+Progresses from Alpha Dodorexy into two forked evolutions: Alpha Trex Ascend (T8) and Legendary Alpha Acro (T4–T8).
 
 > Evolutions don't carry over stats but retain bred stat points. Breed for highest base stats before evolving.
 
@@ -1097,11 +1108,17 @@ Progresses from Alpha Dodorexy to Alpha Trex Ascend (T8).
 
 > Evolution resets level scaling but retains bred stats.
 
+### Legendary Alpha Acro
+
+**How to Evolve:** Your Legendary Alpha Dodorexy must devour one Unreal Descended Acro, then apply an Acro Evolution Core.
+
+**Result:** Legendary Alpha Acro, T4–T8 tier.
+
 ### Alpha Trex
 
 **How to Unlock:** Defeat the Legendary DodoRexy to unlock engram and gain Legendary Soul
 
-**How to Evolve:** Use Legendary Soul with Evo Core on Legendary Alpha Dodorexy (must have completed 25 Dodorexy kills)
+**How to Evolve:** Legendary Alpha Dodorexy must first devour a Devilish Rex. Then use Legendary Soul with Evo Core on the Dodorexy (must have completed 25 Dodorexy kills).
 
 **Result:** Alpha Trex, T4 equivalent with access to Legendary Raid System. Through raid progression, scales to T6.
 

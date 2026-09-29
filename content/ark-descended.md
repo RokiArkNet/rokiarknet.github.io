@@ -1162,8 +1162,7 @@ After defeating 30 Stalkers during active Legendary Challenge, the Legendary Dra
 **Unique Drops:**
 
 - Ascended Legendary Rex Tek Saddle engram
-- Legendary Rex Chibi (25% Def & Dmg bonus, recovers 50k HP/s — works only for Alpha Trex, upgrades Excellent Chibi)
-- Legendary Acro Chibi — works with Legendary Alpha Acro (drops alongside the Rex Chibi)
+- Legendary Rex Chibi and Legendary Acro Chibi (25% Def & Dmg bonus, recovers 50k HP/s — Rex Chibi works with Alpha Trex, Acro Chibi works with Legendary Alpha Acro; upgrades Excellent Chibi)
 
 ### Alpha Trex Ascend
 

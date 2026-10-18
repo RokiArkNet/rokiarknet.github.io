@@ -825,9 +825,6 @@ function renderCreatureReference(){
 <div class="creature">Savage Tribesman Minion</div><div class="creature">Savage Tribesman Chief</div><div class="creature">Toxic Tribesman Minion</div><div class="creature">Toxic Tribesman Chief</div><div class="creature">Berserk Tribesman Minion</div><div class="creature">Berserk Tribesman Chief</div><div class="creature">Necrotic Tribesman Minion</div><div class="creature">Necrotic Tribesman Chief</div><div class="creature">Grenadier Tribesman Minion</div><div class="creature">Grenadier Tribesman Chief</div><div class="creature">Prime Tribesman Minion</div><div class="creature">Prime Tribesman Chief</div><div class="creature">Nuclear Tribesman Minion (Grenades)</div><div class="creature">Nuclear Tribesman Minion (Rocket Launcher)</div><div class="creature">Nuclear Tribesman Chief</div><div class="creature">Vampiric Tribesman Minion (Grenades)</div><div class="creature">Vampiric Tribesman Minion (Rocket Launcher)</div><div class="creature">Vampiric Tribesman Chief</div>
 </div>
 </div>
-`;
-  return wrap;
-}
 
 <div class="creature-tier"><div class="creature-tier-title">Paragon</div>
 <div class="creature-sub-title">Necrotic Paragons</div>
@@ -871,9 +868,9 @@ function renderCreatureReference(){
 <div class="creature spectral paragon boss">Spectral Warden Gorilla Paragon</div><div class="creature spectral paragon boss">Spectral Warden King Titan Paragon</div><div class="creature spectral paragon boss">Spectral Warden Manticore Paragon</div><div class="creature spectral paragon boss">Spectral Warden Rex Paragon</div><div class="creature spectral paragon boss">Spectral Warden Trike Paragon</div><div class="creature spectral paragon boss">Spectral Warden Fire Wyvern Paragon</div>
 </div>
 </div>
-
-
-function parseMarkdown(md){
+`;
+  return wrap;
+}function parseMarkdown(md){
   const sections=[];const lines=md.split('\n');let current=null;
   for(const line of lines){
     if(line.startsWith('## ')){if(current)sections.push(current);current={id:line.slice(3).trim(),lines:[]};}
